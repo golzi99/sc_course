@@ -16,9 +16,12 @@ export const Main = () => {
                 </div>
                 <FlexWrapper align={"center"} direction={"column"}>
                     <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                    <StyledCurrentActivity>
-                        Currently working on <span>Portfolio</span>
-                    </StyledCurrentActivity>
+                    <FlexWrapper>
+                        <StyledIndicator></StyledIndicator>
+                        <StyledCurrentActivity>
+                            Currently working on <span>Portfolio</span>
+                        </StyledCurrentActivity>
+                    </FlexWrapper>
                 </FlexWrapper>
 
             </FlexWrapper>
@@ -58,5 +61,14 @@ const StyledSmallDescription = styled.div`
 
 const StyledCurrentActivity = styled.div`
   color: #ABB2BF;
+  font-size: 16px;
+  font-weight: 600;
+`
 
+const StyledIndicator = styled.div`
+  border: 1px solid #C778DD;
+  width: 16px;
+  height: 16px;
+  flex-direction: row;
+  background-color: #C778DD;
 `
