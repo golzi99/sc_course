@@ -7,6 +7,18 @@ import projectImg3 from "../../../assets/images/banner2.webp"
 import {FlexWrapper} from '../../FlexWrapper';
 import {CardProject} from "./CardProject";
 
+const tools1: Array<string> = [
+    "HTML", "SCSS", "Python", "Flask"
+];
+
+const tools2: Array<string> = [
+    "React", "Express", "Discord.js", "Node.js", "HTML", "SCSS", "Python", "Flask"
+];
+
+const tools3: Array<string> = [
+    "CSS", "Express", "Node.js"
+];
+
 export const Projects = () => {
     return (
         <StyledProject>
@@ -15,19 +27,19 @@ export const Projects = () => {
                 <img src={line} alt={"line"}/>
                 <p>View all ~~&gt;</p>
             </FlexWrapper>
-            <StyledProjectsFlexBox direction={"row"} justify={"center"}>
-                <CardProject img={projectImg1} title={"HTML SCSS Python Flask"}
+            <StyledProjectsFlexBox direction={"row"} justify={"center"} wrap={"wrap"}>
+                <CardProject img={projectImg1} projectTools={tools1}
                              h2text={"ChertNodes"} description={"Minecraft servers hosting"}></CardProject>
-                <CardProject img={projectImg2} title={"React Express Discord.js Node.js HTML SCSS Python Flask"}
+                <CardProject img={projectImg2} projectTools={tools2}
                              h2text={"ProtectX"} description={"Discord anti-crash bot"}></CardProject>
-                <CardProject img={projectImg3} title={"CSS Express Node.js"}
+                <CardProject img={projectImg3} projectTools={tools3}
                              h2text={"Kahoot Answers Viewer"} description={"Get answers to your kahoot quiz"}></CardProject>
             </StyledProjectsFlexBox>
         </StyledProject>
     );
 };
 
-const StyledProject = styled.div`
+const StyledProject = styled.section`
   background-color: #282C33;
 
   p, h2 {
@@ -40,5 +52,7 @@ const StyledProject = styled.div`
 `
 
 const StyledProjectsFlexBox = styled(FlexWrapper)`
-  gap: 50px
+  gap: 50px;
+  min-height: 100vh;
+  min-width: 75vw;
 `

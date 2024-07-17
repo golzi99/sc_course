@@ -4,30 +4,33 @@ import {FlexWrapper} from "../../FlexWrapper";
 
 type CardProjectPropsType = {
     img: string
-    title: string
+    title?: string
     h2text: string
     description: string
+    projectTools?: Array<string>
 }
 
 export const CardProject = (props: CardProjectPropsType) => {
     return (
-        <StyledCardProject>
-            <CardFlexBox direction={"column"}>
-                <img src={props.img} alt={"projectImg"}/>
-                <StyledText>{props.title}</StyledText>
-                <h2>{props.h2text}</h2>
-                <StyledText>{props.description}</StyledText>
-                <CardFlexButtonBox direction={"row"}>
-                    <StyledButton>Live &lt;~~&gt;</StyledButton>
-                    <StyledButton>Cached &gt;=</StyledButton>
-                </CardFlexButtonBox>
-            </CardFlexBox>
+        <StyledCardProject direction={"column"}>
+            <img src={props.img} alt={"projectImg"}/>
+            <FlexWrapper wrap={"wrap"}>
+                {props.projectTools?.map((tool) => {
+                    return (<StyledText>{tool}</StyledText>)
+                })}
+            </FlexWrapper>
+            <h2>{props.h2text}</h2>
+            <StyledText>{props.description}</StyledText>
+            <CardFlexButtonBox direction={"row"}>
+                <StyledButton>Live &lt;~~&gt;</StyledButton>
+                <StyledButton>Cached =&gt;</StyledButton>
+            </CardFlexButtonBox>
         </StyledCardProject>
     );
 };
 
-const StyledCardProject = styled.div`
-  width: 330px;
+const StyledCardProject = styled(FlexWrapper)`
+  width: 20%;
   height: 430px;
   border: #ABB2BF solid 1px;
 
@@ -37,20 +40,18 @@ const StyledCardProject = styled.div`
     height: 187px;
     border-bottom: solid #ABB2BF 1px;
   }
+
+  h2 {
+    border-top: solid #ABB2BF 1px;
+    padding: 10px;
+    margin: 0;
+  }
 `
 const StyledText = styled.p`
   color: #ABB2BF;
   padding-left: 10px;
   font-size: 16px;
   font-weight: 400;
-`
-
-const CardFlexBox = styled(FlexWrapper)`
-  h2 {
-    border-top: solid #ABB2BF 1px;
-    padding: 10px;
-    margin: 0;
-  }
 `
 
 const CardFlexButtonBox = styled(FlexWrapper)`
