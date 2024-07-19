@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {SkillBox} from "../../../../components/mainParts/skills/SkillBox";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
 import line from "../../../../assets/images/Line 7 (Stroke).svg";
+import skillsImg from "../../../../assets/images/skillsImg.webp"
 import {myTheme} from "../../../../styles/Theme.styled";
 
 const languages = [
@@ -12,14 +13,17 @@ const languages = [
 export const Skills = () => {
     return (
         <StyledSkillsSection>
-            <StyledTitleSection direction={"row"} align={"center"} justify={"space-around"}>
-                <h2><span>#</span>skills</h2>
+            <StyledTitleSection direction={"row"}>
+                <p><span>#</span>skills</p>
                 <img src={line} alt={"line"}/>
             </StyledTitleSection>
-            <StyledSkills wrap={"wrap"} justify={"center"}>
-                <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
-                <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
-                <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
+            <StyledSkills justify={"space-around"}>
+                <img src={skillsImg} alt={"skillsImg"}/>
+                <FlexWrapper justify={"space-between"} align={"start"} wrap={"wrap"}>
+                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
+                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
+                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
+                </FlexWrapper>
             </StyledSkills>
         </StyledSkillsSection>
     );
@@ -30,14 +34,16 @@ const StyledSkillsSection = styled.section`
 `
 
 const StyledSkills = styled(FlexWrapper)`
-  gap: 25px;
+    img {
+      width: 30vw;
+    }
 `
 
 const StyledTitleSection = styled(FlexWrapper)`
-  h2 {
-    color: ${myTheme.colors.white}
-  }
+  color: ${myTheme.colors.white};
+  font-size: 32px;
+  font-weight: 500;
   span {
-    color: ${myTheme.colors.mainPurpleColor}
+    color: ${myTheme.colors.mainPurpleColor};
   }
 `

@@ -2,6 +2,7 @@ import React from 'react';
 import dark_man_1 from "../../../assets/images/dark_man_1.webp"
 import styled from "styled-components";
 import {FlexWrapper} from "../../FlexWrapper";
+import { myTheme } from '../../../styles/Theme.styled';
 
 export const FirstPart = () => {
     return (
@@ -42,14 +43,15 @@ const StyledButton = styled.a`
   border: #C778DD solid 1px;
   background-color: transparent;
   color: white;
+  max-width: 130px;
 `
 
 const StyledTitle = styled.p`
-  color: #FFFFFF;
+  color: ${myTheme.colors.white};
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 500;
   span {
-    color: #C778DD;
+    color: ${myTheme.colors.mainPurpleColor};
   }
 `
 
