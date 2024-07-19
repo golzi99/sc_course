@@ -2,16 +2,18 @@ import React from 'react';
 import {FirstPart} from "../../components/mainParts/projects/FirstPart";
 import {Projects} from "../../components/mainParts/projects/Projects";
 import styled from "styled-components";
+import {Skills} from "./mainParts/skills/Skills";
 
 export const Main = () => {
     return (
-        <StyledFirstPart>
+        <StyledMain>
             <FirstPart/>
             <Projects/>
-        </StyledFirstPart>
+            <Skills/>
+        </StyledMain>
     );
 };
 
-const StyledFirstPart = styled.main`
+const StyledMain = styled.main`
   background-color: #282C33;
 `

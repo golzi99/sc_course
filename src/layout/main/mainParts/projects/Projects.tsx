@@ -4,8 +4,8 @@ import line from "../../../assets/images/Line 7 (Stroke).svg"
 import projectImg1 from "../../../assets/images/banner1.webp"
 import projectImg2 from "../../../assets/images/thumbnail1.webp"
 import projectImg3 from "../../../assets/images/banner2.webp"
-import {FlexWrapper} from '../../FlexWrapper';
-import {CardProject} from "./CardProject";
+import {CardProject} from "./card/CardProject";
+import { FlexWrapper } from '../../../../components/FlexWrapper';
 
 const tools1: Array<string> = [
     "HTML", "SCSS", "Python", "Flask"
@@ -53,6 +53,6 @@ const StyledProject = styled.section`
 
 const StyledProjectsFlexBox = styled(FlexWrapper)`
   gap: 50px;
-  min-height: 60vh;
+  min-height: 100vh;
   min-width: 75vw;
 `
