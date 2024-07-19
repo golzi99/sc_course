@@ -11,7 +11,7 @@ type SkillBoxPropsType = {
 export const SkillBox = (props: SkillBoxPropsType) => {
     return (
         <StyledSkillBox direction={'column'}>
-            <h3>{props.skillBoxTitle}</h3>
+            <StyledTitleSkill>{props.skillBoxTitle}</StyledTitleSkill>
             <FlexWrapper wrap={"wrap"}>
                 {props.boxSkills.map((skill) => (
                     <StyledText>{skill}</StyledText>))}
@@ -23,11 +23,6 @@ export const SkillBox = (props: SkillBoxPropsType) => {
 const StyledSkillBox = styled(FlexWrapper)`
   border: ${myTheme.colors.borderColor} solid 1px;
   max-width: 200px;
-  h3 {
-    padding-left: 10px;
-    color: ${myTheme.colors.white};
-    border-bottom: ${myTheme.colors.borderColor} solid 1px;
-  }
 `
 
 const StyledText = styled.p`
@@ -35,4 +30,11 @@ const StyledText = styled.p`
   padding-left: 10px;
   font-size: 16px;
   font-weight: 400;
+`
+const StyledTitleSkill = styled.p`
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 10px;
+  color: ${myTheme.colors.white};
+  border-bottom: ${myTheme.colors.borderColor} solid 1px;
 `

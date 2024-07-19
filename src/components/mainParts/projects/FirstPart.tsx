@@ -5,26 +5,28 @@ import {FlexWrapper} from "../../FlexWrapper";
 
 export const FirstPart = () => {
     return (
-        <FlexWrapper align={"center"} justify={"space-around"}>
-            <FlexWrapper direction={"column"}>
-                <StyledTitle>
-                    Elias is a <span>web designer</span> and <span>front-end developer</span>
-                </StyledTitle>
-                <StyledDescription>
-                    He crafts responsive websites where technologies meet creativity
-                </StyledDescription>
-                <StyledButton>Contact me !!</StyledButton>
+        <section>
+            <FlexWrapper align={"center"} justify={"space-around"}>
+                <FlexWrapper direction={"column"}>
+                    <StyledTitle>
+                        Elias is a <span>web designer</span> and <span>front-end developer</span>
+                    </StyledTitle>
+                    <StyledDescription>
+                        He crafts responsive websites where technologies meet creativity
+                    </StyledDescription>
+                    <StyledButton>Contact me !!</StyledButton>
+                </FlexWrapper>
+                <FlexWrapper align={"center"} direction={"column"}>
+                    <Photo src={dark_man_1} alt={"dark_man_1"}/>
+                    <BoxUnderImage align={"center"}>
+                        <StyledIndicator/>
+                        <StyledCurrentActivity>
+                            Currently working on <strong>Portfolio</strong>
+                        </StyledCurrentActivity>
+                    </BoxUnderImage>
+                </FlexWrapper>
             </FlexWrapper>
-            <FlexWrapper align={"center"} direction={"column"}>
-                <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                <BoxUnderImage align={"center"} >
-                    <StyledIndicator/>
-                    <StyledCurrentActivity>
-                        Currently working on <strong>Portfolio</strong>
-                    </StyledCurrentActivity>
-                </BoxUnderImage>
-            </FlexWrapper>
-        </FlexWrapper>
+        </section>
     );
 };
 
@@ -35,16 +37,17 @@ const Photo = styled.img`
   object-fit: cover;
 `
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
   padding: 8px 16px 8px 16px;
   border: #C778DD solid 1px;
   background-color: transparent;
   color: white;
 `
 
-const StyledTitle = styled.h2`
+const StyledTitle = styled.p`
   color: #FFFFFF;
-
+  font-size: 32px;
+  font-weight: 600;
   span {
     color: #C778DD;
   }
@@ -62,7 +65,7 @@ const BoxUnderImage = styled(FlexWrapper)`
   padding-left: 1vw;
 `
 
-const StyledCurrentActivity = styled.div`
+const StyledCurrentActivity = styled.p`
   color: #ABB2BF;
   font-size: 16px;
   font-weight: 600;

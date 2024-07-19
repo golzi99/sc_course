@@ -19,7 +19,7 @@ export const CardProject = (props: CardProjectPropsType) => {
                     return (<StyledText>{tool}</StyledText>)
                 })}
             </FlexWrapper>
-            <h2>{props.h2text}</h2>
+            <StyledBigText>{props.h2text}</StyledBigText>
             <StyledText>{props.description}</StyledText>
             <CardFlexButtonBox direction={"row"}>
                 <StyledButton>Live &lt;~~&gt;</StyledButton>
@@ -40,13 +40,16 @@ const StyledCardProject = styled(FlexWrapper)`
     height: 187px;
     border-bottom: solid #ABB2BF 1px;
   }
-
-  h2 {
-    border-top: solid #ABB2BF 1px;
-    padding: 10px;
-    margin: 0;
-  }
 `
+
+const StyledBigText = styled.p`
+  border-top: solid #ABB2BF 1px;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 10px;
+  margin: 0;
+`
+
 const StyledText = styled.p`
   color: #ABB2BF;
   padding-left: 10px;
@@ -59,7 +62,7 @@ const CardFlexButtonBox = styled(FlexWrapper)`
   gap: 20px;
 `
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
   padding: 8px 16px 8px 16px;
   border: #C778DD solid 1px;
   background-color: transparent;

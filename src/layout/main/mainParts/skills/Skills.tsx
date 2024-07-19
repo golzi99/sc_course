@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {SkillBox} from "../../../../components/mainParts/skills/skillBox";
+import {SkillBox} from "../../../../components/mainParts/skills/SkillBox";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
 import line from "../../../../assets/images/Line 7 (Stroke).svg";
 import {myTheme} from "../../../../styles/Theme.styled";
