@@ -45,6 +45,7 @@ export const Projects = () => {
 
 const StyledProject = styled.section`
   background-color: #282C33;
+  margin-top: 5vh;
 `
 
 const StyledTitle = styled(FlexWrapper)`

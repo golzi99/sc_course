@@ -21,8 +21,9 @@ export const SkillBox = (props: SkillBoxPropsType) => {
 };
 
 const StyledSkillBox = styled(FlexWrapper)`
-  border: ${myTheme.colors.borderColor} solid 1px;
+  border: ${myTheme.colors.lightGrey} solid 1px;
   max-width: 175px;
+  margin-bottom: 20px;
 `
 
 const StyledText = styled.p`
@@ -36,5 +37,5 @@ const StyledTitleSkill = styled.p`
   font-weight: 600;
   padding-left: 10px;
   color: ${myTheme.colors.white};
-  border-bottom: ${myTheme.colors.borderColor} solid 1px;
+  border-bottom: ${myTheme.colors.lightGrey} solid 1px;
 `

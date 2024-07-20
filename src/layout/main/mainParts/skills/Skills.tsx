@@ -10,6 +10,22 @@ const languages = [
     "TypeScript", "Lua", "Python", "JavaScripts"
 ]
 
+const dataBase = [
+    "SQLite", "PostgreSQL", "Mongo"
+]
+
+const other = [
+    "HTML", "CSS", "EJS", "SCSS", "REST", "Jinja"
+]
+
+const tools = [
+    "VSCode", "Neovim", "Linux", "Figma", "XFCE", "Arch", "Git", "Font", "Awesome"
+]
+
+const frameworks = [
+    "React", "Vue", "Disnake", "Discord.js", "Flask", "Express.js"
+]
+
 export const Skills = () => {
     return (
         <StyledSkillsSection>
@@ -19,11 +35,19 @@ export const Skills = () => {
             </StyledTitleSection>
             <StyledSkills justify={"space-around"}>
                 <img src={skillsImg} alt={"skillsImg"}/>
-                <FlexWrapper justify={"space-between"} align={"start"} wrap={"wrap"}>
-                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
-                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
-                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
-                </FlexWrapper>
+                <StyledSkillBoxContainer>
+                    <FlexWrapper direction={"column"}>
+                        <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
+                    </FlexWrapper>
+                    <FlexWrapper direction={"column"}>
+                        <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}/>
+                        <SkillBox skillBoxTitle={"Other"} boxSkills={other}/>
+                    </FlexWrapper>
+                    <FlexWrapper direction={"column"}>
+                        <SkillBox skillBoxTitle={"Tools"} boxSkills={tools}/>
+                        <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}/>
+                    </FlexWrapper>
+                </StyledSkillBoxContainer>
             </StyledSkills>
         </StyledSkillsSection>
     );
@@ -31,12 +55,21 @@ export const Skills = () => {
 
 const StyledSkillsSection = styled.section`
   background-color: #282C33;
+  margin-top: 5vh;
 `
 
 const StyledSkills = styled(FlexWrapper)`
     img {
       width: 30vw;
     }
+`
+
+const StyledSkillBoxContainer = styled.div`
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 `
 
 const StyledTitleSection = styled(FlexWrapper)`
