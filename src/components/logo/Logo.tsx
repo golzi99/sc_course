@@ -1,5 +1,5 @@
 import React from 'react';
-import {Icon} from "../icon/Icon";
+import {MainIcon} from "../icon/MainIcon";
 import {FlexWrapper} from "../FlexWrapper";
 import styled from "styled-components";
 
@@ -8,7 +8,7 @@ export const Logo = () => {
     return (
         <a>
             <FlexWrapper align={"center"}>
-                <Icon iconId={"iconDefaultSvg"}/>
+                <MainIcon iconId={"iconDefaultSvg"}/>
                 <LogoText>Elias</LogoText>
             </FlexWrapper>
         </a>
