@@ -6,16 +6,22 @@ export const Menu = () => {
         <StyledMenu>
             <ul>
                 <li>
-                    <a href=""><span>#</span>home</a>
+                    <a href="/home"><span>#</span>home</a>
                 </li>
                 <li>
-                    <a href=""><span>#</span>works</a>
+                    <a href="/works"><span>#</span>works</a>
                 </li>
                 <li>
-                    <a href=""><span>#</span>about-me</a>
+                    <a href="/about-me"><span>#</span>about-me</a>
                 </li>
                 <li>
-                    <a href=""><span>#</span>contacts</a>
+                    <a href="/contacts"><span>#</span>contacts</a>
+                </li>
+                <li>
+                    <select name={"language"}>
+                        <option>EN</option>
+                        <option>RU</option>
+                    </select>
                 </li>
             </ul>
         </StyledMenu>
