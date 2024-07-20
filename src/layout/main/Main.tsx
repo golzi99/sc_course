@@ -5,11 +5,13 @@ import styled from "styled-components";
 import {Skills} from "./mainParts/skills/Skills";
 import { AboutMe } from './mainParts/aboutMe/AboutMe';
 import { Contacts } from './mainParts/contacts/Contacts';
+import {Quote} from "../../components/mainParts/blockquote/Quote";
 
 export const Main = () => {
     return (
         <StyledMain>
             <FirstPart/>
+            <Quote/>
             <Projects/>
             <Skills/>
             <AboutMe/>
