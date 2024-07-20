@@ -20,6 +20,5 @@ export const Main = () => {
 
 const StyledMain = styled.main`
   background-color: #282C33;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 0 10% 10% 10%;
 `
