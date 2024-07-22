@@ -1,12 +1,12 @@
 import React from 'react';
-import dark_man_1 from "../../../assets/images/dark_man_1.webp"
+import dark_man_1 from "../../../../assets/images/dark_man_1.webp"
 import styled from "styled-components";
 import { FlexWrapper } from '../../../../components/FlexWrapper';
 
 export const FirstPart = () => {
     return (
-        <FlexWrapper align={"center"} justify={"space-around"}>
-            <FlexWrapper direction={"column"}>
+        <FlexWrapper justify={"space-around"} align={"center"}>
+            <StyledTextBox direction={"column"}>
                 <StyledTitle>
                     Elias is a <span>web designer</span> and <span>front-end developer</span>
                 </StyledTitle>
@@ -14,10 +14,10 @@ export const FirstPart = () => {
                     He crafts responsive websites where technologies meet creativity
                 </StyledDescription>
                 <StyledButton>Contact me !!</StyledButton>
-            </FlexWrapper>
+            </StyledTextBox>
             <FlexWrapper align={"center"} direction={"column"}>
                 <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                <BoxUnderImage align={"center"} >
+                <BoxUnderImage align={"center"}>
                     <StyledIndicator/>
                     <StyledCurrentActivity>
                         Currently working on <strong>Portfolio</strong>
@@ -35,14 +35,18 @@ const Photo = styled.img`
   object-fit: cover;
 `
 
-const StyledButton = styled.button`
+const StyledButton = styled.a`
   padding: 8px 16px 8px 16px;
   border: #C778DD solid 1px;
   background-color: transparent;
   color: white;
+  width: fit-content;
+  font-size: 18px;
 `
 
-const StyledTitle = styled.h2`
+const StyledTitle = styled.p`
+  font-size: 32px;
+  font-weight: bold;
   color: #FFFFFF;
 
   span {
@@ -52,19 +56,25 @@ const StyledTitle = styled.h2`
 
 const StyledDescription = styled.p`
   color: #ABB2BF;
+  font-size: 24px;
+`
+
+const StyledTextBox = styled(FlexWrapper)`
+    gap: 20px;
 `
 
 const BoxUnderImage = styled(FlexWrapper)`
-  border: lightgrey solid 2px;
-  width: 20vw;
-  height: 4vh;
+  border: lightgrey solid 1px;
+  //width: 20vw;
+  //height: 4vh;
   gap: 1vw;
   padding-left: 1vw;
+  padding-right: 1vw;
 `
 
 const StyledCurrentActivity = styled.div`
   color: #ABB2BF;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
 `
 

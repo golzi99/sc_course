@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import line from "../../../assets/images/Line 7 (Stroke).svg"
-import projectImg1 from "../../../assets/images/banner1.webp"
-import projectImg2 from "../../../assets/images/thumbnail1.webp"
-import projectImg3 from "../../../assets/images/banner2.webp"
+import projectImg1 from "../../../../assets/images/banner1.webp"
+import projectImg2 from "../../../../assets/images/thumbnail1.webp"
+import projectImg3 from "../../../../assets/images/banner2.webp"
 import {CardProject} from "./card/CardProject";
 import { FlexWrapper } from '../../../../components/FlexWrapper';
+import { myTheme } from '../../../../styles/Theme.styled';
 
 const tools1: Array<string> = [
     "HTML", "SCSS", "Python", "Flask"
@@ -22,18 +22,21 @@ const tools3: Array<string> = [
 export const Projects = () => {
     return (
         <StyledProject>
-            <FlexWrapper direction={"row"} align={"center"} justify={"space-around"}>
-                <h2><span>#</span>projects</h2>
-                <img src={line} alt={"line"}/>
-                <p>View all ~~&gt;</p>
+            <FlexWrapper direction={"row"} align={"center"} justify={"space-between"}>
+                <StyledTitle direction={"row"} align={"center"}>
+                    <p><span>#</span>projects</p>
+                    <StyledLine></StyledLine>
+                </StyledTitle>
+                <StyledView>View all ~~&gt;</StyledView>
             </FlexWrapper>
-            <StyledProjectsFlexBox direction={"row"} justify={"center"} wrap={"wrap"}>
-                <CardProject img={projectImg1} projectTools={tools1}
+            <StyledProjectsFlexBox direction={"row"} wrap={"wrap"}>
+                <CardProject img={projectImg1} projectTools={tools1} cachedVisible={true}
                              h2text={"ChertNodes"} description={"Minecraft servers hosting"}></CardProject>
-                <CardProject img={projectImg2} projectTools={tools2}
+                <CardProject img={projectImg2} projectTools={tools2} cachedVisible={false}
                              h2text={"ProtectX"} description={"Discord anti-crash bot"}></CardProject>
-                <CardProject img={projectImg3} projectTools={tools3}
-                             h2text={"Kahoot Answers Viewer"} description={"Get answers to your kahoot quiz"}></CardProject>
+                <CardProject img={projectImg3} projectTools={tools3} cachedVisible={false}
+                             h2text={"Kahoot Answers Viewer"}
+                             description={"Get answers to your kahoot quiz"}></CardProject>
             </StyledProjectsFlexBox>
         </StyledProject>
     );
@@ -41,18 +44,31 @@ export const Projects = () => {
 
 const StyledProject = styled.section`
   background-color: #282C33;
+  margin-top: 5vh;
+`
 
-  p, h2 {
-    color: #FFFFFF;
-
-    span {
-      color: #C778DD;
-    }
+const StyledTitle = styled(FlexWrapper)`
+  color: ${myTheme.colors.white};
+  font-size: 32px;
+  font-weight: 500;
+  gap: 20px;
+  span {
+    color: ${myTheme.colors.mainPurpleColor};
   }
 `
 
+const StyledView = styled.p`
+  color: ${myTheme.colors.white};
+  font-size: 24px;
+`
+
 const StyledProjectsFlexBox = styled(FlexWrapper)`
-  gap: 50px;
-  min-height: 100vh;
-  min-width: 75vw;
+  gap: 20px;
+  justify-content: center;
+`
+
+const StyledLine = styled.span`
+  background-color: ${myTheme.colors.mainPurpleColor};
+  width: 25vw;
+  height: 2px;
 `

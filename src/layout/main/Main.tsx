@@ -1,11 +1,11 @@
 import React from 'react';
-import {FirstPart} from "../../components/mainParts/projects/FirstPart";
-import {Projects} from "../../components/mainParts/projects/Projects";
 import styled from "styled-components";
 import {Skills} from "./mainParts/skills/Skills";
 import { AboutMe } from './mainParts/aboutMe/AboutMe';
 import { Contacts } from './mainParts/contacts/Contacts';
 import {Quote} from "../../components/mainParts/blockquote/Quote";
+import { FirstPart } from './mainParts/firstPart/FirstPart';
+import { Projects } from './mainParts/projects/Projects';
 
 export const Main = () => {
     return (

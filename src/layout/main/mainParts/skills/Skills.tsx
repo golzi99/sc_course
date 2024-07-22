@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import {SkillBox} from "../../../../components/mainParts/skills/SkillBox";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
-import line from "../../../../assets/images/Line 7 (Stroke).svg";
 import skillsImg from "../../../../assets/images/skillsImg.webp"
 import {myTheme} from "../../../../styles/Theme.styled";
 
@@ -29,9 +28,9 @@ const frameworks = [
 export const Skills = () => {
     return (
         <StyledSkillsSection>
-            <StyledTitleSection direction={"row"}>
+            <StyledTitleSection direction={"row"} align={"center"}>
                 <p><span>#</span>skills</p>
-                <img src={line} alt={"line"}/>
+                <StyledLine></StyledLine>
             </StyledTitleSection>
             <StyledSkills justify={"space-around"}>
                 <img src={skillsImg} alt={"skillsImg"}/>
@@ -76,7 +75,14 @@ const StyledTitleSection = styled(FlexWrapper)`
   color: ${myTheme.colors.white};
   font-size: 32px;
   font-weight: 500;
+  gap: 20px;
   span {
     color: ${myTheme.colors.mainPurpleColor};
   }
+`
+
+const StyledLine = styled.span`
+  background-color: ${myTheme.colors.mainPurpleColor};
+  width: 25vw;
+  height: 2px;
 `

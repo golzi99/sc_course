@@ -22,18 +22,18 @@ export const SkillBox = (props: SkillBoxPropsType) => {
 
 const StyledSkillBox = styled(FlexWrapper)`
   border: ${myTheme.colors.lightGrey} solid 1px;
-  max-width: 175px;
+  max-width: 250px;
   margin-bottom: 20px;
 `
 
 const StyledText = styled.p`
   color: #ABB2BF;
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 400;
 `
 const StyledTitleSkill = styled.p`
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
   padding-left: 10px;
   color: ${myTheme.colors.white};

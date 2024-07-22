@@ -29,8 +29,14 @@ export const Menu = () => {
 };
 
 const StyledMenu = styled.nav`
+    font-size: 24px;
+  
     ul {
       display: flex;
-      gap:30px
+      gap:30px;
+
+      a {
+        text-decoration: none;
+      }
     }
 `

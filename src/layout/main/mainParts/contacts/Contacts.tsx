@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import line from "../../../../assets/images/Line 7 (Stroke).svg";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
 import {myTheme} from "../../../../styles/Theme.styled";
 import {Icon} from "../../../../components/icon/Icon";
@@ -8,11 +7,11 @@ import {Icon} from "../../../../components/icon/Icon";
 export const Contacts = () => {
     return (
         <StyledContacts>
-            <StyledTitleSection direction={"row"}>
+            <StyledTitleSection direction={"row"} align={"center"}>
                 <p><span>#</span>contacts</p>
-                <img src={line} alt={"line"}/>
+                <StyledLine></StyledLine>
             </StyledTitleSection>
-            <FlexWrapper direction={"row"} justify={"space-between"}>
+            <StyledContactBoxSection direction={"row"} justify={"space-between"}>
                 <StyledText>I’m interested in freelance opportunities. However, if you have other request or question, don’t
                     hesitate to contact me</StyledText>
                 <StyledContactBox direction={"column"}>
@@ -26,7 +25,7 @@ export const Contacts = () => {
                         <StyledText>elias@elias.me</StyledText>
                     </FlexWrapper>
                 </StyledContactBox>
-            </FlexWrapper>
+            </StyledContactBoxSection>
         </StyledContacts>
     );
 };
@@ -44,10 +43,14 @@ const StyledTitleSection = styled(FlexWrapper)`
   color: ${myTheme.colors.white};
   font-size: 32px;
   font-weight: 500;
-
+  gap: 20px;
   span {
     color: ${myTheme.colors.mainPurpleColor};
   }
+`
+
+const StyledContactBoxSection = styled(FlexWrapper)`
+    padding-top: 30px;
 `
 
 const StyledContactBox = styled(FlexWrapper)`
@@ -59,5 +62,11 @@ const StyledText = styled.p`
   color: ${myTheme.colors.lightGrey};
   max-width: 25%;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 24px;
+`
+
+const StyledLine = styled.span`
+  background-color: ${myTheme.colors.mainPurpleColor};
+  width: 25vw;
+  height: 2px;
 `

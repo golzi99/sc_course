@@ -37,6 +37,7 @@ const StyledFooter = styled.footer`
   background-color: #282C33;
   padding-left: 10%;
   padding-right: 10%;
+  font-size: 24px;
 `
 
 const StyledWhiteText = styled.p`
@@ -46,5 +47,7 @@ const StyledWhiteText = styled.p`
 const StyledText = styled.p`
   color: ${myTheme.colors.lightGrey};
   font-weight: 400;
-  font-size: 16px;
+  font-size: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `

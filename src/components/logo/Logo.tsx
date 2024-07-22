@@ -6,19 +6,23 @@ import styled from "styled-components";
 
 export const Logo = () => {
     return (
-        <a>
+        <StyledLink href={"/"}>
             <FlexWrapper align={"center"}>
                 <MainIcon iconId={"iconDefaultSvg"}/>
                 <LogoText>Elias</LogoText>
             </FlexWrapper>
-        </a>
+        </StyledLink>
     );
 };
 
 const LogoText = styled.p`
-  font-size: 24px;
+  font-size: 32px;
   padding-left: 5px;
   color: snow;
+`
+
+const StyledLink = styled.a`
+  text-decoration: none;
 `
 
 
