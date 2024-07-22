@@ -21,15 +21,15 @@ const tools3: Array<string> = [
 
 export const Projects = () => {
     return (
-        <StyledProject>
+        <StyledProject id={"works"}>
             <FlexWrapper direction={"row"} align={"center"} justify={"space-between"}>
                 <StyledTitle direction={"row"} align={"center"}>
                     <p><span>#</span>projects</p>
                     <StyledLine></StyledLine>
                 </StyledTitle>
-                <StyledView>View all ~~&gt;</StyledView>
+                <StyledView href={"/projects"}>View all ~~&gt;</StyledView>
             </FlexWrapper>
-            <StyledProjectsFlexBox direction={"row"} wrap={"wrap"}>
+            <StyledProjectsFlexBox direction={"row"} justify={"space-around"} wrap={"wrap"}>
                 <CardProject img={projectImg1} projectTools={tools1} cachedVisible={true}
                              h2text={"ChertNodes"} description={"Minecraft servers hosting"}></CardProject>
                 <CardProject img={projectImg2} projectTools={tools2} cachedVisible={false}
@@ -43,8 +43,8 @@ export const Projects = () => {
 };
 
 const StyledProject = styled.section`
-  background-color: #282C33;
-  margin-top: 5vh;
+  background-color: ${myTheme.colors.mainBack};
+  min-height: 60vh;
 `
 
 const StyledTitle = styled(FlexWrapper)`
@@ -57,14 +57,16 @@ const StyledTitle = styled(FlexWrapper)`
   }
 `
 
-const StyledView = styled.p`
+const StyledView = styled.a`
   color: ${myTheme.colors.white};
   font-size: 24px;
+  text-decoration: none;
 `
 
 const StyledProjectsFlexBox = styled(FlexWrapper)`
+  padding: 1%;
+  width: 100%;
   gap: 20px;
-  justify-content: center;
 `
 
 const StyledLine = styled.span`

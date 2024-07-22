@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { FlexWrapper } from '../../../../../components/FlexWrapper';
-import { myTheme } from '../../../../../styles/Theme.styled';
+import {myTheme } from '../../../../../styles/Theme.styled';
 
 type CardProjectPropsType = {
     img: string
@@ -37,19 +37,20 @@ const StyledCardProject = styled(FlexWrapper)`
   width: 25%;
   min-width: 375px;
   min-height: 400px;
-  border: #ABB2BF solid 1px;
+  border: ${myTheme.colors.lightGrey} solid 1px;
 
   img {
+    object-fit: cover;
     max-width: 100%;
     max-height: 100%;
     height: 187px;
-    border-bottom: solid #ABB2BF 1px;
+    border-bottom: solid ${myTheme.colors.lightGrey} 1px;
   }
 `
 
 const StyledBigText = styled.p`
-  border-top: solid #ABB2BF 1px;
-  font-size: 24px;
+  border-top: solid ${myTheme.colors.lightGrey} 1px;
+  font-size: 28px;
   font-weight: 500;
   padding: 10px;
   margin: 0;
@@ -57,9 +58,9 @@ const StyledBigText = styled.p`
 `
 
 const StyledText = styled.p`
-  color: #ABB2BF;
+  color: ${myTheme.colors.lightGrey};
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
 `
 
@@ -74,12 +75,21 @@ type StyledBtnPropsType = {
 
 const StyledButton = styled.a<StyledBtnPropsType>`
   padding: 8px 16px 8px 16px;
-  border: #C778DD solid 1px;
+  border: ${myTheme.colors.mainPurpleColor} solid 1px;
   background-color: transparent;
-  color: white;
+  color: ${myTheme.colors.white};
   
   ${props => props.disable && css<StyledBtnPropsType>`
-    border: #ABB2BF solid 1px;
-    color: #ABB2BF;
+    border: ${myTheme.colors.lightGrey} solid 1px;
+    color: ${myTheme.colors.lightGrey};
   `}
+  
+  ${props => !props.disable && css<StyledBtnPropsType>`
+    &:hover {
+      background-color:rgba(199, 120, 221, 0.2);
+      cursor: pointer;
+    }
+  `}
+  
+
 `

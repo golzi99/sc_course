@@ -27,7 +27,7 @@ const frameworks = [
 
 export const Skills = () => {
     return (
-        <StyledSkillsSection>
+        <StyledSkillsSection id={"skills"}>
             <StyledTitleSection direction={"row"} align={"center"}>
                 <p><span>#</span>skills</p>
                 <StyledLine></StyledLine>
@@ -53,8 +53,8 @@ export const Skills = () => {
 };
 
 const StyledSkillsSection = styled.section`
-  background-color: #282C33;
-  margin-top: 5vh;
+  background-color: ${myTheme.colors.mainBack};
+  min-height: 60vh;
 `
 
 const StyledSkills = styled(FlexWrapper)`

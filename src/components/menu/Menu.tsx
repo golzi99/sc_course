@@ -9,13 +9,13 @@ export const Menu = () => {
                     <a href="/home"><span>#</span>home</a>
                 </li>
                 <li>
-                    <a href="/works"><span>#</span>works</a>
+                    <a href="#works"><span>#</span>works</a>
                 </li>
                 <li>
-                    <a href="/about-me"><span>#</span>about-me</a>
+                    <a href="#about-me"><span>#</span>about-me</a>
                 </li>
                 <li>
-                    <a href="/contacts"><span>#</span>contacts</a>
+                    <a href="#contacts"><span>#</span>contacts</a>
                 </li>
                 <li>
                     <select name={"language"}>

@@ -6,7 +6,7 @@ import dark_man_2 from "../../../../assets/images/dark_man_2.webp"
 
 export const AboutMe = () => {
     return (
-        <StyledAboutMe>
+        <StyledAboutMe id={"about-me"}>
             <StyledAboutMeContent justify={"space-around"}>
                 <FlexWrapper direction={"column"}>
                     <StyledTitleSection direction={"row"} align={"center"}>
@@ -26,7 +26,7 @@ export const AboutMe = () => {
                             about
                             the
                             newest technologies and frameworks.</StyledText>
-                        <StyledButton>Read more -&gt;</StyledButton>
+                        <StyledButton href={"/aboutMe"}>Read more -&gt;</StyledButton>
                     </StyledAboutBoxText>
                 </FlexWrapper>
                 <img src={dark_man_2} alt={"dark_man_2"}/>
@@ -37,7 +37,7 @@ export const AboutMe = () => {
 
 const StyledAboutMe = styled.section`
   background-color: ${myTheme.colors.mainBack};
-  margin-top: 5vh;
+  min-height: 85vh;
 `
 
 const StyledTitleSection = styled(FlexWrapper)`
@@ -52,14 +52,16 @@ const StyledTitleSection = styled(FlexWrapper)`
 `
 
 const StyledAboutBoxText = styled(FlexWrapper)`
-  padding-top: 30px;
-  gap: 30px;
+  padding-top: 5vh;
+  gap: 3vh;
 `
 
 
 const StyledAboutMeContent = styled(FlexWrapper)`
   img {
-    width: 30%;
+    max-width: 30vw;
+    max-height: 80vw;
+    object-fit: cover;
   }
 `
 
@@ -76,6 +78,13 @@ const StyledButton = styled.a`
   background-color: transparent;
   color: white;
   width: fit-content;
+  text-decoration: none;
+
+  &:hover {
+    background-color:rgba(199, 120, 221, 0.2);
+    cursor: pointer;
+  }
+  
 `
 
 const StyledLine = styled.span`

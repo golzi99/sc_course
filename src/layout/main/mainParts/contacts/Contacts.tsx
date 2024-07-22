@@ -6,7 +6,7 @@ import {Icon} from "../../../../components/icon/Icon";
 
 export const Contacts = () => {
     return (
-        <StyledContacts>
+        <StyledContacts id={"contacts"}>
             <StyledTitleSection direction={"row"} align={"center"}>
                 <p><span>#</span>contacts</p>
                 <StyledLine></StyledLine>
@@ -36,7 +36,7 @@ const StyledContactTextTitle = styled.p`
 
 const StyledContacts = styled.section`
   background-color: #282C33;
-  margin-top: 5vh;
+  min-height: 30vh;
 `
 
 const StyledTitleSection = styled(FlexWrapper)`
