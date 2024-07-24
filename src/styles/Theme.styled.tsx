@@ -1,7 +1,7 @@
 export const myTheme = {
     colors: {
         mainBack: "#282C33",
-        lightGrey: "#ABB2BF",
+        lightGrey: "#B4BBC5",
         mainPurpleColor: "#C778DD",
         white: "#FFFFFF",
     },

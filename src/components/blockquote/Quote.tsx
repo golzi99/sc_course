@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import {FlexWrapper} from "../../FlexWrapper";
-import {myTheme} from "../../../styles/Theme.styled";
+import {FlexWrapper} from "../FlexWrapper";
+import {myTheme} from "../../styles/Theme.styled";
 
 export const Quote = () => {
     return (
@@ -16,6 +16,7 @@ export const Quote = () => {
 
 const StyledQuote = styled.blockquote`
   margin-top: 5vh;
+  margin-bottom: 5vh;
   color: ${myTheme.colors.white};
   width: fit-content;
   display: flex;

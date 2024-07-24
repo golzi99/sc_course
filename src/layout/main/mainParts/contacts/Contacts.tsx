@@ -36,7 +36,7 @@ const StyledContactTextTitle = styled.p`
 
 const StyledContacts = styled.section`
   background-color: #282C33;
-  min-height: 30vh;
+  min-height: 40vh;
 `
 
 const StyledTitleSection = styled(FlexWrapper)`

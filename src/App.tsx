@@ -8,12 +8,16 @@ function App() {
         <div className="App">
             <Header/>
             <Main/>
-            <hr/>
-            <Footer/>
         </div>
     );
 }
+//заменить hr
 
 export default App;
 
+// обернуть в контейнер
 
+// размер для смартфонов и тд 767
+//            <Main/>
+//             <hr/>
+//             <Footer/>

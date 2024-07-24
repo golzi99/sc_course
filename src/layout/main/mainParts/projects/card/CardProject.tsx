@@ -12,8 +12,6 @@ type CardProjectPropsType = {
     cachedVisible?: boolean
 }
 
-// ??? <StyledCardProject direction={"column"} justify={"space-between"}>
-
 export const CardProject = (props: CardProjectPropsType) => {
     return (
         <StyledCardProject direction={"column"} justify={"space-between"}>
@@ -34,16 +32,12 @@ export const CardProject = (props: CardProjectPropsType) => {
 };
 
 const StyledCardProject = styled(FlexWrapper)`
-  width: 25%;
-  min-width: 375px;
-  min-height: 400px;
   border: ${myTheme.colors.lightGrey} solid 1px;
+  width: 330px;
 
   img {
+    height: 201px;
     object-fit: cover;
-    max-width: 100%;
-    max-height: 100%;
-    height: 187px;
     border-bottom: solid ${myTheme.colors.lightGrey} 1px;
   }
 `

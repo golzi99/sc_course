@@ -19,17 +19,19 @@ const tools3: Array<string> = [
     "CSS", "Express", "Node.js"
 ];
 
+// правильно ли задан flex у карточек, правильно ли переходит wrap или есть более оптимальный способ.
+
 export const Projects = () => {
     return (
         <StyledProject id={"works"}>
-            <FlexWrapper direction={"row"} align={"center"} justify={"space-between"}>
-                <StyledTitle direction={"row"} align={"center"}>
-                    <p><span>#</span>projects</p>
+            <FlexWrapper justify={"space-between"} align={"center"}>
+                <FlexWrapper align={"center"}>
+                    <StyledTitle><span>#</span>projects</StyledTitle>
                     <StyledLine></StyledLine>
-                </StyledTitle>
+                </FlexWrapper>
                 <StyledView href={"/projects"}>View all ~~&gt;</StyledView>
             </FlexWrapper>
-            <StyledProjectsFlexBox direction={"row"} justify={"space-around"} wrap={"wrap"}>
+            <StyledProjectsFlexBox justify={"center"} wrap={"wrap"}>
                 <CardProject img={projectImg1} projectTools={tools1} cachedVisible={true}
                              h2text={"ChertNodes"} description={"Minecraft servers hosting"}></CardProject>
                 <CardProject img={projectImg2} projectTools={tools2} cachedVisible={false}
@@ -43,15 +45,13 @@ export const Projects = () => {
 };
 
 const StyledProject = styled.section`
-  background-color: ${myTheme.colors.mainBack};
-  min-height: 60vh;
+  min-height: 100%;
 `
 
-const StyledTitle = styled(FlexWrapper)`
-  color: ${myTheme.colors.white};
+const StyledTitle = styled.h2`
   font-size: 32px;
-  font-weight: 500;
-  gap: 20px;
+  font-weight: bold;
+  color: ${myTheme.colors.white};
   span {
     color: ${myTheme.colors.mainPurpleColor};
   }
@@ -64,13 +64,13 @@ const StyledView = styled.a`
 `
 
 const StyledProjectsFlexBox = styled(FlexWrapper)`
-  padding: 1%;
-  width: 100%;
-  gap: 20px;
+  padding-top: 25px;
+  gap: 10px;
 `
 
 const StyledLine = styled.span`
   background-color: ${myTheme.colors.mainPurpleColor};
-  width: 25vw;
-  height: 2px;
+  width: 500px;
+  height: 1px;
+  margin-left: 20px;
 `

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {SkillBox} from "../../../../components/mainParts/skills/SkillBox";
+import {SkillBox} from "./skillBox/SkillBox";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
 import skillsImg from "../../../../assets/images/skillsImg.webp"
 import {myTheme} from "../../../../styles/Theme.styled";
@@ -27,27 +27,8 @@ const frameworks = [
 
 export const Skills = () => {
     return (
-        <StyledSkillsSection id={"skills"}>
-            <StyledTitleSection direction={"row"} align={"center"}>
-                <p><span>#</span>skills</p>
-                <StyledLine></StyledLine>
-            </StyledTitleSection>
-            <StyledSkills justify={"space-around"}>
-                <img src={skillsImg} alt={"skillsImg"}/>
-                <StyledSkillBoxContainer>
-                    <FlexWrapper direction={"column"}>
-                        <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
-                    </FlexWrapper>
-                    <FlexWrapper direction={"column"}>
-                        <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}/>
-                        <SkillBox skillBoxTitle={"Other"} boxSkills={other}/>
-                    </FlexWrapper>
-                    <FlexWrapper direction={"column"}>
-                        <SkillBox skillBoxTitle={"Tools"} boxSkills={tools}/>
-                        <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}/>
-                    </FlexWrapper>
-                </StyledSkillBoxContainer>
-            </StyledSkills>
+        <StyledSkillsSection id={"skillBox"}>
+
         </StyledSkillsSection>
     );
 };
@@ -86,3 +67,24 @@ const StyledLine = styled.span`
   width: 25vw;
   height: 2px;
 `
+
+//            <StyledTitleSection direction={"row"} align={"center"}>
+//                 <p><span>#</span>skillBox</p>
+//                 <StyledLine></StyledLine>
+//             </StyledTitleSection>
+//             <StyledSkills justify={"space-around"}>
+//                 <img src={skillsImg} alt={"skillsImg"}/>
+//                 <StyledSkillBoxContainer>
+//                     <FlexWrapper direction={"column"}>
+//                         <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
+//                     </FlexWrapper>
+//                     <FlexWrapper direction={"column"}>
+//                         <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}/>
+//                         <SkillBox skillBoxTitle={"Other"} boxSkills={other}/>
+//                     </FlexWrapper>
+//                     <FlexWrapper direction={"column"}>
+//                         <SkillBox skillBoxTitle={"Tools"} boxSkills={tools}/>
+//                         <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}/>
+//                     </FlexWrapper>
+//                 </StyledSkillBoxContainer>
+//             </StyledSkills>

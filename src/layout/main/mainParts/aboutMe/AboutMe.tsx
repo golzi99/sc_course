@@ -53,14 +53,14 @@ const StyledTitleSection = styled(FlexWrapper)`
 
 const StyledAboutBoxText = styled(FlexWrapper)`
   padding-top: 5vh;
-  gap: 3vh;
+  gap: 7vh;
 `
 
 
 const StyledAboutMeContent = styled(FlexWrapper)`
   img {
     max-width: 30vw;
-    max-height: 80vw;
+    max-height: 40vw;
     object-fit: cover;
   }
 `
