@@ -28,7 +28,7 @@ const frameworks = [
 export const Skills = () => {
     return (
         <StyledSkillsSection id={"skillBox"}>
-            <StyledTitleSection direction={"row"} align={"center"}>
+            <StyledTitleSection align={"center"}>
                 <StyledTitle><span>#</span>skills</StyledTitle>
                 <StyledLine></StyledLine>
             </StyledTitleSection>

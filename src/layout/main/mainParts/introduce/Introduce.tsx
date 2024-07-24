@@ -3,6 +3,8 @@ import dark_man_1 from "../../../../assets/images/dark_man_1.webp"
 import styled from "styled-components";
 import {FlexWrapper} from '../../../../components/FlexWrapper';
 import {myTheme} from "../../../../styles/Theme.styled";
+import dots from "../../../../assets/images/Dots.webp";
+import {MainIcon} from "../../../../components/icon/MainIcon";
 
 export const Introduce = () => {
     return (
@@ -18,7 +20,11 @@ export const Introduce = () => {
                     <StyledButton href={"/contacts"}>Contact me !!</StyledButton>
                 </StyledTextBox>
                 <FlexWrapper direction={"column"} align={"center"}>
-                    <Photo src={dark_man_1} alt={"dark_man_1"}/>
+                    <StyledImgBox>
+                        <Photo src={dark_man_1} alt={"dark_man_1"}/>
+                        <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'0'} top={'0'}/>
+                        <MainIcon position={"absolute"} objectFit={'cover'} iconId={"iconOutLineSvg"}/>
+                    </StyledImgBox>
                     <BoxUnderImage align={"center"}>
                         <StyledIndicator/>
                         <StyledText>
@@ -40,11 +46,24 @@ export const Introduce = () => {
 const StyledIntroduce = styled.section`
 `
 
+const StyledImgBox = styled(FlexWrapper)`
+  position: relative;
+`
+
 const Photo = styled.img`
   width: 100%;
   max-width: 457px;
   object-fit: cover;
-  position: relative;
+`
+
+
+const StyledDots = styled.img<{left: string, top:string}>`
+  position: absolute;
+  object-fit: cover;
+  height:  ${props => (props.height || `64` )};
+  width:  ${props => (props.width || `64` )};
+  left:  ${props => (props.left || `0` )};
+  top:  ${props => (props.top || `0` )};
 `
 
 const StyledButton = styled.a`
@@ -63,7 +82,7 @@ const StyledButton = styled.a`
 `
 
 const StyledTitle = styled.h2`
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   color: ${myTheme.colors.white};
 
@@ -79,7 +98,7 @@ const StyledText = styled.p`
 
 const StyledTextBox = styled(FlexWrapper)`
   gap: 20px;
-  max-width: 527px;
+  max-width: 537px;
 `
 
 const BoxUnderImage = styled(FlexWrapper)`

@@ -13,6 +13,7 @@ export const Main = () => {
                 <Introduce/>
                 <Projects/>
                 <Skills/>
+                <AboutMe/>
             </Container>
         </StyledMain>
     );
@@ -32,6 +33,4 @@ const Container = styled.div`
   margin: 0 auto;
 `
 
-//                 <Skills/>
-//                 <AboutMe/>
 //                 <Contacts/>

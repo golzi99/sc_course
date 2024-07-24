@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import iconSpriteDefault from '../../assets/icons/Style-Default.svg'
 
 type IconPropsType = {
@@ -6,12 +7,23 @@ type IconPropsType = {
     width?: string
     height?: string
     viewBox?: string
+
+}
+type StyledIconPropsType ={
+    position?: string
+    objectFit?: string
 }
 
-export const MainIcon = (props: IconPropsType) => {
+export const MainIcon = ({iconId, width, height, viewBox, objectFit, position}: StyledIconPropsType& IconPropsType) => {
     return (
-        <svg width={props.width || "52"} height={props.height || "52"} viewBox={props.viewBox || "0 0 52 52"} fill="none" xmlns="http://www.w3.org/2000/svg">
-            <use xlinkHref={ `${iconSpriteDefault}#${props.iconId}`}/>
-        </svg>
+        <StyledSvg width={width || "53"} height={height || "53"} viewBox={viewBox || "0 0 53 53"} fill="none" xmlns="http://www.w3.org/2000/svg"
+                   position={position} objectFit={objectFit}>
+            <use xlinkHref={ `${iconSpriteDefault}#${iconId}`}/>
+        </StyledSvg>
     );
 };
+
+const StyledSvg = styled.svg<StyledIconPropsType >`
+  object-fit: ${props => props.objectFit?? ''};
+  position: ${props => props.position?? ''};
+`
