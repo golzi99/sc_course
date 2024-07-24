@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Skills} from "./mainParts/skills/Skills";
 import { AboutMe } from './mainParts/aboutMe/AboutMe';
 import { Contacts } from './mainParts/contacts/Contacts';
-import { Introduce } from './mainParts/firstPart/Introduce';
+import { Introduce } from './mainParts/introduce/Introduce';
 import { Projects } from './mainParts/projects/Projects';
 
 export const Main = () => {
