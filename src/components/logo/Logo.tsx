@@ -8,7 +8,7 @@ export const Logo = () => {
     return (
         <StyledLink href={"/"}>
             <FlexWrapper align={"center"}>
-                <MainIcon iconId={"iconDefaultSvg"}/>
+                <MainIcon iconId={"iconDefaultSvg"} width={"20px"} height={"20px"}/>
                 <LogoText>Elias</LogoText>
             </FlexWrapper>
         </StyledLink>
@@ -16,7 +16,7 @@ export const Logo = () => {
 };
 
 const LogoText = styled.p`
-  font-size: 32px;
+  font-size: 16px;
   padding-left: 5px;
   color: snow;
 `

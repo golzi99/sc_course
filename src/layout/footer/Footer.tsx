@@ -16,7 +16,7 @@ export const Footer = () => {
                                 <Logo></Logo>
                                 <StyledText>elias@elias-dev.ml</StyledText>
                             </StyledLogoFooter>
-                            <StyledMedia>Web designer and front-end developer</StyledMedia>
+                            <StyledJob>Web designer and front-end developer</StyledJob>
                         </FlexWrapper>
                         <FlexWrapper direction={"column"}>
                             <StyledMedia>Media</StyledMedia>
@@ -59,12 +59,16 @@ const StyledFooterBox = styled(FlexWrapper)`
 const StyledMedia = styled.p`
   color: ${myTheme.colors.white};
   font-size: 24px;
-  word-spacing: 5px;
+`
+
+const StyledJob = styled.p`
+  color: ${myTheme.colors.white};
+  font-size: 16px;
 `
 
 const StyledText = styled.p`
   color: ${myTheme.colors.lightGrey};
   font-weight: 400;
-  font-size: 24px;
+  font-size: 16px;
   padding: 20px 0;
 `
