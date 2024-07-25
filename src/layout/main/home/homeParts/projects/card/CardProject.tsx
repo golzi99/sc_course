@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
-import {FlexWrapper} from '../../../../../components/FlexWrapper';
-import {myTheme} from '../../../../../styles/Theme.styled';
+import {FlexWrapper} from '../../../../../../components/FlexWrapper';
+import {myTheme} from '../../../../../../styles/Theme.styled';
 
 type CardProjectPropsType = {
     img: string

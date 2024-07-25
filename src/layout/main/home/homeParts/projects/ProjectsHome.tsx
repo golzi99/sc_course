@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import projectImg1 from "../../../../assets/images/banner1.webp"
-import projectImg2 from "../../../../assets/images/thumbnail1.webp"
-import projectImg3 from "../../../../assets/images/banner2.webp"
+import projectImg1 from "../../../../../assets/images/banner1.webp"
+import projectImg2 from "../../../../../assets/images/thumbnail1.webp"
+import projectImg3 from "../../../../../assets/images/banner2.webp"
 import {CardProject} from "./card/CardProject";
-import { FlexWrapper } from '../../../../components/FlexWrapper';
-import { myTheme } from '../../../../styles/Theme.styled';
+import { FlexWrapper } from '../../../../../components/FlexWrapper';
+import { myTheme } from '../../../../../styles/Theme.styled';
 
 const tools1: Array<string> = [
     "HTML", "SCSS", "Python", "Flask"
@@ -21,9 +21,9 @@ const tools3: Array<string> = [
 
 // правильно ли задан flex у карточек, правильно ли переходит wrap или есть более оптимальный способ.
 
-export const Projects = () => {
+export const ProjectsHome = () => {
     return (
-        <StyledProject id={"works"}>
+        <StyledProject>
             <FlexWrapper justify={"space-between"} align={"center"}>
                 <FlexWrapper align={"center"}>
                     <StyledTitle><span>#</span>projects</StyledTitle>

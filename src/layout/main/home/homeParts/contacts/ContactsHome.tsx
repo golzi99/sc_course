@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from "styled-components";
-import {FlexWrapper} from "../../../../components/FlexWrapper";
-import {myTheme} from "../../../../styles/Theme.styled";
-import {ContactResource} from "../../../../components/contact/ContactResource";
+import {FlexWrapper} from "../../../../../components/FlexWrapper";
+import {myTheme} from "../../../../../styles/Theme.styled";
+import {ContactResource} from "../../../../../components/contact/ContactResource";
 
-export const Contacts = () => {
+export const ContactsHome = () => {
     return (
-        <StyledContacts id={"contacts"}>
+        <StyledContacts>
             <FlexWrapper align={"center"}>
                 <StyledTitle><span>#</span>contacts</StyledTitle>
                 <StyledLine></StyledLine>

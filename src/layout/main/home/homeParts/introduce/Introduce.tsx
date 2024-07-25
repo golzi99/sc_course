@@ -1,10 +1,10 @@
 import React from 'react';
-import dark_man_1 from "../../../../assets/images/dark_man_1.webp"
+import dark_man_1 from "../../../../../assets/images/dark_man_1.webp"
 import styled from "styled-components";
-import {FlexWrapper} from '../../../../components/FlexWrapper';
-import {myTheme} from "../../../../styles/Theme.styled";
-import dots from "../../../../assets/images/Dots.webp";
-import {MainIcon} from "../../../../components/icon/MainIcon";
+import {FlexWrapper} from '../../../../../components/FlexWrapper';
+import {myTheme} from "../../../../../styles/Theme.styled";
+import dots from "../../../../../assets/images/Dots.webp";
+import {MainIcon} from "../../../../../components/icon/MainIcon";
 
 export const Introduce = () => {
     return (

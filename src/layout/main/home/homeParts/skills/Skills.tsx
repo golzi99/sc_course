@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from "styled-components";
 import {SkillBox} from "./skillBox/SkillBox";
-import {FlexWrapper} from "../../../../components/FlexWrapper";
-import skillsImg from "../../../../assets/images/skillsImg.webp"
-import {myTheme} from "../../../../styles/Theme.styled";
+import {FlexWrapper} from "../../../../../components/FlexWrapper";
+import skillsImg from "../../../../../assets/images/skillsImg.webp"
+import {myTheme} from "../../../../../styles/Theme.styled";
 
 const languages = [
     "TypeScript", "Lua", "Python", "JavaScripts"
@@ -27,7 +27,7 @@ const frameworks = [
 
 export const Skills = () => {
     return (
-        <StyledSkillsSection id={"skillBox"}>
+        <StyledSkillsSection>
             <FlexWrapper align={"center"}>
                 <StyledTitle><span>#</span>skills</StyledTitle>
                 <StyledLine></StyledLine>

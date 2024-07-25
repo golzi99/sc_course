@@ -1,22 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import {myTheme} from "../../styles/Theme.styled";
+import {NavLink} from "react-router-dom";
 
 export const Menu = () => {
     return (
         <StyledMenu>
             <StyledMenuList>
                 <Menuitem>
-                    <a href="/home"><span>#</span>home</a>
+                    <NavLink to="/home"><span>#</span>home</NavLink>
                 </Menuitem>
                 <Menuitem>
-                    <a href="#works"><span>#</span>works</a>
+                    <NavLink to="/projects"><span>#</span>works</NavLink>
                 </Menuitem>
                 <Menuitem>
-                    <a href="#about-me"><span>#</span>about-me</a>
+                    <NavLink to="/about-me"><span>#</span>about-me</NavLink>
                 </Menuitem>
                 <Menuitem>
-                    <a href="#contacts"><span>#</span>contacts</a>
+                    <NavLink to="/contacts"><span>#</span>contacts</NavLink>
                 </Menuitem>
                 <Menuitem>
                     <select name={"language"}>

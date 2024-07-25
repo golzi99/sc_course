@@ -1,22 +1,21 @@
 import React from 'react';
 import styled from "styled-components";
-import {Skills} from "./mainParts/skills/Skills";
-import { AboutMe } from './mainParts/aboutMe/AboutMe';
-import { Contacts } from './mainParts/contacts/Contacts';
-import { Introduce } from './mainParts/introduce/Introduce';
-import { Projects } from './mainParts/projects/Projects';
-import {Quote} from "../../components/blockquote/Quote";
+import {Route, Routes} from "react-router-dom";
+import {Home} from "./home/Home";
+import {Projects} from "./projects/Projects";
+import {AboutMe} from "./aboutMe/AboutMe";
+import {Contacts} from "./contacts/Contacts";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <Introduce/>
-                <Quote/>
-                <Projects/>
-                <Skills/>
-                <AboutMe/>
-                <Contacts/>
+                <Routes>
+                    <Route path={"/home?"} element={<Home/>}/>
+                    <Route path={"/projects"} element={<Projects/>}/>
+                    <Route path={"/about-me"} element={<AboutMe/>}/>
+                    <Route path={"/contacts"} element={<Contacts/>}/>
+                </Routes>
             </Container>
         </StyledMain>
     );

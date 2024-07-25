@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
-import {FlexWrapper} from "../../../../components/FlexWrapper";
-import {myTheme} from "../../../../styles/Theme.styled";
-import dark_man_2 from "../../../../assets/images/dark_man_2.webp"
-import dots from "../../../../assets/images/Dots.webp"
+import {FlexWrapper} from "../../../../../components/FlexWrapper";
+import {myTheme} from "../../../../../styles/Theme.styled";
+import dark_man_2 from "../../../../../assets/images/dark_man_2.webp"
+import dots from "../../../../../assets/images/Dots.webp"
 
-export const AboutMe = () => {
+export const AboutMeHome = () => {
     return (
-        <StyledAboutMe id={"about-me"}>
+        <StyledAboutMe>
             <FlexWrapper align={"center"}>
                 <StyledTitle><span>#</span>about-me</StyledTitle>
                 <StyledLine></StyledLine>
