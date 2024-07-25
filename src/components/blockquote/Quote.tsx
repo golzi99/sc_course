@@ -15,8 +15,8 @@ export const Quote = () => {
 };
 
 const StyledQuote = styled.blockquote`
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
   color: ${myTheme.colors.white};
   width: fit-content;
   display: flex;
@@ -26,7 +26,7 @@ const StyledQuote = styled.blockquote`
     position: relative;
     font-size: 24px;
     font-weight: 500;
-    padding: 15px;
+    padding: 30px;
     border: 1px solid ${myTheme.colors.lightGrey};
     margin: 0;
 
@@ -34,6 +34,7 @@ const StyledQuote = styled.blockquote`
       content: "\\201C";
       position: absolute;
       font-size: 3em;
+      top: 20px;
       line-height: 0;
       background-color: ${myTheme.colors.mainBack};
     }
@@ -41,7 +42,7 @@ const StyledQuote = styled.blockquote`
     &:after {
       content: "\\201D";
       position: absolute;
-      bottom: -15px;
+      bottom: -23px;
       right: 10px;
       font-size: 3em;
       line-height: 0;

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
 import {Menu} from "../../components/menu/Menu";
-import { myTheme } from '../../styles/Theme.styled';
 import {FlexWrapper} from "../../components/FlexWrapper";
+import { myTheme } from '../../styles/Theme.styled';
 
 export const Header = () => {
     return (
@@ -24,9 +24,11 @@ const Container = styled.div`
   height: 100%;
   //border: red solid 1px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
 `
 
 const StyledHeader = styled.header`
-  background-color: ${myTheme.colors.mainBack};
+  // @media ${myTheme.media.tablet} {
+  //   flex-direction: column;
+  // }
 `

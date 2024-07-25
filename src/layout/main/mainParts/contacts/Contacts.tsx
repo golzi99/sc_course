@@ -2,55 +2,51 @@ import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
 import {myTheme} from "../../../../styles/Theme.styled";
-import {Icon} from "../../../../components/icon/Icon";
+import {ContactResource} from "../../../../components/contact/ContactResource";
 
 export const Contacts = () => {
     return (
         <StyledContacts id={"contacts"}>
-            <StyledTitleSection direction={"row"} align={"center"}>
-                <p><span>#</span>contacts</p>
+            <FlexWrapper align={"center"}>
+                <StyledTitle><span>#</span>contacts</StyledTitle>
                 <StyledLine></StyledLine>
-            </StyledTitleSection>
-            <StyledContactBoxSection direction={"row"} justify={"space-between"}>
-                <StyledText>I’m interested in freelance opportunities. However, if you have other request or question, don’t
-                    hesitate to contact me</StyledText>
+            </FlexWrapper>
+            <StyledAboutMeContent justify={"space-between"} wrap={"wrap"}>
+                <StyledText>I’m interested in freelance opportunities. However, if you have other request or question,
+                    don’t hesitate to contact me
+                </StyledText>
                 <StyledContactBox direction={"column"}>
                     <StyledContactTextTitle>Message me here</StyledContactTextTitle>
-                    <FlexWrapper>
-                        <Icon iconId={"discordSvg"}></Icon>
-                        <StyledText>!Elias#3519</StyledText>
-                    </FlexWrapper>
-                    <FlexWrapper>
-                        <Icon iconId={"emailSvg"}></Icon>
-                        <StyledText>elias@elias.me</StyledText>
-                    </FlexWrapper>
+                    <ContactBoxWrapper direction={"column"}>
+                        <ContactResource iconContact={"discordSvg"} contactName={"!Elias#3519"}></ContactResource>
+                        <ContactResource iconContact={"emailSvg"} contactName={"elias@elias.me"}></ContactResource>
+                    </ContactBoxWrapper>
                 </StyledContactBox>
-            </StyledContactBoxSection>
+            </StyledAboutMeContent>
         </StyledContacts>
     );
 };
 
-const StyledContactTextTitle = styled.p`
-  color: ${myTheme.colors.white}
-`
 
 const StyledContacts = styled.section`
-  background-color: #282C33;
-  min-height: 40vh;
 `
 
-const StyledTitleSection = styled(FlexWrapper)`
-  color: ${myTheme.colors.white};
+const StyledAboutMeContent = styled(FlexWrapper)`
+  padding-top: 25px;
+`
+
+const ContactBoxWrapper = styled(FlexWrapper)`
+  padding: 8px;
+  gap: 8px;
+`
+
+const StyledTitle = styled.h2`
   font-size: 32px;
-  font-weight: 500;
-  gap: 20px;
+  color: ${myTheme.colors.white};
+
   span {
     color: ${myTheme.colors.mainPurpleColor};
   }
-`
-
-const StyledContactBoxSection = styled(FlexWrapper)`
-    padding-top: 30px;
 `
 
 const StyledContactBox = styled(FlexWrapper)`
@@ -60,13 +56,22 @@ const StyledContactBox = styled(FlexWrapper)`
 
 const StyledText = styled.p`
   color: ${myTheme.colors.lightGrey};
-  max-width: 25%;
+  max-width: 550px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 16px;
 `
+
+const StyledContactTextTitle = styled.p`
+  color: ${myTheme.colors.white};
+  font-size: 16px;
+  word-spacing: 5px;
+  padding: 8px;
+`
+
 
 const StyledLine = styled.span`
   background-color: ${myTheme.colors.mainPurpleColor};
-  width: 25vw;
-  height: 2px;
+  width: 127px;
+  height: 1px;
+  margin-left: 20px;
 `

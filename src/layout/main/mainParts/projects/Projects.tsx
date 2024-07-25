@@ -45,12 +45,10 @@ export const Projects = () => {
 };
 
 const StyledProject = styled.section`
-  min-height: 100%;
 `
 
 const StyledTitle = styled.h2`
   font-size: 32px;
-  font-weight: bold;
   color: ${myTheme.colors.white};
   span {
     color: ${myTheme.colors.mainPurpleColor};

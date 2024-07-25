@@ -22,8 +22,9 @@ export const Introduce = () => {
                 <FlexWrapper direction={"column"} align={"center"}>
                     <StyledImgBox>
                         <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                        <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'0'} top={'0'}/>
-                        <MainIcon position={"absolute"} objectFit={'cover'} iconId={"iconOutLineSvg"}/>
+                        <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'360px'} top={'250px'}/>
+                        <StyledLogoImg iconId={"iconOutLineSvg"}
+                                  width={"155"} height={"155"}/>
                     </StyledImgBox>
                     <BoxUnderImage align={"center"}>
                         <StyledIndicator/>
@@ -33,7 +34,6 @@ export const Introduce = () => {
                     </BoxUnderImage>
                 </FlexWrapper>
             </FlexWrapper>
-
         </StyledIntroduce>
     );
 };
@@ -54,8 +54,16 @@ const Photo = styled.img`
   width: 100%;
   max-width: 457px;
   object-fit: cover;
+  z-index: 2;
 `
 
+const StyledLogoImg = styled(MainIcon)`
+  position: absolute;
+  object-fit: cover;
+  z-index: 1;
+  left: 0;
+  top: 80px;
+`
 
 const StyledDots = styled.img<{left: string, top:string}>`
   position: absolute;
@@ -64,6 +72,7 @@ const StyledDots = styled.img<{left: string, top:string}>`
   width:  ${props => (props.width || `64` )};
   left:  ${props => (props.left || `0` )};
   top:  ${props => (props.top || `0` )};
+  z-index: 2;
 `
 
 const StyledButton = styled.a`
@@ -82,7 +91,7 @@ const StyledButton = styled.a`
 `
 
 const StyledTitle = styled.h2`
-  font-size: 36px;
+  font-size: 32px;
   font-weight: bold;
   color: ${myTheme.colors.white};
 
@@ -93,7 +102,7 @@ const StyledTitle = styled.h2`
 
 const StyledText = styled.p`
   color: ${myTheme.colors.lightGrey};
-  font-size: 20px;
+  font-size: 16px;
 `
 
 const StyledTextBox = styled(FlexWrapper)`

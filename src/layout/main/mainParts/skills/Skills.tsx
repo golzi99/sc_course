@@ -28,25 +28,29 @@ const frameworks = [
 export const Skills = () => {
     return (
         <StyledSkillsSection id={"skillBox"}>
-            <StyledTitleSection align={"center"}>
+            <FlexWrapper align={"center"}>
                 <StyledTitle><span>#</span>skills</StyledTitle>
                 <StyledLine></StyledLine>
-            </StyledTitleSection>
-            <FlexWrapper justify={"space-between"}>
+            </FlexWrapper>
+            <StyledSkillsContent justify={"space-between"}>
                 <Photo src={skillsImg} alt={"skillsImg"}/>
                 <StyledSkills direction={"column"} justify={"flex-start"} align={"flex-start"} wrap={"wrap-reverse"}>
-                    <SkillBox skillBoxTitle={"Tools"} boxSkills={tools}/>
-                    <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}/>
-                    <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}/>
-                    <SkillBox skillBoxTitle={"Other"} boxSkills={other}/>
-                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
+                    <SkillBox skillBoxTitle={"Tools"} boxSkills={tools} maxWidth={"196px"}/>
+                    <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
+                    <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}  maxWidth={"178px"}/>
+                    <SkillBox skillBoxTitle={"Other"} boxSkills={other}  maxWidth={"178px"}/>
+                    <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}  maxWidth={"178px"}/>
                 </StyledSkills>
-            </FlexWrapper>
+            </StyledSkillsContent>
         </StyledSkillsSection>
     );
 };
 
 const StyledSkillsSection = styled.section`
+`
+
+const StyledSkillsContent = styled(FlexWrapper)`
+  padding-top: 25px;
 `
 
 const Photo = styled.img`
@@ -58,23 +62,12 @@ const Photo = styled.img`
 `
 
 const StyledSkills = styled(FlexWrapper)`
-  gap: 8px;
-  height: 300px;
-`
-
-const StyledTitleSection = styled(FlexWrapper)`
-  color: ${myTheme.colors.white};
-  font-size: 32px;
-  font-weight: 500;
-
-  span {
-    color: ${myTheme.colors.mainPurpleColor};
-  }
+  gap: 16px;
+  height: 280px;
 `
 
 const StyledTitle = styled.h2`
   font-size: 32px;
-  font-weight: bold;
   color: ${myTheme.colors.white};
 
   span {
@@ -88,24 +81,3 @@ const StyledLine = styled.span`
   height: 1px;
   margin-left: 20px;
 `
-
-// <StyledTitleSection direction={"row"} align={"center"}>
-//      <p><span>#</span>skillBox</p>
-//      <StyledLine></StyledLine>
-//  </StyledTitleSection>
-//             <StyledSkills justify={"space-around"}>
-//                 <img src={skillsImg} alt={"skillsImg"}/>
-//                 <StyledSkillBoxContainer>
-//                     <FlexWrapper direction={"column"}>
-//                         <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}/>
-//                     </FlexWrapper>
-//                     <FlexWrapper direction={"column"}>
-//                         <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}/>
-//                         <SkillBox skillBoxTitle={"Other"} boxSkills={other}/>
-//                     </FlexWrapper>
-//                     <FlexWrapper direction={"column"}>
-//                         <SkillBox skillBoxTitle={"Tools"} boxSkills={tools}/>
-//                         <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}/>
-//                     </FlexWrapper>
-//                 </StyledSkillBoxContainer>
-//             </StyledSkills>

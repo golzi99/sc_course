@@ -8,46 +8,63 @@ import {Icon} from "../../components/icon/Icon";
 export const Footer = () => {
     return (
         <StyledFooter>
-            <FlexWrapper direction={"row"} justify={"space-between"}>
-                <FlexWrapper direction={"column"}>
-                    <FlexWrapper align={"center"} justify={"space-between"}>
-                        <Logo></Logo>
-                        <StyledText>elias@elias-dev.ml</StyledText>
-                    </FlexWrapper>
-                    <StyledWhiteText>Web designer and front-end developer</StyledWhiteText>
+            <Container>
+                <FlexWrapper direction={"column"} align={"center"}>
+                    <StyledFooterBox justify={"space-between"} align={"center"}>
+                        <FlexWrapper direction={"column"}>
+                            <StyledLogoFooter align={"center"}>
+                                <Logo></Logo>
+                                <StyledText>elias@elias-dev.ml</StyledText>
+                            </StyledLogoFooter>
+                            <StyledMedia>Web designer and front-end developer</StyledMedia>
+                        </FlexWrapper>
+                        <FlexWrapper direction={"column"}>
+                            <StyledMedia>Media</StyledMedia>
+                            <FlexWrapper>
+                                <Icon iconId={"githubSvg"}></Icon>
+                                <Icon iconId={"figmaSvg"}></Icon>
+                                <Icon iconId={"discordSvg"}></Icon>
+                            </FlexWrapper>
+                        </FlexWrapper>
+                    </StyledFooterBox>
+                    <StyledText>© Copyright 2024. Made by Elias</StyledText>
                 </FlexWrapper>
-                <FlexWrapper direction={"column"} justify={"center"}>
-                    <StyledWhiteText>Media</StyledWhiteText>
-                    <FlexWrapper>
-                        <Icon iconId={"githubSvg"}></Icon>
-                        <Icon iconId={"figmaSvg"}></Icon>
-                        <Icon iconId={"discordSvg"}></Icon>
-                    </FlexWrapper>
-                </FlexWrapper>
-            </FlexWrapper>
-            <FlexWrapper justify={"center"}>
-                <StyledText>© Copyright 2024. Made by Elias</StyledText>
-            </FlexWrapper>
+            </Container>
         </StyledFooter>
     );
 };
 
+
 const StyledFooter = styled.footer`
-  padding-top: 5vh;
-  background-color: #282C33;
-  padding-left: 10%;
-  padding-right: 10%;
-  font-size: 24px;
+  border-top: ${myTheme.colors.lightGrey} solid 1px;
 `
 
-const StyledWhiteText = styled.p`
+const Container = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  height: 100%;
+  //border: red solid 1px;
+  margin: 0 auto;
+  padding: 20px 0;
+`
+
+const StyledLogoFooter = styled(FlexWrapper)`
+  gap: 20px;
+`
+
+const StyledFooterBox = styled(FlexWrapper)`
+  width: 100%;
+`
+
+const StyledMedia = styled.p`
   color: ${myTheme.colors.white};
+  font-size: 24px;
+  word-spacing: 5px;
 `
 
 const StyledText = styled.p`
   color: ${myTheme.colors.lightGrey};
   font-weight: 400;
   font-size: 24px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0;
 `
