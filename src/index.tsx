@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {GlobalStyles} from './styles/GlobalStyles';
+import {GlobalStyled} from './styles/Global.styled';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from './styles/Theme.styled';
 
@@ -14,7 +14,7 @@ root.render(
     <ThemeProvider theme={myTheme}>
         <React.StrictMode>
             <App/>
-            <GlobalStyles/>
+            <GlobalStyled/>
         </React.StrictMode>
     </ThemeProvider>
 );

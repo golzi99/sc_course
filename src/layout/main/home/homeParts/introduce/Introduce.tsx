@@ -5,49 +5,59 @@ import {FlexWrapper} from '../../../../../components/FlexWrapper';
 import {myTheme} from "../../../../../styles/Theme.styled";
 import dots from "../../../../../assets/images/Dots.webp";
 import {MainIcon} from "../../../../../components/icon/MainIcon";
+import {NavLink} from "react-router-dom";
+import {Container} from "../../../../../components/Container";
+import {Quote} from "../../../../../components/blockquote/Quote";
 
 export const Introduce = () => {
     return (
         <StyledIntroduce>
-            <FlexWrapper justify={"space-around"} align={"center"} wrap={"wrap"}>
-                <StyledTextBox direction={"column"}>
-                    <StyledTitle>
-                        Elias is a <span>web designer</span> and <span>front-end developer</span>
-                    </StyledTitle>
-                    <StyledText>
-                        He crafts responsive websites where technologies meet creativity
-                    </StyledText>
-                    <StyledButton href={"/contacts"}>Contact me !!</StyledButton>
-                </StyledTextBox>
-                <FlexWrapper direction={"column"} align={"center"}>
-                    <StyledImgBox>
-                        <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                        <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'360px'} top={'250px'}/>
-                        <StyledLogoImg iconId={"iconOutLineSvg"}
-                                  width={"155"} height={"155"}/>
-                    </StyledImgBox>
-                    <BoxUnderImage align={"center"}>
-                        <StyledIndicator/>
-                        <StyledText>
-                            Currently working on <strong>Portfolio</strong>
-                        </StyledText>
-                    </BoxUnderImage>
-                </FlexWrapper>
-            </FlexWrapper>
+            <Container>
+                <StyledContentWrapper direction={"column"}>
+                    <FlexWrapper justify={"center"} wrap={"wrap"}>
+                        <StyledTextBox direction={"column"} justify={"center"}>
+                            <StyledTitle>
+                                Elias is a <span>web designer</span> and <span>front-end developer</span>
+                            </StyledTitle>
+                            <StyledText>
+                                He crafts responsive websites where technologies meet creativity
+                            </StyledText>
+                            <StyledButton to={"/contacts"}>Contact me !!</StyledButton>
+                        </StyledTextBox>
+                        <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
+                            <StyledImgBox>
+                                <Photo src={dark_man_1} alt={"dark_man_1"}/>
+                                <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'360px'}
+                                            top={'250px'}/>
+                                <StyledLogoImg iconId={"iconOutLineSvg"}
+                                               width={"155"} height={"155"}/>
+                            </StyledImgBox>
+                            <BoxUnderImage align={"center"}>
+                                <StyledIndicator/>
+                                <StyledText>
+                                    Currently working on <strong>Portfolio</strong>
+                                </StyledText>
+                            </BoxUnderImage>
+                        </FlexWrapper>
+                    </FlexWrapper>
+                    <Quote></Quote>
+                </StyledContentWrapper>
+            </Container>
         </StyledIntroduce>
     );
 };
 
-//StyledTextBox - можно ли задать расстояние между элементами, но просто описать это в FlexWrapper?
-// использовал justify, но он не реагирует вообще.
-
-// размеры секции, как правильно задать ?
-
 const StyledIntroduce = styled.section`
+  margin-top: 60px;
+`
+
+const StyledContentWrapper = styled(FlexWrapper)`
+  gap: 50px
 `
 
 const StyledImgBox = styled(FlexWrapper)`
   position: relative;
+  max-height: 386px;
 `
 
 const Photo = styled.img`
@@ -65,21 +75,21 @@ const StyledLogoImg = styled(MainIcon)`
   top: 80px;
 `
 
-const StyledDots = styled.img<{left: string, top:string}>`
+const StyledDots = styled.img<{ left: string, top: string }>`
   position: absolute;
   object-fit: cover;
-  height:  ${props => (props.height || `64` )};
-  width:  ${props => (props.width || `64` )};
-  left:  ${props => (props.left || `0` )};
-  top:  ${props => (props.top || `0` )};
+  height: ${props => (props.height || `64`)};
+  width: ${props => (props.width || `64`)};
+  left: ${props => (props.left || `0`)};
+  top: ${props => (props.top || `0`)};
   z-index: 2;
 `
 
-const StyledButton = styled.a`
+const StyledButton = styled(NavLink)`
   padding: 8px 16px 8px 16px;
   border: ${myTheme.colors.mainPurpleColor} solid 1px;
   background-color: transparent;
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
   width: fit-content;
   font-size: 18px;
   text-decoration: none;
@@ -93,7 +103,7 @@ const StyledButton = styled.a`
 const StyledTitle = styled.h2`
   font-size: 32px;
   font-weight: bold;
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
 
   span {
     color: ${myTheme.colors.mainPurpleColor};
@@ -126,24 +136,3 @@ const StyledIndicator = styled.p`
   flex-direction: row;
   background-color: ${myTheme.colors.mainPurpleColor};
 `
-//            <FlexWrapper justify={"space-around"} align={"center"} wrap={"wrap"}>
-//                 <StyledTextBox direction={"column"}>
-//                     <StyledTitle>
-//                         Elias is a <span>web designer</span> and <span>front-end developer</span>
-//                     </StyledTitle>
-//                     <StyledDescription>
-//                         He crafts responsive websites where technologies meet creativity
-//                     </StyledDescription>
-//                     <StyledButton href={"/contacts"}>Contact me !!</StyledButton>
-//                 </StyledTextBox>
-//                 <FlexWrapper align={"center"} direction={"column"}>
-//                     <Photo src={dark_man_1} alt={"dark_man_1"}/>
-//                     <BoxUnderImage align={"center"}>
-//                         <StyledIndicator/>
-//                         <StyledCurrentActivity>
-//                             Currently working on <strong>Portfolio</strong>
-//                         </StyledCurrentActivity>
-//                     </BoxUnderImage>
-//                 </FlexWrapper>
-//             </FlexWrapper>
-//             <Quote/>

@@ -3,26 +3,29 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import {myTheme} from "../../../../../styles/Theme.styled";
 import {ContactResource} from "../../../../../components/contact/ContactResource";
+import {Container} from "../../../../../components/Container";
 
 export const ContactsHome = () => {
     return (
         <StyledContacts>
-            <FlexWrapper align={"center"}>
-                <StyledTitle><span>#</span>contacts</StyledTitle>
-                <StyledLine></StyledLine>
-            </FlexWrapper>
-            <StyledAboutMeContent justify={"space-between"} wrap={"wrap"}>
-                <StyledText>I’m interested in freelance opportunities. However, if you have other request or question,
-                    don’t hesitate to contact me
-                </StyledText>
-                <StyledContactBox direction={"column"}>
-                    <StyledContactTextTitle>Message me here</StyledContactTextTitle>
-                    <ContactBoxWrapper direction={"column"}>
-                        <ContactResource iconContact={"discordSvg"} contactName={"!Elias#3519"}></ContactResource>
-                        <ContactResource iconContact={"emailSvg"} contactName={"elias@elias.me"}></ContactResource>
-                    </ContactBoxWrapper>
-                </StyledContactBox>
-            </StyledAboutMeContent>
+            <Container>
+                <FlexWrapper align={"center"}>
+                    <StyledTitle><span>#</span>contacts</StyledTitle>
+                    <StyledLine></StyledLine>
+                </FlexWrapper>
+                <StyledAboutMeContent justify={"space-between"} wrap={"wrap"}>
+                    <StyledText>I’m interested in freelance opportunities. However, if you have other request or question,
+                        don’t hesitate to contact me
+                    </StyledText>
+                    <StyledContactBox direction={"column"}>
+                        <StyledContactTextTitle>Message me here</StyledContactTextTitle>
+                        <ContactBoxWrapper direction={"column"}>
+                            <ContactResource iconContact={"discordSvg"} contactName={"!Elias#3519"}></ContactResource>
+                            <ContactResource iconContact={"emailSvg"} contactName={"elias@elias.me"}></ContactResource>
+                        </ContactBoxWrapper>
+                    </StyledContactBox>
+                </StyledAboutMeContent>
+            </Container>
         </StyledContacts>
     );
 };
@@ -42,7 +45,7 @@ const ContactBoxWrapper = styled(FlexWrapper)`
 
 const StyledTitle = styled.h2`
   font-size: 32px;
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
 
   span {
     color: ${myTheme.colors.mainPurpleColor};
@@ -62,7 +65,7 @@ const StyledText = styled.p`
 `
 
 const StyledContactTextTitle = styled.p`
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
   font-size: 16px;
   word-spacing: 5px;
   padding: 8px;
@@ -71,7 +74,8 @@ const StyledContactTextTitle = styled.p`
 
 const StyledLine = styled.span`
   background-color: ${myTheme.colors.mainPurpleColor};
-  width: 127px;
+  width: 25vw;
+  max-width: 500px;
   height: 1px;
   margin-left: 20px;
 `

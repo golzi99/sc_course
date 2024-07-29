@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import {Introduce} from "./homeParts/introduce/Introduce";
-import {Quote} from "../../../components/blockquote/Quote";
 import {ProjectsHome} from "./homeParts/projects/ProjectsHome";
 import {Skills} from "./homeParts/skills/Skills";
 import {AboutMeHome} from "./homeParts/aboutMe/AboutMeHome";
@@ -11,7 +10,6 @@ export const Home = () => {
     return (
         <StyledHome>
             <Introduce/>
-            <Quote/>
             <ProjectsHome/>
             <Skills/>
             <AboutMeHome/>
@@ -21,5 +19,4 @@ export const Home = () => {
 };
 
 const StyledHome = styled.div`
-
 `

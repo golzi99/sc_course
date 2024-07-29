@@ -4,6 +4,7 @@ import {FlexWrapper} from "../../components/FlexWrapper";
 import {Logo} from "../../components/logo/Logo";
 import {myTheme} from "../../styles/Theme.styled";
 import {Icon} from "../../components/icon/Icon";
+import { Container } from '../../components/Container';
 
 export const Footer = () => {
     return (
@@ -39,15 +40,6 @@ const StyledFooter = styled.footer`
   border-top: ${myTheme.colors.lightGrey} solid 1px;
 `
 
-const Container = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  height: 100%;
-  //border: red solid 1px;
-  margin: 0 auto;
-  padding: 20px 0;
-`
-
 const StyledLogoFooter = styled(FlexWrapper)`
   gap: 20px;
 `
@@ -57,12 +49,12 @@ const StyledFooterBox = styled(FlexWrapper)`
 `
 
 const StyledMedia = styled.p`
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
   font-size: 24px;
 `
 
 const StyledJob = styled.p`
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
   font-size: 16px;
 `
 

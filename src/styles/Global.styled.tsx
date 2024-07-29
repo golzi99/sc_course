@@ -1,7 +1,8 @@
 import {createGlobalStyle} from "styled-components";
+import {myTheme} from "./Theme.styled";
 //import {myTheme} from "./Theme.styled";
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyled = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -17,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: ${myTheme.colors.fontWhite}
   }
   
   a {
@@ -31,4 +33,13 @@ export const GlobalStyles = createGlobalStyle`
     background-color: unset;
     border: unset;
   }
+  
+  // section:nth-of-type(odd) {
+  //   background-color: ${myTheme.colors.primaryBg};
+  // } // чет
+  //
+  // section:nth-of-type(even) {
+  //  background-color: ${myTheme.colors.primaryBg};
+  // } // нечет
+  
 `

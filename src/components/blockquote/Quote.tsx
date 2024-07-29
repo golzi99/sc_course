@@ -1,27 +1,23 @@
 import React from 'react';
 import styled from "styled-components";
-import {FlexWrapper} from "../FlexWrapper";
 import {myTheme} from "../../styles/Theme.styled";
 
 export const Quote = () => {
     return (
-        <FlexWrapper justify={"center"}>
-            <StyledQuote>
-                <p>With great power comes great electricity bill</p>
-                <cite>- Dr. Who</cite>
-            </StyledQuote>
-        </FlexWrapper>
+        <StyledQuote>
+            <p>With great power comes great electricity bill</p>
+            <cite>- Dr. Who</cite>
+        </StyledQuote>
     );
 };
 
 const StyledQuote = styled.blockquote`
-  margin-top: 50px;
-  margin-bottom: 50px;
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
   width: fit-content;
   display: flex;
   flex-direction: column;
-  
+  margin: 0 auto;
+
   p {
     position: relative;
     font-size: 24px;
@@ -36,7 +32,7 @@ const StyledQuote = styled.blockquote`
       font-size: 3em;
       top: 20px;
       line-height: 0;
-      background-color: ${myTheme.colors.mainBack};
+      background-color: ${myTheme.colors.primaryBg};
     }
 
     &:after {
@@ -46,11 +42,11 @@ const StyledQuote = styled.blockquote`
       right: 10px;
       font-size: 3em;
       line-height: 0;
-      background-color: ${myTheme.colors.mainBack};
-    }    
-    
+      background-color: ${myTheme.colors.primaryBg};
+    }
+
   }
-  
+
   cite {
     border: 1px solid ${myTheme.colors.lightGrey};
     display: flex;
@@ -60,6 +56,6 @@ const StyledQuote = styled.blockquote`
     font-weight: 500;
     width: fit-content;
     align-self: self-end;
-    color: ${myTheme.colors.white};
+    color: ${myTheme.colors.fontWhite};
   }
 `

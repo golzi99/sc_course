@@ -24,5 +24,5 @@ const Container = styled.div`
   display: flex;  
   flex-direction: column;
   gap: 50px;
-  background-color: ${myTheme.colors.mainBack};
+  background-color: ${myTheme.colors.primaryBg};
 `

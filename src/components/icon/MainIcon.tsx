@@ -8,10 +8,9 @@ type IconPropsType = {
     viewBox?: string
 }
 
-
 export const MainIcon = ({iconId, width, height, viewBox, ...rest}: IconPropsType) => {
     return (
-        <svg width={width || "53"} height={height || "53"} viewBox={viewBox || "0 0 53 53"} fill="none" xmlns="http://www.w3.org/2000/svg" {...rest}>
+        <svg width={width || "53"} height={height || "53"} viewBox={viewBox || "0 0 53 53"} fill="none" xmlns="http://www.w3.org/2000/svg"  {...rest}>
             <use xlinkHref={ `${iconSpriteDefault}#${iconId}`}/>
         </svg>
     );

@@ -1,34 +1,41 @@
 import React from 'react';
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
-import {Menu} from "../../components/menu/Menu";
+import {Menu} from "./menu/Menu";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import { myTheme } from '../../styles/Theme.styled';
+import { Container } from '../../components/Container';
 
 export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <FlexWrapper justify={"space-between"}>
+                <FlexWrapper justify={"space-between"} align={"center"}>
                     <Logo/>
                     <Menu/>
+                    <MenuBurger>
+                        ☰
+                    </MenuBurger>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
     );
 };
 
-const Container = styled.div`
-  max-width: 1024px;
-  width: 100%;
-  height: 100%;
-  //border: red solid 1px;
-  margin: 0 auto;
-  padding: 20px 0;
-`
 
 const StyledHeader = styled.header`
-  // @media ${myTheme.media.tablet} {
-  //   flex-direction: column;
-  // }
+  background-color: ${myTheme.colors.primaryBg};
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+`
+
+const MenuBurger = styled.div`
+  display: none;
+
+  @media ${myTheme.media.tablet} {
+    display: block;
+  }
 `

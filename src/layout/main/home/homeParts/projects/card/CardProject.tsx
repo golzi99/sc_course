@@ -17,14 +17,14 @@ export const CardProject = (props: CardProjectPropsType) => {
         <StyledCardProject direction={"column"} justify={"space-between"}>
             <img src={props.img} alt={"projectImg"}/>
             <StyledInstruments wrap={"wrap"}>
-                {props.projectTools?.map((tool) => {
-                    return (<StyledText>{tool}</StyledText>)
+                {props.projectTools?.map((tool, index) => {
+                    return (<StyledText key={index}>{tool}</StyledText>)
                 })}
             </StyledInstruments>
             <StyledBigText>{props.h2text}</StyledBigText>
             <StyledText>{props.description}</StyledText>
             <CardFlexButtonBox direction={"row"}>
-                <StyledButton>Live &lt;~~&gt;</StyledButton>
+                <StyledButton>Live &lt;~&gt;</StyledButton>
                 {props.cachedVisible && <StyledButton disable>Cached =&gt;</StyledButton>}
             </CardFlexButtonBox>
         </StyledCardProject>
@@ -34,9 +34,10 @@ export const CardProject = (props: CardProjectPropsType) => {
 const StyledCardProject = styled(FlexWrapper)`
   border: ${myTheme.colors.lightGrey} solid 1px;
   width: 330px;
+  height: 100%;
 
   img {
-    height: 201px;
+    height: 200px;
     object-fit: cover;
     border-bottom: solid ${myTheme.colors.lightGrey} 1px;
   }
@@ -53,7 +54,7 @@ const StyledBigText = styled.p`
   font-weight: 500;
   padding: 10px;
   margin: 0;
-  color: ${myTheme.colors.white}
+  color: ${myTheme.colors.fontWhite}
 `
 
 const StyledText = styled.p`
@@ -76,7 +77,7 @@ const StyledButton = styled.a<StyledBtnPropsType>`
   padding: 8px 16px 8px 16px;
   border: ${myTheme.colors.mainPurpleColor} solid 1px;
   background-color: transparent;
-  color: ${myTheme.colors.white};
+  color: ${myTheme.colors.fontWhite};
 
   ${props => props.disable && css<StyledBtnPropsType>`
     border: ${myTheme.colors.lightGrey} solid 1px;
@@ -89,6 +90,4 @@ const StyledButton = styled.a<StyledBtnPropsType>`
       cursor: pointer;
     }
   `}
-
-
 `
