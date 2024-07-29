@@ -5,6 +5,7 @@ import {myTheme} from "../../../../../styles/Theme.styled";
 import dark_man_2 from "../../../../../assets/images/dark_man_2.webp"
 import dots from "../../../../../assets/images/Dots.webp"
 import {Container} from "../../../../../components/Container";
+import {NavLink} from "react-router-dom";
 
 export const AboutMeHome = () => {
     return (
@@ -29,7 +30,7 @@ export const AboutMeHome = () => {
                             I have been helping various clients to establish their presence online.
                             I always strive to learn about the newest technologies and frameworks.
                         </StyledText>
-                        <StyledButton href={"/about-me"}>Read more -&gt;</StyledButton>
+                        <StyledButton to={"/about-me"}>Read more -&gt;</StyledButton>
                     </StyledAboutMeTextBlock>
                     <StyledImgBox direction={"column"} align={"center"}>
                         <Photo src={dark_man_2} alt={"dark_man_2"}/>
@@ -42,8 +43,6 @@ export const AboutMeHome = () => {
         </StyledAboutMe>
     );
 };
-
-// как разместить контент по центру у contacts and aboutme при wrap
 
 const StyledAboutMe = styled.section`
 
@@ -93,7 +92,7 @@ const StyledText = styled.p`
   //text-align: justify;
 `
 
-const StyledButton = styled.a`
+const StyledButton = styled(NavLink)`
   padding: 8px 16px 8px 16px;
   border: ${myTheme.colors.mainPurpleColor} solid 1px;
   background-color: transparent;

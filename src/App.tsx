@@ -18,6 +18,8 @@ function App() {
     );
 }
 
+// как разместить контент по центру у contacts and aboutme при wrap
+
 export default App;
 
 const Container = styled.div`
