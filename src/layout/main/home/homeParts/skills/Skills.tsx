@@ -36,18 +36,12 @@ export const Skills = () => {
                 </FlexWrapper>
                 <StyledSkillsContent justify={"space-between"}>
                     <Photo src={skillsImg} alt={"skillsImg"}/>
-                    <StyledSkills>
-                        <StyledColumnSkills direction={"column"}>
-                            <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}  maxWidth={"178px"}/>
-                        </StyledColumnSkills>
-                        <StyledColumnSkills direction={"column"}>
-                            <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}  maxWidth={"178px"}/>
-                            <SkillBox skillBoxTitle={"Other"} boxSkills={other}  maxWidth={"178px"}/>
-                        </StyledColumnSkills>
-                        <StyledColumnSkills direction={"column"}>
-                            <SkillBox skillBoxTitle={"Tools"} boxSkills={tools} maxWidth={"196px"}/>
-                            <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
-                        </StyledColumnSkills>
+                    <StyledSkills direction={"column"} wrap={"wrap-reverse"} justify={"flex-start"} align={"flex-end"}>
+                        <SkillBox skillBoxTitle={"Tools"} boxSkills={tools} maxWidth={"196px"}/>
+                        <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
+                        <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}  maxWidth={"178px"}/>
+                        <SkillBox skillBoxTitle={"Other"} boxSkills={other}  maxWidth={"178px"}/>
+                        <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}  maxWidth={"178px"}/>
                     </StyledSkills>
                 </StyledSkillsContent>
             </Container>
@@ -77,12 +71,14 @@ const Photo = styled.img`
 
 const StyledSkills = styled(FlexWrapper)`
   gap: 16px;
-  max-width: 584px;
+  max-height: 350px;
+  //gap: 16px;
+  //max-width: 584px;
 `
 
-const StyledColumnSkills = styled(FlexWrapper)`
-  gap: 16px;
-`
+// const StyledColumnSkills = styled(FlexWrapper)`
+//   gap: 16px;
+// `
 
 const StyledTitle = styled.h2`
   font-size: 32px;
@@ -101,8 +97,16 @@ const StyledLine = styled.span`
   margin-left: 20px;
 `
 
-                       // <SkillBox skillBoxTitle={"Tools"} boxSkills={tools} maxWidth={"196px"}/>
-                       //  <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}  maxWidth={"178px"}/>
-                       //  <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}  maxWidth={"178px"}/>
-                       //  <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
-                       //  <SkillBox skillBoxTitle={"Other"} boxSkills={other}  maxWidth={"178px"}/>
+//                    <StyledSkills>
+//                         <StyledColumnSkills direction={"column"}>
+//                             <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}  maxWidth={"178px"}/>
+//                         </StyledColumnSkills>
+//                         <StyledColumnSkills direction={"column"}>
+//                             <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}  maxWidth={"178px"}/>
+//                             <SkillBox skillBoxTitle={"Other"} boxSkills={other}  maxWidth={"178px"}/>
+//                         </StyledColumnSkills>
+//                         <StyledColumnSkills direction={"column"}>
+//                             <SkillBox skillBoxTitle={"Tools"} boxSkills={tools} maxWidth={"196px"}/>
+//                             <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
+//                         </StyledColumnSkills>
+//                     </StyledSkills>

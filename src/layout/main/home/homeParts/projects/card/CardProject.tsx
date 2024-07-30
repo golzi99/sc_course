@@ -4,27 +4,28 @@ import {FlexWrapper} from '../../../../../../components/FlexWrapper';
 import {myTheme} from '../../../../../../styles/Theme.styled';
 
 type CardProjectPropsType = {
-    img: string
+    img?: string
     title?: string
     h2text: string
     description: string
     projectTools?: Array<string>
     cachedVisible?: boolean
+    liveVisible?: boolean
 }
 
 export const CardProject = (props: CardProjectPropsType) => {
     return (
         <StyledCardProject direction={"column"} justify={"space-between"}>
-            <img src={props.img} alt={"projectImg"}/>
+            {props.img && <img src={props.img} alt={"projectImg"}/>}
             <StyledInstruments wrap={"wrap"}>
                 {props.projectTools?.map((tool, index) => {
-                    return (<StyledText key={index}>{tool}</StyledText>)
+                    return (<StyledInstrument key={index}>{tool}</StyledInstrument>)
                 })}
             </StyledInstruments>
-            <StyledBigText>{props.h2text}</StyledBigText>
+            <StyledH3>{props.h2text}</StyledH3>
             <StyledText>{props.description}</StyledText>
             <CardFlexButtonBox direction={"row"}>
-                <StyledButton>Live &lt;~&gt;</StyledButton>
+                {props.liveVisible && <StyledButton>Live &lt;~&gt;</StyledButton>}
                 {props.cachedVisible && <StyledButton disable>Cached =&gt;</StyledButton>}
             </CardFlexButtonBox>
         </StyledCardProject>
@@ -44,28 +45,34 @@ const StyledCardProject = styled(FlexWrapper)`
 `
 
 const StyledInstruments = styled(FlexWrapper)`
-  padding: 5px 0;
-  row-gap: 10px;
+  padding: 8px 0;
+  row-gap: 16px;
 `
 
-const StyledBigText = styled.p`
+const StyledInstrument = styled.p`
+  color: ${myTheme.colors.lightGrey};
+  padding-left: 8px;
+  font-size: 16px;
+  font-weight: 400;
+`
+
+const StyledH3 = styled.h3`
   border-top: solid ${myTheme.colors.lightGrey} 1px;
   font-size: 24px;
   font-weight: 500;
-  padding: 10px;
-  margin: 0;
+  padding: 16px;
   color: ${myTheme.colors.fontWhite}
 `
 
 const StyledText = styled.p`
   color: ${myTheme.colors.lightGrey};
-  padding-left: 10px;
+  padding-left: 16px;
   font-size: 16px;
   font-weight: 400;
 `
 
 const CardFlexButtonBox = styled(FlexWrapper)`
-  padding: 10px;
+  padding: 16px;
   gap: 20px;
 `
 

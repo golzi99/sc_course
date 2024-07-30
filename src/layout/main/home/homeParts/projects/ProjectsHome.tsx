@@ -34,11 +34,11 @@ export const ProjectsHome = () => {
                         <StyledView to={"/projects"}>View all ~~&gt;</StyledView>
                     </FlexWrapper>
                     <StyledProjectsFlexBox justify={"center"} wrap={"wrap"}>
-                        <CardProject img={projectImg1} projectTools={tools1} cachedVisible={true}
+                        <CardProject img={projectImg1} projectTools={tools1} cachedVisible={true} liveVisible={true}
                                      h2text={"ChertNodes"} description={"Minecraft servers hosting"}></CardProject>
-                        <CardProject img={projectImg2} projectTools={tools2} cachedVisible={false}
+                        <CardProject img={projectImg2} projectTools={tools2} cachedVisible={false} liveVisible={true}
                                      h2text={"ProtectX"} description={"Discord anti-crash bot"}></CardProject>
-                        <CardProject img={projectImg3} projectTools={tools3} cachedVisible={false}
+                        <CardProject img={projectImg3} projectTools={tools3} cachedVisible={false} liveVisible={true}
                                      h2text={"Kahoot Answers Viewer"}
                                      description={"Get answers to your kahoot quiz"}></CardProject>
                     </StyledProjectsFlexBox>
