@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from "styled-components";
 
 export const AboutMe = () => {
     return (
-        <div>
+        <StyledAboutMe>
             AboutMe
-        </div>
+        </StyledAboutMe>
     );
 };
+
+const StyledAboutMe = styled.div`
+
+`
