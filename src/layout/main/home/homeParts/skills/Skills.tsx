@@ -71,7 +71,7 @@ const Photo = styled.img`
 
 const StyledSkills = styled(FlexWrapper)`
   gap: 16px;
-  max-height: 350px;
+  max-height: 300px;
   //gap: 16px;
   //max-width: 584px;
 `

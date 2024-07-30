@@ -19,6 +19,7 @@ function App() {
 }
 
 // как разместить контент по центру у contacts and aboutme при wrap
+// как наладить container чтобы занимал нормально, вроде делаю под размеры, но не берет
 
 export default App;
 

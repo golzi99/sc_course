@@ -13,9 +13,9 @@ export const Introduce = () => {
     return (
         <StyledIntroduce>
             <Container>
-                <StyledContentWrapper direction={"column"}>
+                <StyledContentWrapper direction={"column"} justify={"center"}>
                     <FlexWrapper justify={"center"} wrap={"wrap"}>
-                        <StyledTextBox direction={"column"} justify={"center"}>
+                        <StyledTextBox direction={"column"} justify={"center"} >
                             <StyledTitle>
                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
                             </StyledTitle>
@@ -48,7 +48,9 @@ export const Introduce = () => {
 };
 
 const StyledIntroduce = styled.section`
-  margin-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 `
 
 const StyledContentWrapper = styled(FlexWrapper)`

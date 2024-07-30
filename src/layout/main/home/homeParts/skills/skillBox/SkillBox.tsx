@@ -37,8 +37,6 @@ const StyledTextWrapper = styled(FlexWrapper)`
 const StyledHr = styled.hr`
   margin: 8px 0;
 `
-// как настроить цвет и ширину hr?
-
 
 const StyledText = styled.p`
   color: #ABB2BF;
