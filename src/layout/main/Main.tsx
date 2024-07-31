@@ -10,10 +10,12 @@ export const Main = () => {
     return (
         <StyledMain>
             <Routes>
-                <Route path={"/home?"} element={<Home/>}/>
+                <Route path={"/home"} element={<Home/>}/>
                 <Route path={"/projects"} element={<Projects/>}/>
                 <Route path={"/about-me"} element={<AboutMe/>}/>
                 <Route path={"/contacts"} element={<Contacts/>}/>
+                {/*<Route path={"*"} index element={<Navigate to={'/home'}/>}/>*/}
+
             </Routes>
         </StyledMain>
     );

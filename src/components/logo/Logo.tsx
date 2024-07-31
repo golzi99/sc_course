@@ -2,11 +2,12 @@ import React from 'react';
 import {MainIcon} from "../icon/MainIcon";
 import {FlexWrapper} from "../FlexWrapper";
 import styled from "styled-components";
+import {NavLink} from "react-router-dom";
 
 
 export const Logo = () => {
     return (
-        <StyledLink href={"/"}>
+        <StyledLink to={"/home"}>
             <FlexWrapper align={"center"}>
                 <MainIcon iconId={"iconDefaultSvg"} width={"20px"} height={"20px"}/>
                 <LogoText>Elias</LogoText>
@@ -21,7 +22,7 @@ const LogoText = styled.p`
   color: snow;
 `
 
-const StyledLink = styled.a`
+const StyledLink = styled(NavLink)`
   text-decoration: none;
 `
 
