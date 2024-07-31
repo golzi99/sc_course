@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {FlexWrapper} from '../../../../../../components/FlexWrapper';
 import {myTheme} from '../../../../../../styles/Theme.styled';
 import {StyledLinkButton} from "../../../../../../components/buttons/BaseButton";
+import {decodeHtml} from "../../../../../../decodingText/DecodeTextHtml";
 
 type CardProjectPropsType = {
     img?: string
@@ -11,6 +12,7 @@ type CardProjectPropsType = {
     projectTools?: Array<string>
     projectSource?: string
     cachedButton?: string
+
 }
 
 export const CardProject = (props: CardProjectPropsType) => {
@@ -25,8 +27,8 @@ export const CardProject = (props: CardProjectPropsType) => {
             <StyledH3>{props.title}</StyledH3>
             <StyledText>{props.description}</StyledText>
             <CardFlexButtonBox direction={"row"}>
-                {props.projectSource && <StyledLinkButton to={""}>{props.projectSource}</StyledLinkButton>}
-                {props.cachedButton && <StyledLinkButton to={""} disable>{props.cachedButton}</StyledLinkButton>}
+                {props.projectSource && <StyledLinkButton to={""} >{decodeHtml(props.projectSource)}</StyledLinkButton>}
+                {props.cachedButton && <StyledLinkButton to={""} disable>{decodeHtml(props.cachedButton)}</StyledLinkButton>}
             </CardFlexButtonBox>
         </StyledCardProject>
     );
