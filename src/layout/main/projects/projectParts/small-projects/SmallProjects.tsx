@@ -3,31 +3,72 @@ import styled from "styled-components";
 import {Container} from "../../../../../components/Container";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import { myTheme } from '../../../../../styles/Theme.styled';
+import { CardProjectType } from '../../../../../types/types';
 import {CardProject} from "../../../home/homeParts/projects/card/CardProject";
 
-const tools1: Array<string> = [
-    "Discord.js", "TS", "JS"
-];
+const tools1: Array<string> = ["Discord.js", "TS", "JS"];
 
-const tools2: Array<string> = [
-    "Vue", "CSS", "JS"
-];
+const tools2: Array<string> = ["Vue", "CSS", "JS"];
 
-const tools3: Array<string> = [
-    "Figma"
-];
+const tools3: Array<string> = ["Figma"];
 
-const tools4: Array<string> = [
-    "HTML", "CSS"
-];
+const tools4: Array<string> = ["HTML", "CSS"];
 
-const tools5: Array<string> = [
-    "Lua", "NeoVim"
-];
+const tools5: Array<string> = ["Lua", "NeoVim"];
 
-const tools6: Array<string> = [
-    "Python", "Quart", "HTML"
-];
+const tools6: Array<string> = ["Python", "Quart", "HTML"];
+
+const Card: Array<CardProjectType> = [
+    {
+        title: "Bot boilerplate",
+        projectTools: tools1,
+        description: "Start creating scalable discord.js bot with typescript in seconds",
+        projectSource: "Github &lt;~&gt;"
+    },
+    {
+        title: "My blog",
+        projectTools: tools2,
+        description: "Front-end of my future blog website written in vue",
+        projectSource: "Github &lt;~&gt;"
+    },
+    {
+        title: "Chess pro",
+        projectTools: tools3,
+        description: "Figma landing page about service for viewing chess tournaments",
+        projectSource: "Figma &lt;~&gt;"
+    },
+    {
+        title: "Crash protect website",
+        projectTools: tools3,
+        description: "Figma template for website about anti-raid, anti-crash discord bot",
+        projectSource: "Figma &lt;~&gt;"
+    },
+    {
+        title: "CSS experiments",
+        projectTools: tools4,
+        description: "Collection of my different little projects in css",
+        projectSource: "Live &lt;~&gt;"
+    },
+    {
+        title: "Web Dev nvim config",
+        projectTools: tools5,
+        description: "Config for neovim perfect for web developer",
+        projectSource: "Github &lt;~&gt;"
+    },
+    {
+        title: "Ooku",
+        projectTools: tools6,
+        description: "Simple link shortener with auth",
+        projectSource: "Live &lt;~&gt;"
+    },
+    {
+        title: "School website",
+        projectTools: tools3,
+        description: "Figma template website for my school",
+        projectSource: "Figma &lt;~&gt;"
+    }
+]
+
 
 
 export const SmallProjects = () => {
@@ -37,30 +78,10 @@ export const SmallProjects = () => {
                 <StyledAppsWrapper direction={"column"}>
                     <Title><span>#</span>small-projects</Title>
                     <StyledProjectsFlexBox justify={"flex-start"} wrap={"wrap"}>
-                        <CardProject projectTools={tools1} cachedVisible={false} liveVisible={true}
-                                     h2text={"Bot boilerplate"}
-                                     description={"Start creating scalable discord.js bot with typescript in seconds"}/>
-                        <CardProject projectTools={tools2} cachedVisible={false} liveVisible={true}
-                                     h2text={"My blog"}
-                                     description={"Front-end of my future blog website written in vue"}/>
-                        <CardProject projectTools={tools3} cachedVisible={false} liveVisible={true}
-                                     h2text={"Chess pro"}
-                                     description={"Figma landing page about service for viewing chess tournaments"}/>
-                        <CardProject projectTools={tools3} cachedVisible={false} liveVisible={true}
-                                     h2text={"Crash protect website"}
-                                     description={"Figma template for website about anti-raid, anti-crash discord bot"}/>
-                        <CardProject projectTools={tools4} cachedVisible={false} liveVisible={true}
-                                     h2text={"CSS experiments"}
-                                     description={"Collection of my different little projects in css"}/>
-                        <CardProject projectTools={tools5} cachedVisible={false} liveVisible={true}
-                                     h2text={"Web Dev nvim config"}
-                                     description={"Config for neovim perfect for web developer"}/>
-                        <CardProject projectTools={tools6} cachedVisible={false} liveVisible={true}
-                                     h2text={"Ooku"}
-                                     description={"Simple link shortener with auth"}/>
-                        <CardProject projectTools={tools3} cachedVisible={false} liveVisible={true}
-                                     h2text={"School website"}
-                                     description={"Figma template website for my school"}/>
+                        {Card.map((card, index) => {
+                            return <CardProject key={index} title={card.title} description={card.description}
+                                                projectTools={card.projectTools} projectSource={card.projectSource}/>
+                        })}
                     </StyledProjectsFlexBox>
                 </StyledAppsWrapper>
             </Container>

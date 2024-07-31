@@ -5,6 +5,8 @@ import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import skillsImg from "../../../../../assets/images/skillsImg.webp"
 import {myTheme} from "../../../../../styles/Theme.styled";
 import {Container} from "../../../../../components/Container";
+import {BaseTitle} from "../../../../../components/titles/BaseTitle";
+import {StyledLine} from "../../../../../components/line/Line";
 
 const languages = [
     "TypeScript", "Lua", "Python", "JavaScript"
@@ -31,7 +33,7 @@ export const Skills = () => {
         <StyledSkillsSection>
             <Container>
                 <FlexWrapper align={"center"}>
-                    <StyledTitle><span>#</span>skills</StyledTitle>
+                    <BaseTitle titleText={"skills"}></BaseTitle>
                     <StyledLine></StyledLine>
                 </FlexWrapper>
                 <StyledSkillsContent justify={"space-between"}>
@@ -57,15 +59,14 @@ const StyledSkillsContent = styled(FlexWrapper)`
 `
 
 const Photo = styled.img`
-  width: 100%;
   height: 100%;
   max-width: 349px;
   object-fit: cover;
   position: relative;
 
-  @media ${myTheme.media.tablet} {
-    display: none;
-  }
+  // @media ${myTheme.media.tablet} {
+  //   display: none;
+  // }
   
 `
 
@@ -80,22 +81,6 @@ const StyledSkills = styled(FlexWrapper)`
 //   gap: 16px;
 // `
 
-const StyledTitle = styled.h2`
-  font-size: 32px;
-  color: ${myTheme.colors.fontWhite};
-
-  span {
-    color: ${myTheme.colors.mainPurpleColor};
-  }
-`
-
-const StyledLine = styled.span`
-  background-color: ${myTheme.colors.mainPurpleColor};
-  width: 25vw;
-  max-width: 500px;
-  height: 1px;
-  margin-left: 20px;
-`
 
 //                    <StyledSkills>
 //                         <StyledColumnSkills direction={"column"}>

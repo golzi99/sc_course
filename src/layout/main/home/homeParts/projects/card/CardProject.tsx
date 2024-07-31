@@ -1,16 +1,16 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import {FlexWrapper} from '../../../../../../components/FlexWrapper';
 import {myTheme} from '../../../../../../styles/Theme.styled';
+import {StyledLinkButton} from "../../../../../../components/buttons/BaseButton";
 
 type CardProjectPropsType = {
     img?: string
-    title?: string
-    h2text: string
+    title: string
     description: string
     projectTools?: Array<string>
-    cachedVisible?: boolean
-    liveVisible?: boolean
+    projectSource?: string
+    cachedButton?: string
 }
 
 export const CardProject = (props: CardProjectPropsType) => {
@@ -22,11 +22,11 @@ export const CardProject = (props: CardProjectPropsType) => {
                     return (<StyledInstrument key={index}>{tool}</StyledInstrument>)
                 })}
             </StyledInstruments>
-            <StyledH3>{props.h2text}</StyledH3>
+            <StyledH3>{props.title}</StyledH3>
             <StyledText>{props.description}</StyledText>
             <CardFlexButtonBox direction={"row"}>
-                {props.liveVisible && <StyledButton>Live &lt;~&gt;</StyledButton>}
-                {props.cachedVisible && <StyledButton disable>Cached =&gt;</StyledButton>}
+                {props.projectSource && <StyledLinkButton to={""}>{props.projectSource}</StyledLinkButton>}
+                {props.cachedButton && <StyledLinkButton to={""} disable>{props.cachedButton}</StyledLinkButton>}
             </CardFlexButtonBox>
         </StyledCardProject>
     );
@@ -74,27 +74,4 @@ const StyledText = styled.p`
 const CardFlexButtonBox = styled(FlexWrapper)`
   padding: 16px;
   gap: 20px;
-`
-
-type StyledBtnPropsType = {
-    disable?: boolean
-}
-
-const StyledButton = styled.a<StyledBtnPropsType>`
-  padding: 8px 16px 8px 16px;
-  border: ${myTheme.colors.mainPurpleColor} solid 1px;
-  background-color: transparent;
-  color: ${myTheme.colors.fontWhite};
-
-  ${props => props.disable && css<StyledBtnPropsType>`
-    border: ${myTheme.colors.lightGrey} solid 1px;
-    color: ${myTheme.colors.lightGrey};
-  `}
-
-  ${props => !props.disable && css<StyledBtnPropsType>`
-    &:hover {
-      background-color: rgba(199, 120, 221, 0.2);
-      cursor: pointer;
-    }
-  `}
 `

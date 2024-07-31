@@ -8,6 +8,9 @@ import {FlexWrapper} from '../../../../../components/FlexWrapper';
 import {myTheme} from '../../../../../styles/Theme.styled';
 import {Container} from "../../../../../components/Container";
 import {NavLink} from "react-router-dom";
+import {BaseTitle} from "../../../../../components/titles/BaseTitle";
+import {StyledLine} from "../../../../../components/line/Line";
+import {CardProjectType} from "../../../../../types/types";
 
 const tools1: Array<string> = [
     "HTML", "SCSS", "Python", "Flask"
@@ -21,6 +24,31 @@ const tools3: Array<string> = [
     "CSS", "Express", "Node.js"
 ];
 
+const Card: Array<CardProjectType> = [
+    {
+        img: projectImg1,
+        title: "ChertNodes",
+        projectTools: tools1,
+        description: "Minecraft servers hosting",
+        projectSource: "Live &lt;~&gt;",
+        cachedButton: "Cached =&gt;"
+    },
+    {
+        img: projectImg2,
+        title: "ProtectX",
+        projectTools: tools2,
+        description: "Discord anti-crash bot",
+        projectSource: "Live &lt;~&gt;",
+    },
+    {
+        img: projectImg3,
+        title: "Kahoot Answers Viewer",
+        projectTools: tools3,
+        description: "Get answers to your kahoot quiz",
+        projectSource: "Live &lt;~&gt;",
+    },
+]
+
 export const ProjectsHome = () => {
     return (
         <StyledProject>
@@ -28,19 +56,20 @@ export const ProjectsHome = () => {
                 <FlexWrapper direction={"column"} justify={"center"}>
                     <FlexWrapper justify={"space-between"} align={"center"}>
                         <FlexWrapper align={"center"}>
-                            <StyledTitle><span>#</span>projects</StyledTitle>
+                            <BaseTitle titleText={"projects"}/>
                             <StyledLine></StyledLine>
                         </FlexWrapper>
                         <StyledView to={"/projects"}>View all ~~&gt;</StyledView>
                     </FlexWrapper>
                     <StyledProjectsFlexBox justify={"center"} wrap={"wrap"}>
-                        <CardProject img={projectImg1} projectTools={tools1} cachedVisible={true} liveVisible={true}
-                                     h2text={"ChertNodes"} description={"Minecraft servers hosting"}></CardProject>
-                        <CardProject img={projectImg2} projectTools={tools2} cachedVisible={false} liveVisible={true}
-                                     h2text={"ProtectX"} description={"Discord anti-crash bot"}></CardProject>
-                        <CardProject img={projectImg3} projectTools={tools3} cachedVisible={false} liveVisible={true}
-                                     h2text={"Kahoot Answers Viewer"}
-                                     description={"Get answers to your kahoot quiz"}></CardProject>
+                        {Card.map((card, index) => {
+                            return <CardProject key={index} img={card.img} title={card.title}
+                                                description={card.description}
+                                                projectTools={card.projectTools}
+                                                projectSource={card.projectSource}
+                                                cachedButton={card.cachedButton}
+                            />
+                        })}
                     </StyledProjectsFlexBox>
                 </FlexWrapper>
             </Container>
@@ -49,15 +78,6 @@ export const ProjectsHome = () => {
 };
 
 const StyledProject = styled.section`
-`
-
-const StyledTitle = styled.h2`
-  font-size: 32px;
-  color: ${myTheme.colors.fontWhite};
-
-  span {
-    color: ${myTheme.colors.mainPurpleColor};
-  }
 `
 
 const StyledView = styled(NavLink)`
@@ -69,12 +89,4 @@ const StyledView = styled(NavLink)`
 const StyledProjectsFlexBox = styled(FlexWrapper)`
   padding-top: 25px;
   gap: 10px;
-`
-
-const StyledLine = styled.span`
-  background-color: ${myTheme.colors.mainPurpleColor};
-  width: 25vw;
-  max-width: 500px;
-  height: 1px;
-  margin-left: 20px;
 `
