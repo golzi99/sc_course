@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {myTheme} from "../../../styles/Theme.styled";
 import {NavLink} from "react-router-dom";
 
-export const Menu = () => {
+export const HeaderMenu = () => {
     return (
         <StyledMenu>
             <MenuList>

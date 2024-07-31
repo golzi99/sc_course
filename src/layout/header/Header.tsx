@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
-import {Menu} from "./menu/Menu";
+import {HeaderMenu} from "./menu/HeaderMenu";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import { myTheme } from '../../styles/Theme.styled';
 import { Container } from '../../components/Container';
@@ -10,13 +10,13 @@ export const Header = () => {
     return (
         <StyledHeader>
             <Container>
-                <FlexWrapper justify={"space-between"} align={"center"}>
+                <StyledWrapperHeader justify={"space-between"} align={"center"}>
                     <Logo/>
-                    <Menu/>
+                    <HeaderMenu/>
                     <MenuBurger>
                         ☰
                     </MenuBurger>
-                </FlexWrapper>
+                </StyledWrapperHeader>
             </Container>
         </StyledHeader>
     );
@@ -30,6 +30,10 @@ const StyledHeader = styled.header`
   right: 0;
   left: 0;
   z-index: 99;
+`
+
+const StyledWrapperHeader = styled(FlexWrapper)`
+  padding: 0 8px;
 `
 
 const MenuBurger = styled.div`

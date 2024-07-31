@@ -13,9 +13,9 @@ export const Introduce = () => {
     return (
         <StyledIntroduce>
             <Container>
-                <StyledContentWrapper direction={"column"} justify={"center"}>
-                    <FlexWrapper justify={"center"} wrap={"wrap"}>
-                        <StyledTextBox direction={"column"} justify={"center"} >
+                <FlexWrapper direction={"column"} justify={"center"}>
+                    <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
+                        <StyledTextBox direction={"column"}>
                             <StyledTitle>
                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
                             </StyledTitle>
@@ -24,7 +24,7 @@ export const Introduce = () => {
                             </StyledText>
                             <StyledButton to={"/contacts"}>Contact me !!</StyledButton>
                         </StyledTextBox>
-                        <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
+                        <FlexWrapper direction={"column"} align={"center"}>
                             <StyledImgBox>
                                 <Photo src={dark_man_1} alt={"dark_man_1"}/>
                                 <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'360px'}
@@ -41,20 +41,16 @@ export const Introduce = () => {
                         </FlexWrapper>
                     </FlexWrapper>
                     <Quote></Quote>
-                </StyledContentWrapper>
+                </FlexWrapper>
             </Container>
         </StyledIntroduce>
     );
 };
 
 const StyledIntroduce = styled.section`
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
-`
-
-const StyledContentWrapper = styled(FlexWrapper)`
-  gap: 50px
 `
 
 const StyledImgBox = styled(FlexWrapper)`
@@ -63,7 +59,6 @@ const StyledImgBox = styled(FlexWrapper)`
 `
 
 const Photo = styled.img`
-  width: 100%;
   max-width: 457px;
   object-fit: cover;
   z-index: 2;
@@ -119,7 +114,7 @@ const StyledText = styled.p`
 
 const StyledTextBox = styled(FlexWrapper)`
   gap: 20px;
-  max-width: 537px;
+  max-width: 500px;
 `
 
 const BoxUnderImage = styled(FlexWrapper)`
@@ -128,7 +123,7 @@ const BoxUnderImage = styled(FlexWrapper)`
   padding-left: 20px;
   padding-right: 20px;
   width: fit-content;
-  height: 40px;
+  height: fit-content;
 `
 
 const StyledIndicator = styled.p`
@@ -138,3 +133,30 @@ const StyledIndicator = styled.p`
   flex-direction: row;
   background-color: ${myTheme.colors.mainPurpleColor};
 `
+
+//<FlexWrapper justify={"center"} align={"center"} wrap={"wrap"}>
+//                         <StyledTextBox direction={"column"} justify={"center"} >
+//                             <StyledTitle>
+//                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
+//                             </StyledTitle>
+//                             <StyledText>
+//                                 He crafts responsive websites where technologies meet creativity
+//                             </StyledText>
+//                             <StyledButton to={"/contacts"}>Contact me !!</StyledButton>
+//                         </StyledTextBox>
+//                         <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
+//                             <StyledImgBox>
+//                                 <Photo src={dark_man_1} alt={"dark_man_1"}/>
+//                                 <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'360px'}
+//                                             top={'250px'}/>
+//                                 <StyledLogoImg iconId={"iconOutLineSvg"}
+//                                                width={"155"} height={"155"}/>
+//                             </StyledImgBox>
+//                             <BoxUnderImage align={"center"}>
+//                                 <StyledIndicator/>
+//                                 <StyledText>
+//                                     Currently working on <strong>Portfolio</strong>
+//                                 </StyledText>
+//                             </BoxUnderImage>
+//                         </FlexWrapper>
+//                     </FlexWrapper>
