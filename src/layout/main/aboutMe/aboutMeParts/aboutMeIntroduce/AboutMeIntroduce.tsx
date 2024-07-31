@@ -1,22 +1,16 @@
 import React from 'react';
+import {StyledBaseText} from "../../../../../styles/texts/Texts";
+import dark_man_2 from "../../../../../assets/images/dark_man_2.webp";
+import dots from "../../../../../assets/images/Dots.webp";
+import {StyledLine} from "../../../../../styles/line/Line";
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
-import dark_man_2 from "../../../../../assets/images/dark_man_2.webp"
-import dots from "../../../../../assets/images/Dots.webp"
 import {Container} from "../../../../../components/Container";
-import {BaseTitle} from "../../../../../components/titles/BaseTitle";
-import {StyledLine} from "../../../../../styles/line/Line";
-import {StyledLinkButton} from "../../../../../styles/buttons/BaseButton";
-import {StyledBaseText} from "../../../../../styles/texts/Texts";
 
-export const AboutMeHome = () => {
+export const AboutMeIntroduce = () => {
     return (
-        <StyledAboutMe>
+        <StyledAboutMeIntroduce>
             <Container>
-                <FlexWrapper align={"center"}>
-                    <BaseTitle titleText={"about-me"}/>
-                    <StyledLine></StyledLine>
-                </FlexWrapper>
                 <StyledContentWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                     <StyledAboutMeTextBlock direction={"column"} justify={"center"}>
                         <StyledBaseText>Hello, i’m Elias!</StyledBaseText>
@@ -32,7 +26,6 @@ export const AboutMeHome = () => {
                             I have been helping various clients to establish their presence online.
                             I always strive to learn about the newest technologies and frameworks.
                         </StyledBaseText>
-                        <StyledLinkButton to={"/about-me"}>Read more -&gt;</StyledLinkButton>
                     </StyledAboutMeTextBlock>
                     <StyledImgBox direction={"column"} align={"center"}>
                         <Photo src={dark_man_2} alt={"dark_man_2"}/>
@@ -42,11 +35,11 @@ export const AboutMeHome = () => {
                     </StyledImgBox>
                 </StyledContentWrapper>
             </Container>
-        </StyledAboutMe>
+        </StyledAboutMeIntroduce>
     );
 };
 
-const StyledAboutMe = styled.section`
+const StyledAboutMeIntroduce = styled.section`
 
 `
 

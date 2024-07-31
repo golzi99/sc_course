@@ -6,7 +6,8 @@ import skillsImg from "../../../../../assets/images/skillsImg.webp"
 import {myTheme} from "../../../../../styles/Theme.styled";
 import {Container} from "../../../../../components/Container";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
-import {StyledLine} from "../../../../../components/line/Line";
+import {StyledLine} from "../../../../../styles/line/Line";
+import {SkillBoxType} from "../../../../../types/types";
 
 const languages = [
     "TypeScript", "Lua", "Python", "JavaScript"
@@ -28,6 +29,34 @@ const frameworks = [
     "React", "Vue", "Disnake", "Discord.js", "Flask", "Express.js"
 ]
 
+const GroupsSkills: Array<SkillBoxType> = [
+    {
+        skillBoxTitle: "Tools",
+        boxSkills: tools,
+        maxWidth: "196px"
+    },
+    {
+        skillBoxTitle: "Frameworks",
+        boxSkills: frameworks,
+        maxWidth: "196px"
+    },
+    {
+        skillBoxTitle: "DataBase",
+        boxSkills: dataBase,
+        maxWidth: "178px"
+    },
+    {
+        skillBoxTitle: "Other",
+        boxSkills: other,
+        maxWidth: "178px"
+    },
+    {
+        skillBoxTitle: "Languages",
+        boxSkills: languages,
+        maxWidth: "178px"
+    },
+]
+
 export const Skills = () => {
     return (
         <StyledSkillsSection>
@@ -39,11 +68,10 @@ export const Skills = () => {
                 <StyledSkillsContent justify={"space-between"}>
                     <Photo src={skillsImg} alt={"skillsImg"}/>
                     <StyledSkills direction={"column"} wrap={"wrap-reverse"} justify={"flex-start"} align={"flex-end"}>
-                        <SkillBox skillBoxTitle={"Tools"} boxSkills={tools} maxWidth={"196px"}/>
-                        <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
-                        <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}  maxWidth={"178px"}/>
-                        <SkillBox skillBoxTitle={"Other"} boxSkills={other}  maxWidth={"178px"}/>
-                        <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}  maxWidth={"178px"}/>
+                        {GroupsSkills.map((skillBox, index) => {
+                            return <SkillBox key={index} skillBoxTitle={skillBox.skillBoxTitle} boxSkills={skillBox.boxSkills}
+                                             maxWidth={skillBox.maxWidth}/>
+                        })}
                     </StyledSkills>
                 </StyledSkillsContent>
             </Container>
@@ -95,3 +123,10 @@ const StyledSkills = styled(FlexWrapper)`
 //                             <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
 //                         </StyledColumnSkills>
 //                     </StyledSkills>
+
+
+//                        <SkillBox skillBoxTitle={"Tools"} boxSkills={tools} maxWidth={"196px"}/>
+//                         <SkillBox skillBoxTitle={"Frameworks"} boxSkills={frameworks}  maxWidth={"196px"}/>
+//                         <SkillBox skillBoxTitle={"DataBase"} boxSkills={dataBase}  maxWidth={"178px"}/>
+//                         <SkillBox skillBoxTitle={"Other"} boxSkills={other}  maxWidth={"178px"}/>
+//                         <SkillBox skillBoxTitle={"Languages"} boxSkills={languages}  maxWidth={"178px"}/>

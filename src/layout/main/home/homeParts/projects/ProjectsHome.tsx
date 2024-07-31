@@ -9,7 +9,7 @@ import {myTheme} from '../../../../../styles/Theme.styled';
 import {Container} from "../../../../../components/Container";
 import {NavLink} from "react-router-dom";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
-import {StyledLine} from "../../../../../components/line/Line";
+import {StyledLine} from "../../../../../styles/line/Line";
 import {CardProjectType} from "../../../../../types/types";
 
 const tools1: Array<string> = [

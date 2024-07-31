@@ -5,9 +5,10 @@ import {FlexWrapper} from '../../../../../components/FlexWrapper';
 import {myTheme} from "../../../../../styles/Theme.styled";
 import dots from "../../../../../assets/images/Dots.webp";
 import {MainIcon} from "../../../../../components/icon/MainIcon";
-import {NavLink} from "react-router-dom";
 import {Container} from "../../../../../components/Container";
 import {Quote} from "../../../../../components/blockquote/Quote";
+import {StyledBaseText, StyledTitle} from "../../../../../styles/texts/Texts";
+import {StyledLinkButton} from "../../../../../styles/buttons/BaseButton";
 
 export const Introduce = () => {
     return (
@@ -19,10 +20,10 @@ export const Introduce = () => {
                             <StyledTitle>
                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
                             </StyledTitle>
-                            <StyledText>
+                            <StyledBaseText>
                                 He crafts responsive websites where technologies meet creativity
-                            </StyledText>
-                            <StyledButton to={"/contacts"}>Contact me !!</StyledButton>
+                            </StyledBaseText>
+                            <StyledLinkButton to={"/contacts"}>Contact me !!</StyledLinkButton>
                         </StyledTextBox>
                         <FlexWrapper direction={"column"} align={"center"}>
                             <StyledImgBox>
@@ -34,9 +35,9 @@ export const Introduce = () => {
                             </StyledImgBox>
                             <BoxUnderImage align={"center"}>
                                 <StyledIndicator/>
-                                <StyledText>
+                                <StyledBaseText>
                                     Currently working on <strong>Portfolio</strong>
-                                </StyledText>
+                                </StyledBaseText>
                             </BoxUnderImage>
                         </FlexWrapper>
                     </FlexWrapper>
@@ -82,36 +83,6 @@ const StyledDots = styled.img<{ left: string, top: string }>`
   z-index: 2;
 `
 
-const StyledButton = styled(NavLink)`
-  padding: 8px 16px 8px 16px;
-  border: ${myTheme.colors.mainPurpleColor} solid 1px;
-  background-color: transparent;
-  color: ${myTheme.colors.fontWhite};
-  width: fit-content;
-  font-size: 18px;
-  text-decoration: none;
-
-  &:hover {
-    background-color: rgba(199, 120, 221, 0.2);
-    cursor: pointer;
-  }
-`
-
-const StyledTitle = styled.h2`
-  font-size: 32px;
-  font-weight: bold;
-  color: ${myTheme.colors.fontWhite};
-
-  span {
-    color: ${myTheme.colors.mainPurpleColor};
-  }
-`
-
-const StyledText = styled.p`
-  color: ${myTheme.colors.lightGrey};
-  font-size: 16px;
-`
-
 const StyledTextBox = styled(FlexWrapper)`
   gap: 20px;
   max-width: 500px;
@@ -126,7 +97,7 @@ const BoxUnderImage = styled(FlexWrapper)`
   height: fit-content;
 `
 
-const StyledIndicator = styled.p`
+const StyledIndicator = styled.span`
   border: 1px solid ${myTheme.colors.mainPurpleColor};
   width: 16px;
   height: 16px;

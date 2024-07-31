@@ -6,3 +6,9 @@ export type CardProjectType = {
     projectSource?: string
     cachedButton?: string
 }
+
+export type SkillBoxType = {
+    skillBoxTitle: string,
+    boxSkills: Array<string>,
+    maxWidth: string
+}

@@ -5,6 +5,7 @@ import {Logo} from "../../components/logo/Logo";
 import {myTheme} from "../../styles/Theme.styled";
 import {Icon} from "../../components/icon/Icon";
 import { Container } from '../../components/Container';
+import {StyledBaseText, StyledWhiteText} from '../../styles/texts/Texts';
 
 export const Footer = () => {
     return (
@@ -15,9 +16,9 @@ export const Footer = () => {
                         <FlexWrapper direction={"column"}>
                             <StyledLogoFooter align={"center"}>
                                 <Logo></Logo>
-                                <StyledText>elias@elias-dev.ml</StyledText>
+                                <StyledBaseText>elias@elias-dev.ml</StyledBaseText>
                             </StyledLogoFooter>
-                            <StyledJob>Web designer and front-end developer</StyledJob>
+                            <StyledWhiteText>Web designer and front-end developer</StyledWhiteText>
                         </FlexWrapper>
                         <FlexWrapper direction={"column"}>
                             <StyledMedia>Media</StyledMedia>
@@ -28,7 +29,7 @@ export const Footer = () => {
                             </FlexWrapper>
                         </FlexWrapper>
                     </StyledFooterBox>
-                    <StyledText>© Copyright 2024. Made by Elias</StyledText>
+                    <StyledBaseText>© Copyright 2024. Made by Elias</StyledBaseText>
                 </FlexWrapper>
             </Container>
         </StyledFooter>
@@ -41,26 +42,16 @@ const StyledFooter = styled.footer`
 `
 
 const StyledLogoFooter = styled(FlexWrapper)`
-  gap: 20px;
+  gap: 16px;
+  margin-bottom: 16px;
 `
 
 const StyledFooterBox = styled(FlexWrapper)`
   width: 100%;
+  margin-bottom: 16px;
 `
 
-const StyledMedia = styled.p`
-  color: ${myTheme.colors.fontWhite};
+const StyledMedia = styled(StyledWhiteText)`
   font-size: 24px;
-`
-
-const StyledJob = styled.p`
-  color: ${myTheme.colors.fontWhite};
-  font-size: 16px;
-`
-
-const StyledText = styled.p`
-  color: ${myTheme.colors.lightGrey};
-  font-weight: 400;
-  font-size: 16px;
-  padding: 20px 0;
+  margin-bottom: 16px;
 `

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import {NavLink} from "react-router-dom";
-import {myTheme} from "../../styles/Theme.styled";
+import {myTheme} from "../Theme.styled";
 
 type StyledBtnPropsType = {
     disable?: boolean

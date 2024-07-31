@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {FlexWrapper} from '../../../../../../components/FlexWrapper';
 import {myTheme} from '../../../../../../styles/Theme.styled';
-import {StyledLinkButton} from "../../../../../../components/buttons/BaseButton";
+import {StyledLinkButton} from "../../../../../../styles/buttons/BaseButton";
 import {decodeHtml} from "../../../../../../decodingText/DecodeTextHtml";
 
 type CardProjectPropsType = {

@@ -2,9 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../../../components/Container";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
-import { myTheme } from '../../../../../styles/Theme.styled';
 import { CardProjectType } from '../../../../../types/types';
 import {CardProject} from "../../../home/homeParts/projects/card/CardProject";
+import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 
 const tools1: Array<string> = ["Discord.js", "TS", "JS"];
 
@@ -76,7 +76,7 @@ export const SmallProjects = () => {
         <StyledSmallProjects>
             <Container>
                 <StyledAppsWrapper direction={"column"}>
-                    <Title><span>#</span>small-projects</Title>
+                    <BaseTitle titleText={"small-projects"}/>
                     <StyledProjectsFlexBox justify={"flex-start"} wrap={"wrap"}>
                         {Card.map((card, index) => {
                             return <CardProject key={index} title={card.title} description={card.description}
@@ -99,14 +99,4 @@ const StyledAppsWrapper = styled(FlexWrapper)`
 const StyledProjectsFlexBox = styled(FlexWrapper)`
   padding-top: 10px;
   gap: 10px;
-`
-
-const Title = styled.h2`
-  font-size: 32px;
-  font-weight: bold;
-  color: ${myTheme.colors.fontWhite};
-
-  span {
-    color: ${myTheme.colors.mainPurpleColor};
-  }
 `

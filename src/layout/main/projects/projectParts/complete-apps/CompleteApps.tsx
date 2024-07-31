@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../../../components/Container";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
-import { myTheme } from '../../../../../styles/Theme.styled';
 import {CardProject} from "../../../home/homeParts/projects/card/CardProject";
 import projectImg1 from "../../../../../assets/images/banner1.webp";
 import projectImg2 from "../../../../../assets/images/thumbnail1.webp";
@@ -10,6 +9,7 @@ import projectImg3 from "../../../../../assets/images/banner2.webp";
 import projectImg4 from "../../../../../assets/images/thumbnail2.webp";
 import projectImg5 from "../../../../../assets/images/Portfolio.webp";
 import {CardProjectType} from "../../../../../types/types";
+import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 
 const tools1: Array<string> = [
     "HTML", "SCSS", "Python", "Flask"
@@ -75,7 +75,7 @@ export const CompleteApps = () => {
         <StyledCompleteApps>
             <Container>
                 <StyledAppsWrapper direction={"column"}>
-                    <Title><span>#</span>complete-apps</Title>
+                    <BaseTitle titleText={"complete-apps"}/>
                     <StyledProjectsFlexBox justify={"flex-start"} wrap={"wrap"}>
                         {Card.map((card, index) => {
                             return <CardProject key={index} img={card.img} title={card.title}
@@ -102,14 +102,4 @@ const StyledAppsWrapper = styled(FlexWrapper)`
 const StyledProjectsFlexBox = styled(FlexWrapper)`
   padding-top: 10px;
   gap: 10px;
-`
-
-const Title = styled.h2`
-  font-size: 32px;
-  font-weight: bold;
-  color: ${myTheme.colors.fontWhite};
-
-  span {
-    color: ${myTheme.colors.mainPurpleColor};
-  }
 `
