@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {SkillBox} from "./skillBox/SkillBox";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import skillsImg from "../../../../../assets/images/skillsImg.webp"
-import {myTheme} from "../../../../../styles/Theme.styled";
 import {Container} from "../../../../../components/Container";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
@@ -33,27 +32,27 @@ const GroupsSkills: Array<SkillBoxType> = [
     {
         skillBoxTitle: "Tools",
         boxSkills: tools,
-        maxWidth: "196px"
+        maxWidth: "198px"
     },
     {
         skillBoxTitle: "Frameworks",
         boxSkills: frameworks,
-        maxWidth: "196px"
+        maxWidth: "198px"
     },
     {
         skillBoxTitle: "DataBase",
         boxSkills: dataBase,
-        maxWidth: "178px"
+        maxWidth: "180px"
     },
     {
         skillBoxTitle: "Other",
         boxSkills: other,
-        maxWidth: "178px"
+        maxWidth: "180px"
     },
     {
         skillBoxTitle: "Languages",
         boxSkills: languages,
-        maxWidth: "178px"
+        maxWidth: "180px"
     },
 ]
 
@@ -84,6 +83,10 @@ const StyledSkillsSection = styled.section`
 
 const StyledSkillsContent = styled(FlexWrapper)`
   padding-top: 25px;
+
+  @media (max-width: 950px) {
+    justify-content: center;
+  }
 `
 
 const Photo = styled.img`
@@ -92,15 +95,20 @@ const Photo = styled.img`
   object-fit: cover;
   position: relative;
 
-  // @media ${myTheme.media.tablet} {
-  //   display: none;
-  // }
+  @media (max-width: 950px) {
+    display: none;
+  }
   
 `
 
 const StyledSkills = styled(FlexWrapper)`
   gap: 16px;
   max-height: 300px;
+
+  @media (max-width: 616px) {
+    max-height: 500px;
+  }
+  
   //gap: 16px;
   //max-width: 584px;
 `

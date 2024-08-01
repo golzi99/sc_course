@@ -16,7 +16,7 @@ export const ContactsHome = () => {
                     <BaseTitle titleText={"contacts"}/>
                     <StyledLine></StyledLine>
                 </FlexWrapper>
-                <StyledAboutMeContent justify={"space-between"}>
+                <StyledAboutMeContent justify={"space-between"} wrap={"wrap"}>
                     <StyledMaxWidthText>I’m interested in freelance opportunities.
                         However, if you have other request or question,
                         don’t hesitate to contact me
@@ -40,6 +40,10 @@ const StyledContacts = styled.section`
 
 const StyledAboutMeContent = styled(FlexWrapper)`
   margin-top: 25px;
+  gap: 25px;
+  @media (max-width: 803px) {
+    justify-content: center;
+  }
 `
 
 const ContactBoxWrapper = styled(FlexWrapper)`

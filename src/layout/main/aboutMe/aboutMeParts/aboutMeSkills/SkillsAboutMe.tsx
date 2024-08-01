@@ -58,15 +58,15 @@ export const SkillsAboutMe = () => {
     return (
         <StyledSkillsAboutMe>
             <Container>
-                <StyledSkillsWrapper direction={"column"}>
+                <StyledSkillsContent direction={"column"}>
                     <BaseTitle titleText={"skills"}/>
-                    <FlexWrapper justify={"space-between"} wrap={"wrap"}>
+                    <StyledSkillsWrapper justify={"center"} wrap={"wrap"}>
                         {GroupsSkills.map((skillBox, index) => {
                             return <SkillBox key={index} skillBoxTitle={skillBox.skillBoxTitle} boxSkills={skillBox.boxSkills}
                                              maxWidth={skillBox.maxWidth}/>
                         })}
-                    </FlexWrapper>
-                </StyledSkillsWrapper>
+                    </StyledSkillsWrapper>
+                </StyledSkillsContent>
             </Container>
         </StyledSkillsAboutMe>
     );
@@ -76,6 +76,10 @@ const StyledSkillsAboutMe = styled.section`
   
 `
 
-const StyledSkillsWrapper = styled(FlexWrapper)`
+const StyledSkillsContent = styled(FlexWrapper)`
   gap: 30px;
+`
+
+const StyledSkillsWrapper = styled(FlexWrapper)`
+  gap: 24px;
 `

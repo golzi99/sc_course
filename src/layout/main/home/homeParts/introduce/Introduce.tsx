@@ -14,8 +14,8 @@ export const Introduce = () => {
     return (
         <StyledIntroduce>
             <Container>
-                <FlexWrapper direction={"column"} justify={"center"}>
-                    <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
+                <StyledContentWrapper direction={"column"} justify={"center"}>
+                    <StyledFirstPartWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                         <StyledTextBox direction={"column"}>
                             <StyledTitle>
                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
@@ -28,10 +28,10 @@ export const Introduce = () => {
                         <FlexWrapper direction={"column"} align={"center"}>
                             <StyledImgBox>
                                 <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                                <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'360px'}
-                                            top={'250px'}/>
+                                <StyledDots src={dots} alt={"dots1"} width={"84px"} height={"84px"}
+                                            left={'360px'} top={'250px'}/>
                                 <StyledLogoImg iconId={"iconOutLineSvg"}
-                                               width={"155"} height={"155"}/>
+                                               width={"155px"} height={"155px"}/>
                             </StyledImgBox>
                             <BoxUnderImage align={"center"}>
                                 <StyledIndicator/>
@@ -40,9 +40,9 @@ export const Introduce = () => {
                                 </StyledBaseText>
                             </BoxUnderImage>
                         </FlexWrapper>
-                    </FlexWrapper>
+                    </StyledFirstPartWrapper>
                     <Quote></Quote>
-                </FlexWrapper>
+                </StyledContentWrapper>
             </Container>
         </StyledIntroduce>
     );
@@ -52,6 +52,16 @@ const StyledIntroduce = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
+`
+
+const StyledContentWrapper = styled(FlexWrapper)`
+    gap: 100px;
+`
+
+const StyledFirstPartWrapper = styled(FlexWrapper)`
+  @media (max-width: 974px) {
+    flex-direction: column;
+  }
 `
 
 const StyledImgBox = styled(FlexWrapper)`
@@ -73,7 +83,7 @@ const StyledLogoImg = styled(MainIcon)`
   top: 80px;
 `
 
-const StyledDots = styled.img<{ left: string, top: string }>`
+const StyledDots = styled.img<{ left: string, top: string, height: string, width: string }>`
   position: absolute;
   object-fit: cover;
   height: ${props => (props.height || `64`)};
@@ -92,16 +102,14 @@ const BoxUnderImage = styled(FlexWrapper)`
   border: ${myTheme.colors.lightGrey} solid 1px;
   gap: 20px;
   padding-left: 20px;
-  padding-right: 20px;
-  width: fit-content;
-  height: fit-content;
+  width: 100%;
+  height: 32px;
 `
 
 const StyledIndicator = styled.span`
   border: 1px solid ${myTheme.colors.mainPurpleColor};
   width: 16px;
   height: 16px;
-  flex-direction: row;
   background-color: ${myTheme.colors.mainPurpleColor};
 `
 

@@ -12,7 +12,7 @@ export const StyledLinkButton = styled(NavLink)<StyledBtnPropsType>`
   background-color: transparent;
   color: ${myTheme.colors.fontWhite};
   width: fit-content;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   
   &:hover {

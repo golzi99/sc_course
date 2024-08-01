@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom";
 export const HeaderMenu = () => {
     return (
         <StyledMenu>
-            <MenuList>
+            <ul>
                 <Menuitem>
                     <StyledNav to="/home"><span>#</span>home</StyledNav>
                 </Menuitem>
@@ -23,14 +23,12 @@ export const HeaderMenu = () => {
                     <option>EN</option>
                     <option>RU</option>
                 </select>
-            </MenuList>
+            </ul>
         </StyledMenu>
     );
 };
 
 const StyledMenu = styled.nav`
-  font-size: 16px;
-
   ul {
     display: flex;
     gap: 30px;
@@ -40,9 +38,6 @@ const StyledMenu = styled.nav`
     display: none;
   }
   
-`
-
-const MenuList = styled.ul`
 `
 
 const Menuitem = styled.li`

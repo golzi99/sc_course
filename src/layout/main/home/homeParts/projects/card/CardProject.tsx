@@ -4,6 +4,7 @@ import {FlexWrapper} from '../../../../../../components/FlexWrapper';
 import {myTheme} from '../../../../../../styles/Theme.styled';
 import {StyledLinkButton} from "../../../../../../styles/buttons/BaseButton";
 import {decodeHtml} from "../../../../../../decodingText/DecodeTextHtml";
+import {StyledBaseText} from "../../../../../../styles/texts/Texts";
 
 type CardProjectPropsType = {
     img?: string
@@ -17,63 +18,61 @@ type CardProjectPropsType = {
 
 export const CardProject = (props: CardProjectPropsType) => {
     return (
-        <StyledCardProject direction={"column"} justify={"space-between"}>
-            {props.img && <img src={props.img} alt={"projectImg"}/>}
-            <StyledInstruments wrap={"wrap"}>
+        <StyledCardProject direction={"column"}>
+            {props.img && <Image src={props.img} alt={"projectImg"}/>}
+            <StyledInstruments justify={"flex-start"} align={"flex-start"} wrap={"wrap"}>
                 {props.projectTools?.map((tool, index) => {
-                    return (<StyledInstrument key={index}>{tool}</StyledInstrument>)
+                    return (<Instrument key={index}>{tool}</Instrument>)
                 })}
             </StyledInstruments>
-            <StyledH3>{props.title}</StyledH3>
-            <StyledText>{props.description}</StyledText>
-            <CardFlexButtonBox direction={"row"}>
-                {props.projectSource && <StyledLinkButton to={""} >{decodeHtml(props.projectSource)}</StyledLinkButton>}
-                {props.cachedButton && <StyledLinkButton to={""} disable>{decodeHtml(props.cachedButton)}</StyledLinkButton>}
-            </CardFlexButtonBox>
+            <StyledTextBlock direction={"column"}>
+                <h3>{props.title}</h3>
+                <StyledBaseText>{props.description}</StyledBaseText>
+                <CardFlexButtonBox>
+                    {props.projectSource &&
+                        <StyledLinkButton to={""}>{decodeHtml(props.projectSource)}</StyledLinkButton>}
+                    {props.cachedButton &&
+                        <StyledLinkButton to={""} disable>{decodeHtml(props.cachedButton)}</StyledLinkButton>}
+                </CardFlexButtonBox>
+            </StyledTextBlock>
         </StyledCardProject>
     );
 };
 
 const StyledCardProject = styled(FlexWrapper)`
   border: ${myTheme.colors.lightGrey} solid 1px;
-  width: 330px;
-  height: 100%;
+  max-width: 332px;
+  width: 100%;
+`
 
-  img {
-    height: 200px;
-    object-fit: cover;
-    border-bottom: solid ${myTheme.colors.lightGrey} 1px;
-  }
+const Image = styled.img`
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: ${myTheme.colors.lightGrey} solid 1px;
+`
+
+const Instrument = styled.p`
+  color: ${myTheme.colors.lightGrey};
+  padding-left: 8px;
 `
 
 const StyledInstruments = styled(FlexWrapper)`
-  padding: 8px 0;
+  align-content: flex-start;
   row-gap: 16px;
+  padding: 8px 0;
 `
 
-const StyledInstrument = styled.p`
-  color: ${myTheme.colors.lightGrey};
-  padding-left: 8px;
-  font-size: 16px;
-  font-weight: 400;
-`
-
-const StyledH3 = styled.h3`
+const StyledTextBlock = styled(FlexWrapper)`
   border-top: solid ${myTheme.colors.lightGrey} 1px;
-  font-size: 24px;
-  font-weight: 500;
   padding: 16px;
-  color: ${myTheme.colors.fontWhite}
-`
-
-const StyledText = styled.p`
-  color: ${myTheme.colors.lightGrey};
-  padding-left: 16px;
-  font-size: 16px;
-  font-weight: 400;
+  gap: 16px;
 `
 
 const CardFlexButtonBox = styled(FlexWrapper)`
-  padding: 16px;
-  gap: 20px;
+  ${StyledLinkButton} {
+    & + ${StyledLinkButton} {
+      margin-left: 20px;
+    }
+  }
 `

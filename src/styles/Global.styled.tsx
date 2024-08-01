@@ -38,6 +38,21 @@ export const GlobalStyled = createGlobalStyle`
     padding: 50px 0;
   }
   
+  p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  
+  h2 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
   // section:nth-of-type(odd) {
   //   background-color: ${myTheme.colors.primaryBg};
   // } // чет

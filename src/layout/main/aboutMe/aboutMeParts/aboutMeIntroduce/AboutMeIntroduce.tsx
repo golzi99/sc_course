@@ -44,6 +44,9 @@ const StyledAboutMeIntroduce = styled.section`
 `
 
 const StyledContentWrapper = styled(FlexWrapper)`
+  @media (max-width: 869px) {
+    justify-content: center;
+  }
 `
 
 const StyledAboutMeTextBlock = styled(FlexWrapper)`

@@ -102,4 +102,8 @@ const StyledAppsWrapper = styled(FlexWrapper)`
 const StyledProjectsFlexBox = styled(FlexWrapper)`
   padding-top: 10px;
   gap: 10px;
+
+  @media (max-width: 1031px) {
+    justify-content: center;
+  }
 `
