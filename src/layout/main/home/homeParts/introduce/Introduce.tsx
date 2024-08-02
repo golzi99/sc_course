@@ -7,7 +7,7 @@ import {MainIcon} from "../../../../../components/icon/MainIcon";
 import {Container} from "../../../../../components/Container";
 import {Quote} from "../../../../../components/blockquote/Quote";
 import {StyledBaseText, StyledTitle} from "../../../../../styles/texts/Texts";
-import {StyledLinkButton} from "../../../../../styles/buttons/BaseButton";
+import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
 
 export const Introduce = () => {

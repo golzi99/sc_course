@@ -5,7 +5,7 @@ import dark_man_2 from "../../../../../assets/images/dark_man_2.webp"
 import {Container} from "../../../../../components/Container";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
-import {StyledLinkButton} from "../../../../../styles/buttons/BaseButton";
+import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
 import {StyledBaseText} from "../../../../../styles/texts/Texts";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
 

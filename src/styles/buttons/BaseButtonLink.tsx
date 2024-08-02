@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
+import {NavLink} from "react-router-dom";
 import {myTheme} from "../Theme.styled";
 
 type StyledBtnPropsType = {
     disable?: boolean
 }
 
-export const StyledButton = styled.button<StyledBtnPropsType>`
+export const StyledLinkButton = styled(NavLink)<StyledBtnPropsType>`
   padding: 8px 16px 8px 16px;
   border: ${myTheme.colors.mainPurpleColor} solid 1px;
   background-color: transparent;
