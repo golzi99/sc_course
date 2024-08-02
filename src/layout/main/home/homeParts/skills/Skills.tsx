@@ -62,7 +62,7 @@ export const Skills = () => {
             <Container>
                 <FlexWrapper align={"center"}>
                     <BaseTitle titleText={"skills"}></BaseTitle>
-                    <StyledLine></StyledLine>
+                    <StyledLine lineWidth={"239px"}></StyledLine>
                 </FlexWrapper>
                 <StyledSkillsContent justify={"space-between"}>
                     <Photo src={skillsImg} alt={"skillsImg"}/>

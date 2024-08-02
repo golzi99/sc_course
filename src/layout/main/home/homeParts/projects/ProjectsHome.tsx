@@ -57,7 +57,7 @@ export const ProjectsHome = () => {
                     <FlexWrapper justify={"space-between"} align={"center"}>
                         <FlexWrapper align={"center"}>
                             <BaseTitle titleText={"projects"}/>
-                            <StyledLine></StyledLine>
+                            <StyledLine lineWidth={"511px"} mediaStop={"892px"}></StyledLine>
                         </FlexWrapper>
                         <StyledView to={"/projects"}>View all ~~&gt;</StyledView>
                     </FlexWrapper>

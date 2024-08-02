@@ -14,7 +14,7 @@ export const ContactsHome = () => {
             <Container>
                 <FlexWrapper align={"center"}>
                     <BaseTitle titleText={"contacts"}/>
-                    <StyledLine></StyledLine>
+                    <StyledLine lineWidth={"127px"}></StyledLine>
                 </FlexWrapper>
                 <StyledAboutMeContent justify={"space-between"} wrap={"wrap"}>
                     <StyledMaxWidthText>I’m interested in freelance opportunities.

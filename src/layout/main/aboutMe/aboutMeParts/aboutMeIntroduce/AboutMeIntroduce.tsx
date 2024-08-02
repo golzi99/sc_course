@@ -39,7 +39,7 @@ export const AboutMeIntroduce = () => {
                                 (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
                             )}
                         </DotsBox2>
-                        <StyledLine maxLineWidth={"270px"}></StyledLine>
+                        <StyledLine lineWidth={"271px"}></StyledLine>
                     </StyledImgBox>
                 </StyledContentWrapper>
             </Container>

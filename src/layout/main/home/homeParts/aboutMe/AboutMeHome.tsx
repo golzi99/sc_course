@@ -15,7 +15,7 @@ export const AboutMeHome = () => {
             <Container>
                 <FlexWrapper align={"center"}>
                     <BaseTitle titleText={"about-me"}/>
-                    <StyledLine></StyledLine>
+                    <StyledLine lineWidth={"326px"} mediaStop={"534px"}></StyledLine>
                 </FlexWrapper>
                 <StyledContentWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                     <StyledAboutMeTextBlock direction={"column"} justify={"center"}>
@@ -46,7 +46,7 @@ export const AboutMeHome = () => {
                                 (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
                             )}
                         </DotsBox2>
-                        <StyledLine maxLineWidth={"270px"}></StyledLine>
+                        <StyledLine lineWidth={"271px"}></StyledLine>
                     </StyledImgBox>
                 </StyledContentWrapper>
             </Container>
