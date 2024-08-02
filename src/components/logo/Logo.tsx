@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 
 export const Logo = () => {
     return (
-        <StyledLink to={"/home"}>
+        <StyledLink to={"/"}>
             <FlexWrapper align={"center"}>
                 <MainIcon iconId={"iconDefaultSvg"} width={"20px"} height={"20px"}/>
                 <LogoText>Elias</LogoText>

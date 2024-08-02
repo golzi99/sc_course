@@ -8,7 +8,7 @@ export const HeaderMenu = () => {
         <StyledMenu>
             <ul>
                 <Menuitem>
-                    <StyledNav to="/home"><span>#</span>home</StyledNav>
+                    <StyledNav to="/"><span>#</span>home</StyledNav>
                 </Menuitem>
                 <Menuitem>
                     <StyledNav to="/projects"><span>#</span>works</StyledNav>
