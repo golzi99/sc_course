@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyledBaseText} from "../../../../../styles/texts/Texts";
 import dark_man_2 from "../../../../../assets/images/dark_man_2.webp";
-import dots from "../../../../../assets/images/Dots.webp";
 import {StyledLine} from "../../../../../styles/line/Line";
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import {Container} from "../../../../../components/Container";
+import {DotsLine} from "../../../../../styles/dot/DotsLine";
 
 export const AboutMeIntroduce = () => {
     return (
@@ -29,8 +29,16 @@ export const AboutMeIntroduce = () => {
                     </StyledAboutMeTextBlock>
                     <StyledImgBox direction={"column"} align={"center"}>
                         <Photo src={dark_man_2} alt={"dark_man_2"}/>
-                        <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'0'} top={'60px'}/>
-                        <StyledDots src={dots} alt={"dots2"} width={"104"} height={"56"} left={'220px'} top={"280px"}/>
+                        <DotsBox1 direction={"column"} justify={"space-between"}>
+                            {Array.from({length: 5}).map((_, index) =>
+                                (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
+                            )}
+                        </DotsBox1>
+                        <DotsBox2 direction={"column"} justify={"space-between"}>
+                            {Array.from({length: 4}).map((_, index) =>
+                                (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
+                            )}
+                        </DotsBox2>
                         <StyledLine maxLineWidth={"270px"}></StyledLine>
                     </StyledImgBox>
                 </StyledContentWrapper>
@@ -64,11 +72,16 @@ const StyledImgBox = styled(FlexWrapper)`
   position: relative;
 `
 
-const StyledDots = styled.img<{ left: string, top: string }>`
+const DotsBox1 = styled(FlexWrapper)`
   position: absolute;
-  object-fit: cover;
-  height: ${props => (props.height || `64`)};
-  width: ${props => (props.width || `64`)};
-  left: ${props => (props.left || `0`)};
-  top: ${props => (props.top || `0`)};
+  max-height: 84px;
+  left: 0;
+  top: 60px;
+`
+
+const DotsBox2 = styled(FlexWrapper)`
+  position: absolute;
+  max-height: 56px;
+  left: 240px;
+  top: 280px;
 `

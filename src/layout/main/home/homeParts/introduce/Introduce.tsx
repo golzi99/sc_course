@@ -3,12 +3,12 @@ import dark_man_1 from "../../../../../assets/images/dark_man_1.webp"
 import styled from "styled-components";
 import {FlexWrapper} from '../../../../../components/FlexWrapper';
 import {myTheme} from "../../../../../styles/Theme.styled";
-import dots from "../../../../../assets/images/Dots.webp";
 import {MainIcon} from "../../../../../components/icon/MainIcon";
 import {Container} from "../../../../../components/Container";
 import {Quote} from "../../../../../components/blockquote/Quote";
 import {StyledBaseText, StyledTitle} from "../../../../../styles/texts/Texts";
 import {StyledLinkButton} from "../../../../../styles/buttons/BaseButton";
+import {DotsLine} from "../../../../../styles/dot/DotsLine";
 
 export const Introduce = () => {
     return (
@@ -28,8 +28,11 @@ export const Introduce = () => {
                         <FlexWrapper direction={"column"} align={"center"}>
                             <StyledImgBox>
                                 <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                                <StyledDots src={dots} alt={"dots1"} width={"84px"} height={"84px"}
-                                            left={'360px'} top={'250px'}/>
+                                <DotsBox direction={"column"} justify={"space-between"}>
+                                    {Array.from({length: 5}).map((_, index) =>
+                                        (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
+                                    )}
+                                </DotsBox>
                                 <StyledLogoImg iconId={"iconOutLineSvg"}
                                                width={"155px"} height={"155px"}/>
                             </StyledImgBox>
@@ -83,13 +86,11 @@ const StyledLogoImg = styled(MainIcon)`
   top: 80px;
 `
 
-const StyledDots = styled.img<{ left: string, top: string, height: string, width: string }>`
+const DotsBox = styled(FlexWrapper)`
   position: absolute;
-  object-fit: cover;
-  height: ${props => (props.height || `64`)};
-  width: ${props => (props.width || `64`)};
-  left: ${props => (props.left || `0`)};
-  top: ${props => (props.top || `0`)};
+  max-height: 84px;
+  left: 360px;
+  top: 250px;
   z-index: 2;
 `
 

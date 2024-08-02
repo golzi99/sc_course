@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container} from "../../../../../components/Container";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
-import {StyledBaseText} from "../../../../../styles/texts/Texts";
+import {StyledWhiteText} from "../../../../../styles/texts/Texts";
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 
@@ -11,7 +11,7 @@ export const TitleAboutMe = () => {
             <Container>
                 <TitleWrapper direction={"column"}>
                     <BaseTitle titleText={"about-me"} symbolTitle={"/"}/>
-                    <StyledBaseText>Who am i?</StyledBaseText>
+                    <StyledWhiteText>Who am i?</StyledWhiteText>
                 </TitleWrapper>
             </Container>
         </StyledAboutMe>

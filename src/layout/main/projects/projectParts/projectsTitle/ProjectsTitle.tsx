@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Container} from "../../../../../components/Container";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
-import {StyledBaseText} from "../../../../../styles/texts/Texts";
+import {StyledWhiteText} from "../../../../../styles/texts/Texts";
 
 export const ProjectsTitle = () => {
     return (
@@ -11,7 +11,7 @@ export const ProjectsTitle = () => {
             <Container>
                 <TitleWrapper direction={"column"}>
                     <BaseTitle titleText={"projects"} symbolTitle={"/"}/>
-                    <StyledBaseText>List of my projects</StyledBaseText>
+                    <StyledWhiteText>List of my projects</StyledWhiteText>
                 </TitleWrapper>
             </Container>
         </StyledProjects>
