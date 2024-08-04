@@ -113,9 +113,6 @@ const StyledSkills = styled(FlexWrapper)`
   @media ${myTheme.media.mobile} {
     max-height: 700px;
   }
-  
-  //gap: 16px;
-  //max-width: 584px;
 `
 
 // const StyledColumnSkills = styled(FlexWrapper)`

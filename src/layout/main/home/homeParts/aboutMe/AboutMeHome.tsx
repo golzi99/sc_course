@@ -17,7 +17,7 @@ export const AboutMeHome = () => {
                     <BaseTitle titleText={"about-me"}/>
                     <StyledLine lineWidth={"326px"} mediaStop={"534px"}></StyledLine>
                 </FlexWrapper>
-                <StyledContentWrapper justify={"space-around"} align={"center"} wrap={"wrap"}>
+                <StyledContentWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                     <StyledAboutMeTextBlock direction={"column"} justify={"center"}>
                         <StyledBaseText>Hello, i’m Elias!</StyledBaseText>
                         <StyledBaseText>
@@ -59,6 +59,9 @@ const StyledAboutMe = styled.section`
 `
 
 const StyledContentWrapper = styled(FlexWrapper)`
+  @media (max-width: 869px) {
+    justify-content: center;
+  }
 `
 
 const StyledAboutMeTextBlock = styled(FlexWrapper)`

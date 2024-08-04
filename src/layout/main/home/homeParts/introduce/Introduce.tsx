@@ -15,7 +15,7 @@ export const Introduce = () => {
         <StyledIntroduce>
             <Container>
                 <StyledContentWrapper direction={"column"} justify={"center"}>
-                    <StyledFirstPartWrapper justify={"space-around"} align={"center"} wrap={"wrap"}>
+                    <StyledFirstPartWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                         <StyledTextBox direction={"column"}>
                             <StyledTitle>
                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
@@ -85,8 +85,11 @@ const StyledLogoImg = styled(MainIcon)`
 `
 
 const StyledFirstPartWrapper = styled(FlexWrapper)`
+  @media (max-width: 972px) {
+    justify-content: center;
+  }
+  
   @media ${myTheme.media.mobile} {
-
     ${Photo} {
       max-width: 316px;
       margin-top: 20px;

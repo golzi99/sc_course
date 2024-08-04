@@ -11,7 +11,7 @@ export const ContactsContent = () => {
     return (
         <StyledContents>
             <Container>
-                <StyledWrapper justify={"space-around"} wrap={"wrap"}>
+                <StyledWrapper justify={"space-between"} wrap={"wrap"}>
                     <TextBlock>
                         I’m interested in freelance opportunities.
                         However, if you have other request or question,
@@ -43,6 +43,10 @@ const StyledContents = styled.section`
 `
 
 const StyledWrapper = styled(FlexWrapper)`
+  @media (max-width: 937px) {
+    justify-content: center;
+  }
+  
   gap: 20px;
   margin-bottom: 24px;
 `

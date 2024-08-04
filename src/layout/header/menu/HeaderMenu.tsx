@@ -60,5 +60,10 @@ const StyledNav = styled(NavLink)`
 `
 
 const StyledLanguage = styled.select`
-    width: fit-content;
+  font-size: 16px;
+  font-weight: 600;
+  width: fit-content;
+  background-color: ${myTheme.colors.primaryBg};
+  border-color: transparent;
+  color: ${myTheme.colors.lightGrey};
 `
