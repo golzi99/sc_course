@@ -36,7 +36,7 @@ export const FactsAboutMe = () => {
                         <ImageBox>
                             <DotsBox direction={"column"} justify={"space-between"}>
                                 {Array.from({length: 4}).map((_, index) =>
-                                    (<DotsLine key={index} count={4}></DotsLine>)
+                                    (<DotsLine key={index} countDots={4}></DotsLine>)
                                 )}
                             </DotsBox>
                             <StyledLogoImg iconId={"iconOutLineSvg"}

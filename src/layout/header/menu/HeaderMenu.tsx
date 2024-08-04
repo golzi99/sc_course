@@ -19,10 +19,10 @@ export const HeaderMenu = () => {
                 <Menuitem>
                     <StyledNav to="/contacts"><span>#</span>contacts</StyledNav>
                 </Menuitem>
-                <select name={"language"}>
+                <StyledLanguage name={"language"}>
                     <option>EN</option>
                     <option>RU</option>
-                </select>
+                </StyledLanguage>
             </ul>
         </StyledMenu>
     );
@@ -57,4 +57,8 @@ const StyledNav = styled(NavLink)`
   span {
     color: ${myTheme.colors.mainPurpleColor}
   }
+`
+
+const StyledLanguage = styled.select`
+    width: fit-content;
 `

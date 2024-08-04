@@ -17,7 +17,7 @@ export const AboutMeHome = () => {
                     <BaseTitle titleText={"about-me"}/>
                     <StyledLine lineWidth={"326px"} mediaStop={"534px"}></StyledLine>
                 </FlexWrapper>
-                <StyledContentWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
+                <StyledContentWrapper justify={"space-around"} align={"center"} wrap={"wrap"}>
                     <StyledAboutMeTextBlock direction={"column"} justify={"center"}>
                         <StyledBaseText>Hello, i’m Elias!</StyledBaseText>
                         <StyledBaseText>
@@ -38,12 +38,12 @@ export const AboutMeHome = () => {
                         <Photo src={dark_man_2} alt={"dark_man_2"}/>
                         <DotsBox1 direction={"column"} justify={"space-between"}>
                             {Array.from({length: 5}).map((_, index) =>
-                                (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
+                                (<DotsLine key={index} countDots={5} gap={"16px"}></DotsLine>)
                             )}
                         </DotsBox1>
                         <DotsBox2 direction={"column"} justify={"space-between"}>
                             {Array.from({length: 4}).map((_, index) =>
-                                (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
+                                (<DotsLine key={index} countDots={5} gap={"16px"}></DotsLine>)
                             )}
                         </DotsBox2>
                         <StyledLine lineWidth={"271px"}></StyledLine>
@@ -59,9 +59,6 @@ const StyledAboutMe = styled.section`
 `
 
 const StyledContentWrapper = styled(FlexWrapper)`
-  @media (max-width: 872px) {
-    justify-content: center;
-  }
 `
 
 const StyledAboutMeTextBlock = styled(FlexWrapper)`

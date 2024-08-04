@@ -82,7 +82,7 @@ const StyledProject = styled.section`
 
 const StyledView = styled(NavLink)`
   color: ${myTheme.colors.fontWhite};
-  font-size: 24px;
+  font-size: 16px;
   text-decoration: none;
 `
 

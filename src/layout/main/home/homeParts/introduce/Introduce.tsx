@@ -15,7 +15,7 @@ export const Introduce = () => {
         <StyledIntroduce>
             <Container>
                 <StyledContentWrapper direction={"column"} justify={"center"}>
-                    <StyledFirstPartWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
+                    <StyledFirstPartWrapper justify={"space-around"} align={"center"} wrap={"wrap"}>
                         <StyledTextBox direction={"column"}>
                             <StyledTitle>
                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
@@ -30,7 +30,7 @@ export const Introduce = () => {
                                 <Photo src={dark_man_1} alt={"dark_man_1"}/>
                                 <DotsBox direction={"column"} justify={"space-between"}>
                                     {Array.from({length: 5}).map((_, index) =>
-                                        (<DotsLine key={index} count={5} gap={"16px"}></DotsLine>)
+                                        (<DotsLine key={index} countDots={5} gap={"16px"}></DotsLine>)
                                     )}
                                 </DotsBox>
                                 <StyledLogoImg iconId={"iconOutLineSvg"}
@@ -55,26 +55,24 @@ const StyledIntroduce = styled.section`
   min-height: 100vh;
   display: flex;
   align-items: center;
+  margin-top: 25px;
 `
 
 const StyledContentWrapper = styled(FlexWrapper)`
-    gap: 100px;
-`
-
-const StyledFirstPartWrapper = styled(FlexWrapper)`
-  @media (max-width: 974px) {
-    flex-direction: column;
-  }
-`
-
-const StyledImgBox = styled(FlexWrapper)`
-  position: relative;
-  max-height: 386px;
+  gap: 100px;
 `
 
 const Photo = styled.img`
   max-width: 457px;
   object-fit: cover;
+  z-index: 2;
+`
+
+const DotsBox = styled(FlexWrapper)`
+  position: absolute;
+  max-height: 84px;
+  left: 360px;
+  top: 250px;
   z-index: 2;
 `
 
@@ -86,12 +84,34 @@ const StyledLogoImg = styled(MainIcon)`
   top: 80px;
 `
 
-const DotsBox = styled(FlexWrapper)`
-  position: absolute;
-  max-height: 84px;
-  left: 360px;
-  top: 250px;
-  z-index: 2;
+const StyledFirstPartWrapper = styled(FlexWrapper)`
+  @media ${myTheme.media.mobile} {
+
+    ${Photo} {
+      max-width: 316px;
+      margin-top: 20px;
+    }
+
+    ${DotsBox} {
+      left: 230px;
+      top: 190px;
+      max-height: 56px;
+    }
+
+    ${StyledLogoImg} {
+      left: -10px;
+      top: 80px;
+      width: 104px;
+      height: 104px;
+    }
+  }
+`
+
+
+
+const StyledImgBox = styled(FlexWrapper)`
+  position: relative;
+  max-height: 386px;
 `
 
 const StyledTextBox = styled(FlexWrapper)`
@@ -102,9 +122,9 @@ const StyledTextBox = styled(FlexWrapper)`
 const BoxUnderImage = styled(FlexWrapper)`
   border: ${myTheme.colors.lightGrey} solid 1px;
   gap: 20px;
-  padding-left: 20px;
+  padding: 8px;
   width: 100%;
-  height: 32px;
+  height: fit-content;
 `
 
 const StyledIndicator = styled.span`
@@ -113,30 +133,3 @@ const StyledIndicator = styled.span`
   height: 16px;
   background-color: ${myTheme.colors.mainPurpleColor};
 `
-
-//<FlexWrapper justify={"center"} align={"center"} wrap={"wrap"}>
-//                         <StyledTextBox direction={"column"} justify={"center"} >
-//                             <StyledTitle>
-//                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
-//                             </StyledTitle>
-//                             <StyledText>
-//                                 He crafts responsive websites where technologies meet creativity
-//                             </StyledText>
-//                             <StyledButton to={"/contacts"}>Contact me !!</StyledButton>
-//                         </StyledTextBox>
-//                         <FlexWrapper direction={"column"} justify={"center"} align={"center"}>
-//                             <StyledImgBox>
-//                                 <Photo src={dark_man_1} alt={"dark_man_1"}/>
-//                                 <StyledDots src={dots} alt={"dots1"} width={"84"} height={"84"} left={'360px'}
-//                                             top={'250px'}/>
-//                                 <StyledLogoImg iconId={"iconOutLineSvg"}
-//                                                width={"155"} height={"155"}/>
-//                             </StyledImgBox>
-//                             <BoxUnderImage align={"center"}>
-//                                 <StyledIndicator/>
-//                                 <StyledText>
-//                                     Currently working on <strong>Portfolio</strong>
-//                                 </StyledText>
-//                             </BoxUnderImage>
-//                         </FlexWrapper>
-//                     </FlexWrapper>

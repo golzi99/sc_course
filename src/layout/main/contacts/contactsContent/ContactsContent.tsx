@@ -11,13 +11,13 @@ export const ContactsContent = () => {
     return (
         <StyledContents>
             <Container>
-                <StyledWrapper justify={"space-between"} wrap={"wrap"}>
+                <StyledWrapper justify={"space-around"} wrap={"wrap"}>
                     <TextBlock>
                         I’m interested in freelance opportunities.
                         However, if you have other request or question,
                         don’t hesitate to contact me
                     </TextBlock>
-                    <StyledContactsInfo>
+                    <StyledContactsInfo wrap={"wrap"}>
                         <SupBox direction={"column"}>
                             <StyledWhiteText>Support me here</StyledWhiteText>
                             <StyledBaseText>4149500120690030</StyledBaseText>
@@ -43,15 +43,16 @@ const StyledContents = styled.section`
 `
 
 const StyledWrapper = styled(FlexWrapper)`
-  @media (max-width: 917px) {
-    justify-content: center;
-    gap: 20px;
-  }
+  gap: 20px;
   margin-bottom: 24px;
 `
 
 const StyledContactsInfo = styled(FlexWrapper)`
   gap: 8px;
+  
+  @media ${myTheme.media.mobile} {
+    flex-direction: column;
+  }
 `
 
 const SupBox = styled(FlexWrapper)`

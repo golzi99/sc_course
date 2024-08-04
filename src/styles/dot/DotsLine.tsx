@@ -4,14 +4,14 @@ import styled from "styled-components";
 import {StyledDot} from "./Dot";
 
 type DotsLinePropsType = {
-    count: number,
+    countDots: number,
     gap?: string
 }
 
 export const DotsLine = (props: DotsLinePropsType) => {
     return (
         <StyledFlex gap={props.gap || "0"}>
-            {Array.from({length: props.count}).map((_, index) =>
+            {Array.from({length: props.countDots}).map((_, index) =>
                 (<StyledDot key={index}></StyledDot>)
             )}
         </StyledFlex>

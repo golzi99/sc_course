@@ -5,9 +5,9 @@ import styled from "styled-components";
 import {NavLink} from "react-router-dom";
 
 
-export const Logo = () => {
+export const Logo = ({...rest}) => {
     return (
-        <StyledLink to={"/"}>
+        <StyledLink to={"/"} {...rest}>
             <FlexWrapper align={"center"}>
                 <MainIcon iconId={"iconDefaultSvg"} width={"20px"} height={"20px"}/>
                 <LogoText>Elias</LogoText>

@@ -7,6 +7,7 @@ import {Container} from "../../../../../components/Container";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
 import {SkillBoxType} from "../../../../../types/types";
+import {myTheme} from "../../../../../styles/Theme.styled";
 
 const languages = [
     "TypeScript", "Lua", "Python", "JavaScript"
@@ -105,8 +106,12 @@ const StyledSkills = styled(FlexWrapper)`
   gap: 16px;
   max-height: 300px;
 
-  @media (max-width: 616px) {
+  @media ${myTheme.media.tablet} {
     max-height: 500px;
+  }
+
+  @media ${myTheme.media.mobile} {
+    max-height: 700px;
   }
   
   //gap: 16px;

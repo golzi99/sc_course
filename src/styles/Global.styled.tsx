@@ -1,6 +1,5 @@
 import {createGlobalStyle} from "styled-components";
 import {myTheme} from "./Theme.styled";
-//import {myTheme} from "./Theme.styled";
 
 export const GlobalStyled = createGlobalStyle`
   *,
@@ -35,7 +34,7 @@ export const GlobalStyled = createGlobalStyle`
   }
   
   section {
-    padding: 50px 0;
+    padding: 25px 0;
   }
   
   p {
@@ -52,13 +51,12 @@ export const GlobalStyled = createGlobalStyle`
     font-size: 24px;
     font-weight: 500;
   }
+
+  // @media ${myTheme.media.tablet} {
+  //   body {
+  //     overflow: hidden;
+  //   }
+  // }
   
-  // section:nth-of-type(odd) {
-  //   background-color: ${myTheme.colors.primaryBg};
-  // } // чет
-  //
-  // section:nth-of-type(even) {
-  //  background-color: ${myTheme.colors.primaryBg};
-  // } // нечет
-  
+  // тут надо как-то настроить для кнопки, что когда меню бургера открыто, то прятать
 `
