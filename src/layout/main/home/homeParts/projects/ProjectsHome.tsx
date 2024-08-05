@@ -77,8 +77,6 @@ export const ProjectsHome = () => {
     );
 };
 
-// как сделать переходы правильные или более красивые ?
-
 const StyledProject = styled.section`
 `
 

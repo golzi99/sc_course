@@ -47,7 +47,6 @@ const Image = styled.img`
 
 const StyledCardProject = styled(FlexWrapper)`
   border: ${myTheme.colors.lightGrey} solid 1px;
-  flex-grow: 1;
   width: 332px;
 `
 
