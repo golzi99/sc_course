@@ -3,6 +3,7 @@ import {StyledButton} from "../../../../styles/buttons/BaseButton";
 import styled from "styled-components";
 import {myTheme} from "../../../../styles/Theme.styled";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
+import { font } from '../../../../styles/Common';
 
 export const ContactsForm = () => {
     return (
@@ -53,7 +54,7 @@ const Field = styled.input`
   color: ${myTheme.colors.fontWhite};
   
   &::placeholder {
-    color: ${myTheme.colors.lightGrey};
+    ${font({color: myTheme.colors.lightGrey})}
   }
   
   &:focus-visible {

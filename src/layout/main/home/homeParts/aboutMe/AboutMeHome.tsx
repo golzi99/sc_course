@@ -32,7 +32,7 @@ export const AboutMeHome = () => {
                             I have been helping various clients to establish their presence online.
                             I always strive to learn about the newest technologies and frameworks.
                         </StyledBaseText>
-                        <StyledLinkButton to={"/about-me"}>Read more -&gt;</StyledLinkButton>
+                        <StyledLinkButton to={"/about-me"} typeLinkButton={"primary"}>Read more -&gt;</StyledLinkButton>
                     </StyledAboutMeTextBlock>
                     <StyledImgBox direction={"column"} align={"center"}>
                         <Photo src={dark_man_2} alt={"dark_man_2"}/>
@@ -61,6 +61,7 @@ const StyledAboutMe = styled.section`
 const StyledContentWrapper = styled(FlexWrapper)`
   @media (max-width: 869px) {
     justify-content: center;
+    margin-top: 25px;
   }
 `
 

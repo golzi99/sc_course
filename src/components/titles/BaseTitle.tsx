@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledTitle } from '../../styles/texts/Texts';
+import {StyledTitle} from "../../styles/texts/StyledTitle";
 
 type BaseTitlePropsType = {
     titleText: string

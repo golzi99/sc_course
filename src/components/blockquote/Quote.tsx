@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { font } from '../../styles/Common';
 import {myTheme} from "../../styles/Theme.styled";
 
 export const Quote = () => {
@@ -19,10 +20,9 @@ const StyledQuote = styled.blockquote`
   margin: 0 auto;
 
   p {
+    ${font({color: myTheme.colors.fontWhite, Fmin: 24, Fmax:24, weight: 500})}
     position: relative;
-    font-size: 24px;
-    font-weight: 500;
-    padding: 30px;
+    padding: 24px;
     border: 1px solid ${myTheme.colors.lightGrey};
     margin: 0;
 
@@ -30,7 +30,8 @@ const StyledQuote = styled.blockquote`
       content: "\\201C";
       position: absolute;
       font-size: 3em;
-      top: 20px;
+      left: 0;
+      top: 0.3em;
       line-height: 0;
       background-color: ${myTheme.colors.primaryBg};
     }
@@ -38,8 +39,8 @@ const StyledQuote = styled.blockquote`
     &:after {
       content: "\\201D";
       position: absolute;
-      bottom: -23px;
-      right: 10px;
+      bottom: -0.3em;
+      right: 0;
       font-size: 3em;
       line-height: 0;
       background-color: ${myTheme.colors.primaryBg};
@@ -48,14 +49,15 @@ const StyledQuote = styled.blockquote`
   }
 
   cite {
+    ${font({color: myTheme.colors.fontWhite, Fmin: 24, Fmax:24, weight: 400})}
+    text-align: left;
+    font-style: normal;
+
     border: 1px solid ${myTheme.colors.lightGrey};
     display: flex;
     justify-content: end;
-    padding: 15px;
-    font-size: 24px;
-    font-weight: 500;
+    padding: 16px;
     width: fit-content;
     align-self: self-end;
-    color: ${myTheme.colors.fontWhite};
   }
 `

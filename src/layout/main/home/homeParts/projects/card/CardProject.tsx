@@ -4,7 +4,7 @@ import {FlexWrapper} from '../../../../../../components/FlexWrapper';
 import {myTheme} from '../../../../../../styles/Theme.styled';
 import {StyledLinkButton} from "../../../../../../styles/buttons/BaseButtonLink";
 import {decodeHtml} from "../../../../../../decodingText/DecodeTextHtml";
-import {StyledBaseText} from "../../../../../../styles/texts/Texts";
+import {font} from "../../../../../../styles/Common";
 
 type CardProjectPropsType = {
     img?: string
@@ -13,7 +13,6 @@ type CardProjectPropsType = {
     projectTools?: Array<string>
     projectSource?: string
     cachedButton?: string
-
 }
 
 export const CardProject = (props: CardProjectPropsType) => {
@@ -27,23 +26,17 @@ export const CardProject = (props: CardProjectPropsType) => {
             </StyledInstruments>
             <StyledTextBlock direction={"column"}>
                 <h3>{props.title}</h3>
-                <StyledBaseText>{props.description}</StyledBaseText>
+                <StyledText>{props.description}</StyledText>
                 <CardFlexButtonBox>
                     {props.projectSource &&
-                        <StyledLinkButton to={""}>{decodeHtml(props.projectSource)}</StyledLinkButton>}
+                        <StyledLinkButton to={""} typeLinkButton={"primary"}>{decodeHtml(props.projectSource)}</StyledLinkButton>}
                     {props.cachedButton &&
-                        <StyledLinkButton to={""} disable>{decodeHtml(props.cachedButton)}</StyledLinkButton>}
+                        <StyledLinkButton to={""} typeLinkButton={"secondary"}>{decodeHtml(props.cachedButton)}</StyledLinkButton>}
                 </CardFlexButtonBox>
             </StyledTextBlock>
         </StyledCardProject>
     );
 };
-
-const StyledCardProject = styled(FlexWrapper)`
-  border: ${myTheme.colors.lightGrey} solid 1px;
-  max-width: 332px;
-  width: 100%;
-`
 
 const Image = styled.img`
   height: 200px;
@@ -52,8 +45,19 @@ const Image = styled.img`
   border-bottom: ${myTheme.colors.lightGrey} solid 1px;
 `
 
+const StyledCardProject = styled(FlexWrapper)`
+  border: ${myTheme.colors.lightGrey} solid 1px;
+  flex-grow: 1;
+  width: 332px;
+`
+
+const StyledText = styled.p`
+  ${font({weight: 400, Fmin: 16, Fmax: 16, lineHeight: 1.6})};
+  text-align: left;
+`
+
 const Instrument = styled.p`
-  color: ${myTheme.colors.lightGrey};
+  ${font({color: myTheme.colors.lightGrey})}
   padding-left: 8px;
 `
 

@@ -6,9 +6,10 @@ import {myTheme} from "../../../../../styles/Theme.styled";
 import {MainIcon} from "../../../../../components/icon/MainIcon";
 import {Container} from "../../../../../components/Container";
 import {Quote} from "../../../../../components/blockquote/Quote";
-import {StyledBaseText, StyledTitle} from "../../../../../styles/texts/Texts";
 import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
+import {StyledTitle} from "../../../../../styles/texts/StyledTitle";
+import { font } from '../../../../../styles/Common';
 
 export const Introduce = () => {
     return (
@@ -17,13 +18,13 @@ export const Introduce = () => {
                 <StyledContentWrapper direction={"column"} justify={"center"}>
                     <StyledFirstPartWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                         <StyledTextBox direction={"column"}>
-                            <StyledTitle>
+                            <Title>
                                 Elias is a <span>web designer</span> and <span>front-end developer</span>
-                            </StyledTitle>
-                            <StyledBaseText>
+                            </Title>
+                            <StyledText>
                                 He crafts responsive websites where technologies meet creativity
-                            </StyledBaseText>
-                            <StyledLinkButton to={"/contacts"}>Contact me !!</StyledLinkButton>
+                            </StyledText>
+                            <StyledLinkButton to={"/contacts"} typeLinkButton={"primary"}>Contact me !!</StyledLinkButton>
                         </StyledTextBox>
                         <FlexWrapper direction={"column"} align={"center"}>
                             <StyledImgBox>
@@ -38,9 +39,9 @@ export const Introduce = () => {
                             </StyledImgBox>
                             <BoxUnderImage align={"center"}>
                                 <StyledIndicator/>
-                                <StyledBaseText>
-                                    Currently working on <strong>Portfolio</strong>
-                                </StyledBaseText>
+                                <StyledTextUnderImg>
+                                    Currently working on <span>Portfolio</span>
+                                </StyledTextUnderImg>
                             </BoxUnderImage>
                         </FlexWrapper>
                     </StyledFirstPartWrapper>
@@ -58,8 +59,27 @@ const StyledIntroduce = styled.section`
   margin-top: 25px;
 `
 
+const Title = styled(StyledTitle)`
+  max-width: 537px;
+`
+
+const StyledTextUnderImg = styled.p`
+  ${font({weight: 500, Fmin: 16, Fmax: 16})};
+  text-align: left;
+  
+  span {
+    ${font({color: myTheme.colors.fontWhite, weight: 600, Fmin: 16, Fmax: 16})};
+  }
+`
+
+const StyledText = styled.p`
+  ${font({weight: 400, Fmin: 16, Fmax: 16, lineHeight: 1.6})};
+  max-width: 463px;
+  text-align: left;
+`
+
 const StyledContentWrapper = styled(FlexWrapper)`
-  gap: 100px;
+  gap: 60px;
 `
 
 const Photo = styled.img`
@@ -110,8 +130,6 @@ const StyledFirstPartWrapper = styled(FlexWrapper)`
   }
 `
 
-
-
 const StyledImgBox = styled(FlexWrapper)`
   position: relative;
   max-height: 386px;
@@ -119,7 +137,6 @@ const StyledImgBox = styled(FlexWrapper)`
 
 const StyledTextBox = styled(FlexWrapper)`
   gap: 20px;
-  max-width: 500px;
 `
 
 const BoxUnderImage = styled(FlexWrapper)`

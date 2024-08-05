@@ -11,7 +11,6 @@ export const StyledLine = styled.span<StyledLineType>`
   background-color: ${props => props.colorLine || myTheme.colors.mainPurpleColor};
   width: ${props => props.lineWidth || "100px"};
   height: 1px;
-  margin-left: 20px;
 
   ${props => props.mediaStop && css<StyledLineType>`
     @media (max-width: ${props.mediaStop}) {

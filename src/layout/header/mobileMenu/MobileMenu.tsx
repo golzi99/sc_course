@@ -4,6 +4,7 @@ import {myTheme} from "../../../styles/Theme.styled";
 import {NavLink} from "react-router-dom";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Icon} from "../../../components/icon/Icon";
+import { font } from '../../../styles/Common';
 
 // есть баг с переключением меню и изменением размеров
 
@@ -21,16 +22,16 @@ export const MobileMenu = () => {
             <MobileMenuWrapper isOpen={isOpen}>
                 <ul>
                     <Menuitem>
-                        <StyledNav to="/"><span>#</span>home</StyledNav>
+                        <StyledNav to="/" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>home</StyledNav>
                     </Menuitem>
                     <Menuitem>
-                        <StyledNav to="/projects"><span>#</span>works</StyledNav>
+                        <StyledNav to="/projects" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>works</StyledNav>
                     </Menuitem>
                     <Menuitem>
-                        <StyledNav to="/about-me"><span>#</span>about-me</StyledNav>
+                        <StyledNav to="/about-me" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>about-me</StyledNav>
                     </Menuitem>
                     <Menuitem>
-                        <StyledNav to="/contacts"><span>#</span>contacts</StyledNav>
+                        <StyledNav to="/contacts" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>contacts</StyledNav>
                     </Menuitem>
                     <StyledLanguage name={"language"}>
                         <option>EN</option>
@@ -66,7 +67,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   position: fixed;
   width: 24px;
   height: 24px;
-  right: 0;
+  right: 8px;
   z-index: 999;
 
   span {
@@ -141,8 +142,7 @@ const Menuitem = styled.li`
 `
 
 const StyledNav = styled(NavLink)`
-  font-size: 48px;
-  color: ${myTheme.colors.lightGrey};
+  ${font({color: myTheme.colors.lightGrey, Fmin: 32, Fmax: 48, weight: 400})}
 
   &:hover {
     color: rgba(255, 255, 255, 0.9);
@@ -150,6 +150,7 @@ const StyledNav = styled(NavLink)`
 
   &.active {
     color: ${myTheme.colors.fontWhite}
+    font-weight: 500;
   }
 
   span {
@@ -158,9 +159,8 @@ const StyledNav = styled(NavLink)`
 `
 
 const StyledLanguage = styled.select`
-  font-size: 48px;
+  ${font({color: myTheme.colors.lightGrey, Fmin: 32, Fmax: 48, weight: 600})}
   width: fit-content;
   background-color: ${myTheme.colors.primaryBg};
   border-color: transparent;
-  color: ${myTheme.colors.lightGrey};
 `

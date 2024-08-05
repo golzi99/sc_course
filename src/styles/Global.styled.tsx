@@ -17,11 +17,14 @@ export const GlobalStyled = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${myTheme.colors.fontWhite}
+    color: ${myTheme.colors.fontWhite};
+    line-height: 1.2;
+    min-width: 360px;
   }
   
   a {
     text-decoration: none;
+    cursor: pointer;
   }
   
   ul {
@@ -34,7 +37,11 @@ export const GlobalStyled = createGlobalStyle`
   }
   
   section {
-    padding: 25px 0;
+    padding: 50px 0;
+    
+    @media ${myTheme.media.tablet} {
+      padding: 25px 0;
+    }
   }
   
   p {

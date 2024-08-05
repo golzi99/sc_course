@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {myTheme} from "../../../styles/Theme.styled";
 import {NavLink} from "react-router-dom";
+import {font} from "../../../styles/Common";
 
 export const HeaderMenu = () => {
     return (
@@ -44,14 +45,15 @@ const Menuitem = styled.li`
 `
 
 const StyledNav = styled(NavLink)`
-  color: ${myTheme.colors.lightGrey};
+  ${font({color: myTheme.colors.lightGrey, Fmin: 16, Fmax: 16, weight: 400})}
 
   &:hover {
     color: rgba(255, 255, 255, 0.9);
   }
 
   &.active {
-    color: ${myTheme.colors.fontWhite}
+    color: ${myTheme.colors.fontWhite};
+    font-weight: 500;
   }
 
   span {
@@ -60,10 +62,8 @@ const StyledNav = styled(NavLink)`
 `
 
 const StyledLanguage = styled.select`
-  font-size: 16px;
-  font-weight: 600;
+  ${font({color: myTheme.colors.lightGrey, Fmin: 16, Fmax: 16, weight: 600})}
   width: fit-content;
   background-color: ${myTheme.colors.primaryBg};
   border-color: transparent;
-  color: ${myTheme.colors.lightGrey};
 `

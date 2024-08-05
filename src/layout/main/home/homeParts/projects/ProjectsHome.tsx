@@ -46,7 +46,7 @@ const Card: Array<CardProjectType> = [
         projectTools: tools3,
         description: "Get answers to your kahoot quiz",
         projectSource: "Live &lt;~&gt;",
-    },
+    }
 ]
 
 export const ProjectsHome = () => {
@@ -76,6 +76,8 @@ export const ProjectsHome = () => {
         </StyledProject>
     );
 };
+
+// как сделать переходы правильные или более красивые ?
 
 const StyledProject = styled.section`
 `
