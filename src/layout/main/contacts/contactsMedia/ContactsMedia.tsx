@@ -5,6 +5,8 @@ import {FlexWrapper} from "../../../../components/FlexWrapper";
 import {BaseTitle} from "../../../../components/titles/BaseTitle";
 import {ContactResource} from "../../../../components/contact/ContactResource";
 
+// как прокинуть цвет на hover для иконки?
+
 export const ContactsMedia = () => {
     return (
         <StyledMedia>
@@ -28,3 +30,9 @@ const StyledResourceMedia = styled(FlexWrapper)`
   margin-top: 25px;
   gap: 20px;
 `
+
+// const StyledContactRes = styled(ContactResource)`
+//   &:hover {
+//     fill: ${myTheme.colors.fontWhite};
+//   }
+// `
