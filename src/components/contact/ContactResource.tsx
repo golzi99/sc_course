@@ -13,7 +13,7 @@ type ContactResourcePropsType = {
 export const ContactResource = (props: ContactResourcePropsType) => {
     return (
         <StyledContactWrapper align={"center"}>
-            <StyledIcon iconId={props.iconContact}></StyledIcon>
+            <Icon iconId={props.iconContact}></Icon>
             <StyledText>{props.contactName}</StyledText>
         </StyledContactWrapper>
     );
@@ -24,16 +24,18 @@ const StyledText = styled.p`
   padding-left: 8px;
 `
 
+// const StyledIcon = styled(Icon)`
+//   &:hover {
+//     fill: ${myTheme.colors.fontWhite};
+//   }
+// `
+
 const StyledContactWrapper = styled(FlexWrapper)`
   &:hover{
+    cursor: pointer;
     ${StyledText} {
       color: ${myTheme.colors.fontWhite};
     }
   }
 `
 
-const StyledIcon = styled(Icon)`
-  &:hover {
-    fill: ${myTheme.colors.fontWhite};
-  }
-`
