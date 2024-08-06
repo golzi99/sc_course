@@ -47,7 +47,7 @@ const Card: Array<CardProjectType> = [
         projectTools: tools3,
         description: "Get answers to your kahoot quiz",
         projectSource: "Live &lt;~&gt;",
-    }
+    },
 ]
 
 export const ProjectsHome = () => {
@@ -62,7 +62,7 @@ export const ProjectsHome = () => {
                         </FlexWrapper>
                         <StyledView to={"/projects"}>View all ~~&gt;</StyledView>
                     </FlexWrapper>
-                    <StyledProjectsFlexBox justify={"center"} wrap={"wrap"}>
+                    <StyledProjectsFlexBox>
                         {Card.map((card, index) => {
                             return <CardProject key={index} img={card.img} title={card.title}
                                                 description={card.description}
@@ -85,7 +85,9 @@ const StyledView = styled(NavLink)`
   ${font({color: myTheme.colors.fontWhite, Fmin: 16, Fmax: 16})};
 `
 
-const StyledProjectsFlexBox = styled(FlexWrapper)`
-  padding-top: 25px;
+const StyledProjectsFlexBox = styled.div`
   gap: 10px;
+  padding-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
 `

@@ -77,7 +77,7 @@ export const SmallProjects = () => {
             <Container>
                 <StyledAppsWrapper direction={"column"}>
                     <BaseTitle titleText={"small-projects"}/>
-                    <StyledProjectsFlexBox justify={"flex-start"} wrap={"wrap"}>
+                    <StyledProjectsFlexBox>
                         {Card.map((card, index) => {
                             return <CardProject key={index} title={card.title} description={card.description}
                                                 projectTools={card.projectTools} projectSource={card.projectSource}/>
@@ -97,10 +97,15 @@ const StyledAppsWrapper = styled(FlexWrapper)`
 `
 
 const StyledProjectsFlexBox = styled(FlexWrapper)`
-  padding-top: 10px;
   gap: 10px;
-
-  @media (max-width: 1031px) {
-    justify-content: center;
-  }
+  padding-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  
+  //padding-top: 10px;
+  //gap: 10px;
+  //
+  //@media (max-width: 1031px) {
+  //  justify-content: center;
+  //}
 `

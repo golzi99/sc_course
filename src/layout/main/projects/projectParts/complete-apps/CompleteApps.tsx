@@ -76,7 +76,7 @@ export const CompleteApps = () => {
             <Container>
                 <StyledAppsWrapper direction={"column"}>
                     <BaseTitle titleText={"complete-apps"}/>
-                    <StyledProjectsFlexBox justify={"flex-start"} wrap={"wrap"}>
+                    <StyledProjectsFlexBox>
                         {Card.map((card, index) => {
                             return <CardProject key={index} img={card.img} title={card.title}
                                                 description={card.description}
@@ -100,10 +100,14 @@ const StyledAppsWrapper = styled(FlexWrapper)`
 `
 
 const StyledProjectsFlexBox = styled(FlexWrapper)`
-  padding-top: 10px;
   gap: 10px;
-
-  @media (max-width: 1031px) {
-    justify-content: center;
-  }
+  padding-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  //padding-top: 10px;
+  //gap: 10px;
+  //
+  //@media (max-width: 1031px) {
+  //  justify-content: center;
+  //}
 `

@@ -11,8 +11,10 @@ export const StyledLinkButton = styled(NavLink)<StyledBtnPropsType>`
   ${font({color: myTheme.colors.fontWhite, weight: 500, Fmin: 16, Fmax: 16})}
   padding: 8px 16px 8px 16px;
   background-color: transparent;
-  width: fit-content;
-
+  height: fit-content;
+  width: 100%;
+  text-align: center;
+  
   ${props => props.typeLinkButton === "primary" && css<StyledBtnPropsType>`
     border: ${myTheme.colors.mainPurpleColor} solid 1px;
 
@@ -29,5 +31,3 @@ export const StyledLinkButton = styled(NavLink)<StyledBtnPropsType>`
     }
   `}
 `
-
-// ?? правильно сделана ли кнопка ?
