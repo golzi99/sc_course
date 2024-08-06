@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { myTheme } from './styles/Theme.styled';
 import { Main } from './layout/main/Main';
 import {HashRouter} from "react-router-dom";
+import {ScrollToTopButton} from "./components/buttons/ScrollToTopButton";
 
 function App() {
     return (
@@ -13,17 +14,11 @@ function App() {
                 <Header/>
                 <Main/>
                 <Footer/>
+                <ScrollToTopButton/>
             </Container>
         </HashRouter>
     );
 }
-
-// как разместить контент по центру у contacts and aboutMe при wrap
-// как наладить container чтобы занимал нормально, вроде делаю под размеры, но не берет
-
-// интродьюс - сделать расположение через флексы. flex: 1. это что-то вроде аналого гридов для флексов.
-// в блоках где происходит wrap, сделать изменение напрвления флекса и выровнить
-
 
 export default App;
 
