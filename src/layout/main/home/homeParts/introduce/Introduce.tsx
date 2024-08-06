@@ -73,7 +73,7 @@ const StyledTextUnderImg = styled.p`
 `
 
 const StyledText = styled.p`
-  ${font({weight: 400, Fmin: 16, Fmax: 16, lineHeight: 1.6})};
+  ${font({Fmin: 16, Fmax: 16, lineHeight: 1.6})};
   max-width: 463px;
   text-align: left;
 `

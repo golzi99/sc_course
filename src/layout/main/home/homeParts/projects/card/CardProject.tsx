@@ -51,12 +51,12 @@ const StyledCardProject = styled(FlexWrapper)`
 `
 
 const StyledText = styled.p`
-  ${font({weight: 400, Fmin: 16, Fmax: 16, lineHeight: 1.6})};
+  ${font({Fmin: 16, Fmax: 16, lineHeight: 1.6})};
   text-align: left;
 `
 
 const Instrument = styled.p`
-  ${font({color: myTheme.colors.lightGrey})}
+  ${font({})}
   padding-left: 8px;
 `
 

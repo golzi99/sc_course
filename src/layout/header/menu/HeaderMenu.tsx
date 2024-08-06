@@ -45,7 +45,7 @@ const Menuitem = styled.li`
 `
 
 const StyledNav = styled(NavLink)`
-  ${font({color: myTheme.colors.lightGrey, Fmin: 16, Fmax: 16, weight: 400})}
+  ${font({Fmin: 16, Fmax: 16})}
 
   &:hover {
     color: rgba(255, 255, 255, 0.9);
@@ -62,7 +62,7 @@ const StyledNav = styled(NavLink)`
 `
 
 const StyledLanguage = styled.select`
-  ${font({color: myTheme.colors.lightGrey, Fmin: 16, Fmax: 16, weight: 600})}
+  ${font({Fmin: 16, Fmax: 16, weight: 600})}
   width: fit-content;
   background-color: ${myTheme.colors.primaryBg};
   border-color: transparent;

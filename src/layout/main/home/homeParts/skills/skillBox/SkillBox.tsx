@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../../../../../components/FlexWrapper";
 import {myTheme} from "../../../../../../styles/Theme.styled";
-import {StyledBaseText} from "../../../../../../styles/texts/Texts";
+import { font } from '../../../../../../styles/Common';
 
 type SkillBoxPropsType = {
     skillBoxTitle: string
@@ -16,7 +16,7 @@ export const SkillBox = (props: SkillBoxPropsType) => {
             <StyledTitleSkill>{props.skillBoxTitle}</StyledTitleSkill>
             <StyledTextWrapper wrap={"wrap"}>
                 {props.boxSkills.map((skill, index) => (
-                    <StyledBaseText key={index}>{skill}</StyledBaseText>))}
+                    <Skill key={index}>{skill}</Skill>))}
             </StyledTextWrapper>
         </StyledSkillBox>
     );
@@ -34,9 +34,12 @@ const StyledTextWrapper = styled(FlexWrapper)`
   gap: 8px;
 `
 
+const Skill = styled.p`
+  ${font({Fmin: 16, Fmax: 16})}
+`
+
 const StyledTitleSkill = styled.p`
-  font-weight: 600;
+  ${font({color: myTheme.colors.fontWhite, weight: 600, Fmin: 16, Fmax: 16})}
   padding: 0 8px 8px 8px;
-  color: ${myTheme.colors.fontWhite};
   border-bottom: ${myTheme.colors.lightGrey} solid 1px;
 `

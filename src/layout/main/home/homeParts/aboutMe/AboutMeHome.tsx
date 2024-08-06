@@ -6,8 +6,9 @@ import {Container} from "../../../../../components/Container";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
 import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
-import {StyledBaseText} from "../../../../../styles/texts/Texts";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
+import {font} from "../../../../../styles/Common";
+import {myTheme} from "../../../../../styles/Theme.styled";
 
 export const AboutMeHome = () => {
     return (
@@ -19,19 +20,19 @@ export const AboutMeHome = () => {
                 </FlexWrapper>
                 <StyledContentWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                     <StyledAboutMeTextBlock direction={"column"} justify={"center"}>
-                        <StyledBaseText>Hello, i’m Elias!</StyledBaseText>
-                        <StyledBaseText>
+                        <Text>Hello, i’m Elias!</Text>
+                        <Text>
                             I’m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive
                             websites
                             from
                             scratch and raise them into modern user-friendly web experiences.
-                        </StyledBaseText>
-                        <StyledBaseText>
+                        </Text>
+                        <Text>
                             Transforming my creativity and knowledge into a websites has been my passion for over a
                             year.
                             I have been helping various clients to establish their presence online.
                             I always strive to learn about the newest technologies and frameworks.
-                        </StyledBaseText>
+                        </Text>
                         <StyledLinkButton to={"/about-me"} typeLinkButton={"primary"}>Read more -&gt;</StyledLinkButton>
                     </StyledAboutMeTextBlock>
                     <StyledImgBox direction={"column"} align={"center"}>
@@ -68,6 +69,10 @@ const StyledContentWrapper = styled(FlexWrapper)`
 const StyledAboutMeTextBlock = styled(FlexWrapper)`
   max-width: 515px;
   gap:30px;
+`
+
+const Text = styled.p`
+  ${font({color: myTheme.colors.lightGrey, weight: 400, Fmin: 16, Fmax: 16, lineHeight: 1.6})};
 `
 
 const Photo = styled.img`

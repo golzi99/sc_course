@@ -68,11 +68,3 @@ const SocialLine = styled.div`
     display: none;
   }
 `
-
-// const MenuBurger = styled.div`
-//   display: none;
-//
-//   @media ${myTheme.media.tablet} {
-//     display: block;
-//   }
-// `

@@ -9,22 +9,18 @@ import {myTheme} from "../../styles/Theme.styled";
 
 export const Logo = ({...rest}) => {
     return (
-        <StyledLink to={"/"} {...rest}>
+        <NavLink to={"/"} {...rest}>
             <FlexWrapper align={"center"}>
                 <MainIcon iconId={"iconDefaultSvg"} width={"20px"} height={"20px"}/>
                 <LogoText>Elias</LogoText>
             </FlexWrapper>
-        </StyledLink>
+        </NavLink>
     );
 };
 
 const LogoText = styled.p`
   ${font({color: myTheme.colors.fontWhite, weight: 700, Fmin: 16, Fmax: 16})}
   padding-left: 5px;
-`
-
-const StyledLink = styled(NavLink)`
-  text-decoration: none;
 `
 
 

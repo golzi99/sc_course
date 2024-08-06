@@ -4,6 +4,7 @@ import {myTheme} from "../Theme.styled";
 
 export const StyledTitle = styled.h2`
   ${font({color: myTheme.colors.fontWhite, weight: 600, Fmin: 32, Fmax: 32})};
+  margin-right: 20px;
 
   span {
     ${font({color: myTheme.colors.mainPurpleColor, weight: 600, Fmin: 32, Fmax: 32})};

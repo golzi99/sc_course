@@ -3,6 +3,7 @@ import {FlexWrapper} from "../FlexWrapper";
 import {Icon} from "../icon/Icon";
 import styled from "styled-components";
 import {myTheme} from "../../styles/Theme.styled";
+import {font} from "../../styles/Common";
 
 type ContactResourcePropsType = {
     iconContact: string,
@@ -19,9 +20,6 @@ export const ContactResource = (props: ContactResourcePropsType) => {
 };
 
 const StyledText = styled.p`
-  color: ${myTheme.colors.lightGrey};
-  max-width: 550px;
-  font-weight: 400;
-  font-size: 16px;
+  ${font({color: myTheme.colors.lightGrey, weight: 400, Fmin: 16, Fmax: 16})};
   padding-left: 8px;
 `

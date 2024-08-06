@@ -6,7 +6,7 @@ import {ContactResource} from "../../../../../components/contact/ContactResource
 import {Container} from "../../../../../components/Container";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
-import {StyledBaseText, StyledWhiteText} from "../../../../../styles/texts/Texts";
+import {font} from "../../../../../styles/Common";
 
 export const ContactsHome = () => {
     return (
@@ -17,12 +17,12 @@ export const ContactsHome = () => {
                     <StyledLine lineWidth={"127px"}></StyledLine>
                 </FlexWrapper>
                 <StyledAboutMeContent justify={"space-between"} wrap={"wrap"}>
-                    <StyledMaxWidthText>I’m interested in freelance opportunities.
+                    <Text>I’m interested in freelance opportunities.
                         However, if you have other request or question,
                         don’t hesitate to contact me
-                    </StyledMaxWidthText>
+                    </Text>
                     <StyledContactBox direction={"column"}>
-                        <StyledWhiteText>Message me here</StyledWhiteText>
+                        <MessageTitle>Message me here</MessageTitle>
                         <ContactBoxWrapper direction={"column"}>
                             <ContactResource iconContact={"discordSvg"} contactName={"!Elias#3519"}></ContactResource>
                             <ContactResource iconContact={"emailSvg"} contactName={"elias@elias.me"}></ContactResource>
@@ -57,6 +57,11 @@ const StyledContactBox = styled(FlexWrapper)`
   padding: 10px;
 `
 
-const StyledMaxWidthText = styled(StyledBaseText)`
+const Text = styled.p`
+  ${font({color: myTheme.colors.lightGrey, weight: 400, Fmin: 16, Fmax: 16})};
   max-width: 550px;
+`
+
+const MessageTitle = styled.h3`
+  ${font({color: myTheme.colors.fontWhite, weight: 600, Fmin: 16, Fmax: 16})};
 `

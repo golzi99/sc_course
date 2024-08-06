@@ -23,7 +23,7 @@ export const StyledLinkButton = styled(NavLink)<StyledBtnPropsType>`
   
   ${props => props.typeLinkButton === "secondary" && css<StyledBtnPropsType>`
     border: ${myTheme.colors.lightGrey} solid 1px;
-
+    ${font({color: myTheme.colors.lightGrey, weight: 500, Fmin: 16, Fmax: 16})}
     &:hover {
       background-color: rgba(171, 178, 191, 0.2);
     }

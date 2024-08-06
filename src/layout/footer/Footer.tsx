@@ -5,7 +5,6 @@ import {Logo} from "../../components/logo/Logo";
 import {myTheme} from "../../styles/Theme.styled";
 import {Icon} from "../../components/icon/Icon";
 import { Container } from '../../components/Container';
-import {StyledBaseText, StyledWhiteText} from '../../styles/texts/Texts';
 import {font} from "../../styles/Common";
 
 export const Footer = () => {
@@ -17,9 +16,9 @@ export const Footer = () => {
                         <FlexWrapper direction={"column"}>
                             <StyledLogoFooter justify={"space-between"} align={"center"}>
                                 <Logo></Logo>
-                                <StyledBaseText>elias@elias-dev.ml</StyledBaseText>
+                                <Text>elias@elias-dev.ml</Text>
                             </StyledLogoFooter>
-                            <Text>Web designer and front-end developer</Text>
+                            <WhiteText>Web designer and front-end developer</WhiteText>
                         </FlexWrapper>
                         <MediaWrapper direction={"column"}>
                             <StyledMedia>Media</StyledMedia>
@@ -30,7 +29,7 @@ export const Footer = () => {
                             </FlexWrapper>
                         </MediaWrapper>
                     </StyledFooterBox>
-                    <StyledBaseText>© Copyright 2024. Made by Elias</StyledBaseText>
+                    <Text>© Copyright 2024. Made by Elias</Text>
                 </FlexWrapper>
             </Container>
         </StyledFooter>
@@ -42,9 +41,13 @@ const StyledFooter = styled.footer`
   border-top: ${myTheme.colors.lightGrey} solid 1px;
 `
 
-const Text = styled.p`
+const WhiteText = styled.p`
   ${font({color: myTheme.colors.fontWhite})};
   white-space: nowrap;
+`
+
+const Text = styled.p`
+  ${font({color: myTheme.colors.lightGrey})};
 `
 
 const StyledLogoFooter = styled(FlexWrapper)`
@@ -67,7 +70,7 @@ const StyledFooterBox = styled(FlexWrapper)`
   }
 `
 
-const StyledMedia = styled(StyledWhiteText)`
-  font-size: 24px;
+const StyledMedia = styled.p`
+  ${font({color: myTheme.colors.fontWhite, Fmin: 24, Fmax: 24, weight: 500})};
   margin-bottom: 16px;
 `
