@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/sc_course/static/css/main.e6c13ad2.css",
+    "main.js": "/sc_course/static/js/main.75e7c7c7.js",
+    "static/js/787.25eaef86.chunk.js": "/sc_course/static/js/787.25eaef86.chunk.js",
+    "static/media/dark_man_2.webp": "/sc_course/static/media/dark_man_2.8b353b39768ce3daee4f.webp",
+    "static/media/dark_man_1.webp": "/sc_course/static/media/dark_man_1.a063b3ab70ca7226d848.webp",
+    "static/media/Portfolio.webp": "/sc_course/static/media/Portfolio.e2ee9883574acf658edf.webp",
+    "static/media/thumbnail1.webp": "/sc_course/static/media/thumbnail1.f7fcef36651ac9787f68.webp",
+    "static/media/banner2.webp": "/sc_course/static/media/banner2.15509ade5f8bdb77ff5d.webp",
+    "static/media/thumbnail2.webp": "/sc_course/static/media/thumbnail2.cbbc86fdd1752b440a9c.webp",
+    "static/media/icons-sprite.svg": "/sc_course/static/media/icons-sprite.54da9c937009b89e1d488dcbdde99409.svg",
+    "static/media/banner1.webp": "/sc_course/static/media/banner1.e446845396cb029dfbfb.webp",
+    "static/media/skillsImg.webp": "/sc_course/static/media/skillsImg.4b01a7086644cc931bd7.webp",
+    "static/media/Style-Default.svg": "/sc_course/static/media/Style-Default.33df809bf3896906893cd582f5964b46.svg",
+    "index.html": "/sc_course/index.html",
+    "main.e6c13ad2.css.map": "/sc_course/static/css/main.e6c13ad2.css.map",
+    "main.75e7c7c7.js.map": "/sc_course/static/js/main.75e7c7c7.js.map",
+    "787.25eaef86.chunk.js.map": "/sc_course/static/js/787.25eaef86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.75e7c7c7.js"
+  ]
+}
