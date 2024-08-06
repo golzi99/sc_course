@@ -52,8 +52,7 @@ const StyledNav = styled(NavLink)`
   }
 
   &.active {
-    color: ${myTheme.colors.fontWhite};
-    font-weight: 500;
+    ${font({color: myTheme.colors.fontWhite, weight: 500})};
   }
 
   span {

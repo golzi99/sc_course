@@ -8,7 +8,7 @@ import { font } from '../../../../styles/Common';
 export const ContactsForm = () => {
     return (
         <StyledFiledSet>
-            <legend>Text me your questions</legend>
+            <legend>Text me your questions!</legend>
             <StyledFrom>
                 <FieldsWrapper>
                     <Field placeholder={"Name"}/>
@@ -54,7 +54,7 @@ const Field = styled.input`
   color: ${myTheme.colors.fontWhite};
   
   &::placeholder {
-    ${font({color: myTheme.colors.lightGrey})}
+    ${font({})}
   }
   
   &:focus-visible {

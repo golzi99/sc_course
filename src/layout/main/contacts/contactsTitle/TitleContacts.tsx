@@ -2,8 +2,9 @@ import React from 'react';
 import {Container} from "../../../../components/Container";
 import styled from "styled-components";
 import { BaseTitle } from '../../../../components/titles/BaseTitle';
-import {StyledWhiteText} from '../../../../styles/texts/Texts';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
+import {font} from "../../../../styles/Common";
+import {myTheme} from "../../../../styles/Theme.styled";
 
 export const TitleContacts = () => {
     return (
@@ -11,7 +12,7 @@ export const TitleContacts = () => {
             <Container>
                 <TitleWrapper direction={"column"}>
                     <BaseTitle titleText={"contacts"} symbolTitle={"/"}/>
-                    <StyledWhiteText>Who am i?</StyledWhiteText>
+                    <WhiteText>Who am i?</WhiteText>
                 </TitleWrapper>
             </Container>
         </StyledContacts>
@@ -24,4 +25,8 @@ const StyledContacts = styled.section`
 
 const TitleWrapper = styled(FlexWrapper)`
   gap: 20px;
+`
+
+const WhiteText = styled.p`
+  ${font({color: myTheme.colors.fontWhite})}
 `

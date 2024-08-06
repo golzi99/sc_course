@@ -58,7 +58,7 @@ const StyledContactBox = styled(FlexWrapper)`
 `
 
 const Text = styled.p`
-  ${font({color: myTheme.colors.lightGrey, weight: 400, Fmin: 16, Fmax: 16})};
+  ${font({Fmin: 16, Fmax: 16})};
   max-width: 550px;
 `
 

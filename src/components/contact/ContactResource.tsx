@@ -2,7 +2,6 @@ import React from 'react';
 import {FlexWrapper} from "../FlexWrapper";
 import {Icon} from "../icon/Icon";
 import styled from "styled-components";
-import {myTheme} from "../../styles/Theme.styled";
 import {font} from "../../styles/Common";
 
 type ContactResourcePropsType = {
@@ -20,6 +19,6 @@ export const ContactResource = (props: ContactResourcePropsType) => {
 };
 
 const StyledText = styled.p`
-  ${font({color: myTheme.colors.lightGrey, weight: 400, Fmin: 16, Fmax: 16})};
+  ${font({Fmin: 16, Fmax: 16})};
   padding-left: 8px;
 `

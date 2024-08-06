@@ -2,28 +2,28 @@ import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../../components/Container";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
-import {StyledBaseText, StyledWhiteText} from "../../../../styles/texts/Texts";
 import {ContactResource} from "../../../../components/contact/ContactResource";
 import {myTheme} from "../../../../styles/Theme.styled";
 import {ContactsForm} from "../contactsForm/ContactsForm";
+import {font} from "../../../../styles/Common";
 
 export const ContactsContent = () => {
     return (
         <StyledContents>
             <Container>
                 <StyledWrapper justify={"space-between"} wrap={"wrap"}>
-                    <TextBlock>
+                    <Text>
                         I’m interested in freelance opportunities.
                         However, if you have other request or question,
                         don’t hesitate to contact me
-                    </TextBlock>
+                    </Text>
                     <StyledContactsInfo wrap={"wrap"}>
                         <SupBox direction={"column"}>
-                            <StyledWhiteText>Support me here</StyledWhiteText>
-                            <StyledBaseText>4149500120690030</StyledBaseText>
+                            <WhiteText>Support me here</WhiteText>
+                            <Text>4149500120690030</Text>
                         </SupBox>
                         <StyledContactBox direction={"column"}>
-                            <StyledWhiteText>Message me here</StyledWhiteText>
+                            <WhiteText>Message me here</WhiteText>
                             <ContactBoxWrapper direction={"column"}>
                                 <ContactResource iconContact={"discordSvg"}
                                                  contactName={"!Elias#3519"}></ContactResource>
@@ -75,6 +75,11 @@ const StyledContactBox = styled(FlexWrapper)`
   padding: 10px;
 `
 
-const TextBlock = styled(StyledBaseText)`
+const Text = styled.p`
+  ${font({Fmin: 16, Fmax: 16})};
   max-width: 505px;
+`
+
+const WhiteText = styled.p`
+  ${font({color: myTheme.colors.fontWhite})}
 `

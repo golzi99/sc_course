@@ -47,7 +47,7 @@ const WhiteText = styled.p`
 `
 
 const Text = styled.p`
-  ${font({color: myTheme.colors.lightGrey})};
+  ${font({})};
 `
 
 const StyledLogoFooter = styled(FlexWrapper)`

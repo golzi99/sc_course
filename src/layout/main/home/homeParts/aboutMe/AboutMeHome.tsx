@@ -8,7 +8,6 @@ import {StyledLine} from "../../../../../styles/line/Line";
 import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
 import {font} from "../../../../../styles/Common";
-import {myTheme} from "../../../../../styles/Theme.styled";
 
 export const AboutMeHome = () => {
     return (
@@ -72,7 +71,7 @@ const StyledAboutMeTextBlock = styled(FlexWrapper)`
 `
 
 const Text = styled.p`
-  ${font({color: myTheme.colors.lightGrey, weight: 400, Fmin: 16, Fmax: 16, lineHeight: 1.6})};
+  ${font({Fmin: 16, Fmax: 16, lineHeight: 1.6})};
 `
 
 const Photo = styled.img`

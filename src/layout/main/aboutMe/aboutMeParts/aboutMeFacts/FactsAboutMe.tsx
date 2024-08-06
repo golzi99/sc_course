@@ -4,9 +4,9 @@ import {Container} from "../../../../../components/Container";
 import {FlexWrapper} from "../../../../../components/FlexWrapper";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {myTheme} from "../../../../../styles/Theme.styled";
-import {StyledBaseText} from "../../../../../styles/texts/Texts";
 import {MainIcon} from "../../../../../components/icon/MainIcon";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
+import {font} from "../../../../../styles/Common";
 
 
 const facts = [
@@ -71,7 +71,8 @@ const ImageBox = styled.div`
   }
 `
 
-const StyledFact = styled(StyledBaseText)`
+const StyledFact = styled.p`
+  ${font({Fmin: 16, Fmax: 16})};
   border: ${myTheme.colors.lightGrey} solid 1px;
   padding: 8px;
   

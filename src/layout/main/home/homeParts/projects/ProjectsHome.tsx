@@ -11,6 +11,7 @@ import {NavLink} from "react-router-dom";
 import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
 import {CardProjectType} from "../../../../../types/types";
+import { font } from '../../../../../styles/Common';
 
 const tools1: Array<string> = [
     "HTML", "SCSS", "Python", "Flask"
@@ -81,9 +82,7 @@ const StyledProject = styled.section`
 `
 
 const StyledView = styled(NavLink)`
-  color: ${myTheme.colors.fontWhite};
-  font-size: 16px;
-  text-decoration: none;
+  ${font({color: myTheme.colors.fontWhite, Fmin: 16, Fmax: 16})};
 `
 
 const StyledProjectsFlexBox = styled(FlexWrapper)`
