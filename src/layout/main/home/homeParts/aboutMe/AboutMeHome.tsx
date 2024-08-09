@@ -32,7 +32,8 @@ export const AboutMeHome = () => {
                             I have been helping various clients to establish their presence online.
                             I always strive to learn about the newest technologies and frameworks.
                         </Text>
-                        <StyledLinkButton to={"/about-me"} typeLinkButton={"primary"}>Read more -&gt;</StyledLinkButton>
+                        <StyledLinkButton to={"/about-me"} typeLinkButton={"primary"} width={"fit-content"}>Read more
+                            -&gt;</StyledLinkButton>
                     </StyledAboutMeTextBlock>
                     <StyledImgBox direction={"column"} align={"center"}>
                         <Photo src={dark_man_2} alt={"dark_man_2"}/>
@@ -67,7 +68,7 @@ const StyledContentWrapper = styled(FlexWrapper)`
 
 const StyledAboutMeTextBlock = styled(FlexWrapper)`
   max-width: 515px;
-  gap:30px;
+  gap: 30px;
 `
 
 const Text = styled.p`

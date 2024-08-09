@@ -10,6 +10,7 @@ import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
 import {StyledTitle} from "../../../../../styles/texts/StyledTitle";
 import {font} from '../../../../../styles/Common';
+import {font} from '../../../../../styles/Common';
 import Typewriter from 'typewriter-effect';
 import Tilt from 'react-parallax-tilt';
 
@@ -38,8 +39,8 @@ export const Introduce = () => {
                             <StyledText>
                                 He crafts responsive websites where technologies meet creativity
                             </StyledText>
-                            <StyledLinkButton to={"/contacts"} typeLinkButton={"primary"}>Contact me
-                                !!</StyledLinkButton>
+                            <StyledLinkButton to={"/contacts"} typeLinkButton={"primary"} width={"fit-content"}>Contact
+                                me !!</StyledLinkButton>
                         </StyledTextBox>
                         <FlexWrapper direction={"column"} align={"center"}>
                             <Tilt>

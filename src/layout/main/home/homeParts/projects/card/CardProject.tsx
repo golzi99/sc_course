@@ -39,7 +39,7 @@ export const CardProject = (props: CardProjectPropsType) => {
 };
 
 const Image = styled.img`
-  height: 200px;
+  min-height: 200px;
   width: 100%;
   object-fit: cover;
   border-bottom: ${myTheme.colors.lightGrey} solid 1px;
@@ -47,12 +47,14 @@ const Image = styled.img`
 
 const StyledCardProject = styled(FlexWrapper)`
   border: ${myTheme.colors.lightGrey} solid 1px;
-  width: 332px;
 `
 
 const StyledText = styled.p`
-  ${font({Fmin: 16, Fmax: 16, lineHeight: 1.6})};
+  ${font({Fmin: 16, Fmax: 16})};
   text-align: left;
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
 `
 
 const Instrument = styled.p`
@@ -62,6 +64,7 @@ const Instrument = styled.p`
 
 const StyledInstruments = styled(FlexWrapper)`
   align-content: flex-start;
+  height: fit-content;
   row-gap: 16px;
   padding: 8px 0;
 `
@@ -70,9 +73,17 @@ const StyledTextBlock = styled(FlexWrapper)`
   border-top: solid ${myTheme.colors.lightGrey} 1px;
   padding: 16px;
   gap: 16px;
+  
+  h3 {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
 `
 
-const CardFlexButtonBox = styled(FlexWrapper)`
+const CardFlexButtonBox = styled.div`
+  display: flex;
+  justify-content: center;
   ${StyledLinkButton} {
     & + ${StyledLinkButton} {
       margin-left: 20px;
