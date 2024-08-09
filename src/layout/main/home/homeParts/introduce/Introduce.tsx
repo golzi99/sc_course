@@ -10,7 +10,6 @@ import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
 import {StyledTitle} from "../../../../../styles/texts/StyledTitle";
 import {font} from '../../../../../styles/Common';
-import {font} from '../../../../../styles/Common';
 import Typewriter from 'typewriter-effect';
 import Tilt from 'react-parallax-tilt';
 
