@@ -79,6 +79,7 @@ export const ProjectsHome = () => {
 };
 
 const StyledProject = styled.section`
+  position: relative;
 `
 
 const StyledView = styled(NavLink)`

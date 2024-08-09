@@ -36,6 +36,7 @@ export const ContactsHome = () => {
 
 
 const StyledContacts = styled.section`
+  position: relative;
 `
 
 const StyledAboutMeContent = styled(FlexWrapper)`

@@ -21,7 +21,6 @@ export const Home = () => {
 };
 
 const StyledHome = styled.div`
-    position: relative;
 `
 
 // const StyledCube = styled.div<{top?: string, left?: string, width?: string, height?: string}>`

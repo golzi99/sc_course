@@ -55,7 +55,7 @@ export const AboutMeHome = () => {
 };
 
 const StyledAboutMe = styled.section`
-
+  position: relative;
 `
 
 const StyledContentWrapper = styled(FlexWrapper)`

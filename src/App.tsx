@@ -5,11 +5,14 @@ import styled from "styled-components";
 import { myTheme } from './styles/Theme.styled';
 import { Main } from './layout/main/Main';
 import {HashRouter} from "react-router-dom";
+import {Particle} from "./components/partical/Particle";
+import React from "react";
 
 function App() {
     return (
         <HashRouter>
             <Container>
+                <Particle/>
                 <Header/>
                 <Main/>
                 <Footer/>

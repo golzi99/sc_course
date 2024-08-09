@@ -37,6 +37,7 @@ export const GlobalStyled = createGlobalStyle`
   }
   
   section {
+    background-color: ${myTheme.colors.primaryBg};
     padding: 50px 0;
     
     @media ${myTheme.media.tablet} {

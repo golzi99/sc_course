@@ -80,6 +80,7 @@ export const Skills = () => {
 };
 
 const StyledSkillsSection = styled.section`
+    position: relative;
 `
 
 const StyledSkillsContent = styled(FlexWrapper)`

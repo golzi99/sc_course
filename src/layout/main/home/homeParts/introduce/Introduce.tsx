@@ -9,7 +9,9 @@ import {Quote} from "../../../../../components/blockquote/Quote";
 import {StyledLinkButton} from "../../../../../styles/buttons/BaseButtonLink";
 import {DotsLine} from "../../../../../styles/dot/DotsLine";
 import {StyledTitle} from "../../../../../styles/texts/StyledTitle";
-import { font } from '../../../../../styles/Common';
+import {font} from '../../../../../styles/Common';
+import Typewriter from 'typewriter-effect';
+import Tilt from 'react-parallax-tilt';
 
 export const Introduce = () => {
     return (
@@ -19,30 +21,45 @@ export const Introduce = () => {
                     <StyledFirstPartWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
                         <StyledTextBox direction={"column"}>
                             <Title>
-                                Elias is a <span>web designer</span> and <span>front-end developer</span>
+                                <h2>Elias is a <span>web designer</span> and <span>front-end developer</span></h2>
+                                <Typewriter
+                                    options={{
+                                        loop: true,
+                                        delay: 75
+                                    }}
+                                    onInit={(typewriter) => {
+                                        typewriter
+                                            .typeString('Elias is a <strong>web designer</strong> and <strong>front-end developer</strong>')
+                                            .pauseFor(5000)
+                                            .start();
+                                    }}
+                                />
                             </Title>
                             <StyledText>
                                 He crafts responsive websites where technologies meet creativity
                             </StyledText>
-                            <StyledLinkButton to={"/contacts"} typeLinkButton={"primary"}>Contact me !!</StyledLinkButton>
+                            <StyledLinkButton to={"/contacts"} typeLinkButton={"primary"}>Contact me
+                                !!</StyledLinkButton>
                         </StyledTextBox>
                         <FlexWrapper direction={"column"} align={"center"}>
-                            <StyledImgBox>
-                                <Photo src={dark_man_1} alt={"dark_man_1"}/>
-                                <DotsBox direction={"column"} justify={"space-between"}>
-                                    {Array.from({length: 5}).map((_, index) =>
-                                        (<DotsLine key={index} countDots={5} gap={"16px"}></DotsLine>)
-                                    )}
-                                </DotsBox>
-                                <StyledLogoImg iconId={"iconOutLineSvg"}
-                                               width={"155px"} height={"155px"}/>
-                            </StyledImgBox>
+                            <Tilt>
+                                <StyledImgBox>
+                                    <Photo src={dark_man_1} alt={"dark_man_1"}/>
+                                    <DotsBox direction={"column"} justify={"space-between"}>
+                                        {Array.from({length: 5}).map((_, index) =>
+                                            (<DotsLine key={index} countDots={5} gap={"16px"}></DotsLine>)
+                                        )}
+                                    </DotsBox>
+                                    <StyledLogoImg iconId={"iconOutLineSvg"}
+                                                   width={"155px"} height={"155px"}/>
+                                </StyledImgBox>
                             <BoxUnderImage align={"center"}>
                                 <StyledIndicator/>
                                 <StyledTextUnderImg>
                                     Currently working on <span>Portfolio</span>
                                 </StyledTextUnderImg>
                             </BoxUnderImage>
+                            </Tilt>
                         </FlexWrapper>
                     </StyledFirstPartWrapper>
                     <Quote></Quote>
@@ -61,12 +78,17 @@ const StyledIntroduce = styled.section`
 
 const Title = styled(StyledTitle)`
   max-width: 537px;
+
+  h2 {
+    display: none;
+  }
+
 `
 
 const StyledTextUnderImg = styled.p`
   ${font({weight: 500, Fmin: 16, Fmax: 16})};
   text-align: left;
-  
+
   span {
     ${font({color: myTheme.colors.fontWhite, weight: 600, Fmin: 16, Fmax: 16})};
   }
@@ -108,7 +130,7 @@ const StyledFirstPartWrapper = styled(FlexWrapper)`
   @media (max-width: 972px) {
     justify-content: center;
   }
-  
+
   @media ${myTheme.media.mobile} {
     ${Photo} {
       max-width: 316px;
