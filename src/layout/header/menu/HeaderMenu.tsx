@@ -34,11 +34,6 @@ const StyledMenu = styled.nav`
     display: flex;
     gap: 30px;
   }
-
-  @media ${myTheme.media.tablet} {
-    display: none;
-  }
-  
 `
 
 const Menuitem = styled.li`

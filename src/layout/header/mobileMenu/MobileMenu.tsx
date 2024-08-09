@@ -50,12 +50,6 @@ export const MobileMenu = () => {
 };
 
 const StyledMobileMenu = styled.nav`
-  display: none;
-
-  @media ${myTheme.media.tablet} {
-    display: flex;
-    align-items: center;
-  }
 `
 
 const SocialMedia = styled(FlexWrapper)`

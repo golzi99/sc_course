@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
 import {HeaderMenu} from "./menu/HeaderMenu";
@@ -12,6 +12,16 @@ import {Icon} from "../../components/icon/Icon";
 // сделал отельную копоненту, чтобы в футоре не отображалось лого, прокинул через rest
 
 export const Header = () => {
+
+    const [width, setWidth] = useState(window.innerWidth);
+    const breakpoint = 768;
+
+    useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth)
+        window.addEventListener("resize", handleWindowResize)
+        return () => window.removeEventListener("resize", handleWindowResize)
+    }, [])
+
     return (
         <StyledHeader>
             <Container>
@@ -23,8 +33,7 @@ export const Header = () => {
                         <StyledIcon height={"32"} width={"32"} iconId={"figmaSvg"}/>
                     </SocialLine>
                     <HeaderLogo/>
-                    <HeaderMenu/>
-                    <MobileMenu/>
+                    {width < breakpoint ? <MobileMenu/> : <HeaderMenu/>}
                 </StyledWrapperHeader>
             </Container>
         </StyledHeader>
