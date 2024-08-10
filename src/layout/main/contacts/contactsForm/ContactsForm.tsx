@@ -1,21 +1,46 @@
-import React from 'react';
+import React, {ElementRef, useRef} from 'react';
 import {StyledButton} from "../../../../styles/buttons/BaseButton";
 import styled from "styled-components";
 import {myTheme} from "../../../../styles/Theme.styled";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
 import { font } from '../../../../styles/Common';
+import emailjs from '@emailjs/browser';
 
 export const ContactsForm = () => {
+    const form = useRef<ElementRef<'form'>>(null);
+
+    const sendEmail = (e: any) => {
+        e.preventDefault();
+
+        if (!form.current) return
+
+        emailjs
+            .sendForm('service_w3aqfk9', 'template_u659tsl', form.current, {
+                publicKey: 'j2UjtoQ28N4qgp9eI',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+
+        e.target.reset();
+    };
+
+
     return (
         <StyledFiledSet>
             <legend>Text me your questions!</legend>
-            <StyledFrom>
+            <StyledFrom ref={form} onSubmit={sendEmail}>
                 <FieldsWrapper>
-                    <Field placeholder={"Name"}/>
-                    <Field placeholder={"Email"} type={"email"}/>
+                    <Field required placeholder={"Name"} name={"user_name"}/>
+                    <Field required placeholder={"Email"} type={"email"} name={"email"}/>
                 </FieldsWrapper>
-                <Field placeholder={"Title"}/>
-                <Field as={"textarea"} placeholder={"Message"}/>
+                <Field required placeholder={"Title"} name={"title"}/>
+                <Field required as={"textarea"} placeholder={"Message"} name={"message"}/>
                 <StyledButton type={"submit"}>Send</StyledButton>
             </StyledFrom>
         </StyledFiledSet>
