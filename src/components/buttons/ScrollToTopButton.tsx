@@ -14,7 +14,7 @@ export const ScrollToTopButton = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 20) {
+            if (window.scrollY > 200) {
                 setIsVisible(true)
             } else {
                 setIsVisible(false)

@@ -4,7 +4,7 @@ import {myTheme} from "../../../styles/Theme.styled";
 import {NavLink} from "react-router-dom";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Icon} from "../../../components/icon/Icon";
-import { font } from '../../../styles/Common';
+import {font} from '../../../styles/Common';
 
 // есть баг с переключением меню и изменением размеров
 
@@ -22,16 +22,24 @@ export const MobileMenu = () => {
             <MobileMenuWrapper isOpen={isOpen}>
                 <ul>
                     <Menuitem>
-                        <StyledNav to="/" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>home</StyledNav>
+                        <StyledNav to="/" onClick={() => {
+                            setIsOpen(!isOpen)
+                        }}><span>#</span>home</StyledNav>
                     </Menuitem>
                     <Menuitem>
-                        <StyledNav to="/projects" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>works</StyledNav>
+                        <StyledNav to="/projects" onClick={() => {
+                            setIsOpen(!isOpen)
+                        }}><span>#</span>works</StyledNav>
                     </Menuitem>
                     <Menuitem>
-                        <StyledNav to="/about-me" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>about-me</StyledNav>
+                        <StyledNav to="/about-me" onClick={() => {
+                            setIsOpen(!isOpen)
+                        }}><span>#</span>about-me</StyledNav>
                     </Menuitem>
                     <Menuitem>
-                        <StyledNav to="/contacts" onClick={() => {setIsOpen(!isOpen)}}><span>#</span>contacts</StyledNav>
+                        <StyledNav to="/contacts" onClick={() => {
+                            setIsOpen(!isOpen)
+                        }}><span>#</span>contacts</StyledNav>
                     </Menuitem>
                     <StyledLanguage name={"language"}>
                         <option>EN</option>
@@ -73,7 +81,6 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     ${props => props.isOpen && css<{ isOpen: boolean }>`
       background-color: transparent;
     `}
-    
     &::before {
       display: block;
       position: absolute;
@@ -114,29 +121,40 @@ const MobileMenuWrapper = styled.div<{ isOpen: boolean }>`
   bottom: 0;
   right: 0;
   left: 0;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 8px;
   margin-top: 60px;
-
-  ${props => props.isOpen && css<{ isOpen: boolean }>`
-    display: flex;
-    flex-direction: column;
-  `}
+  transform: translateY(calc(-100% - 60px));
+  transition: 1s ease-in-out;
+  
   ul {
     flex-grow: 1;
     display: flex;
-    gap: 30px;
+    gap: 0;
     flex-direction: column;
     justify-content: start;
     padding-top: 50px;
+    transition: 1s ease-in-out;
   }
+
+  ${props => props.isOpen && css<{ isOpen: boolean }>`
+    transform: translateY(0);
+    
+    ul {
+      gap:30px;
+    }
+  `}
 `
+
 
 const Menuitem = styled.li`
 `
 
 const StyledNav = styled(NavLink)`
-  ${font({Fmin: 32, Fmax: 48})}
+  ${font({Fmin: 32, Fmax: 48})};
+  transition: ${myTheme.animations.transition};
 
   &:hover {
     color: rgba(255, 255, 255, 0.9);

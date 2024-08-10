@@ -40,7 +40,8 @@ const Menuitem = styled.li`
 `
 
 const StyledNav = styled(NavLink)`
-  ${font({Fmin: 16, Fmax: 16})}
+  ${font({Fmin: 16, Fmax: 16})};
+  transition: ${myTheme.animations.transition};
 
   &:hover {
     color: rgba(255, 255, 255, 0.9);
