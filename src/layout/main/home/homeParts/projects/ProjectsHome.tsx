@@ -12,6 +12,7 @@ import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
 import {CardProjectType} from "../../../../../types/types";
 import { font } from '../../../../../styles/Common';
+import { Fade } from "react-awesome-reveal";
 
 const tools1: Array<string> = [
     "HTML", "SCSS", "Python", "Flask"
@@ -63,14 +64,16 @@ export const ProjectsHome = () => {
                         <StyledView to={"/projects"}>View all ~~&gt;</StyledView>
                     </FlexWrapper>
                     <StyledProjectsFlexBox>
-                        {Card.map((card, index) => {
-                            return <CardProject key={index} img={card.img} title={card.title}
-                                                description={card.description}
-                                                projectTools={card.projectTools}
-                                                projectSource={card.projectSource}
-                                                cachedButton={card.cachedButton}
-                            />
-                        })}
+                        <Fade cascade={true} damping={0.5}>
+                            {Card.map((card, index) => {
+                                return <CardProject key={index} img={card.img} title={card.title}
+                                                    description={card.description}
+                                                    projectTools={card.projectTools}
+                                                    projectSource={card.projectSource}
+                                                    cachedButton={card.cachedButton}
+                                />
+                            })}
+                        </Fade>
                     </StyledProjectsFlexBox>
                 </FlexWrapper>
             </Container>

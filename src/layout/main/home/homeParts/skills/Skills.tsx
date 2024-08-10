@@ -8,6 +8,7 @@ import {BaseTitle} from "../../../../../components/titles/BaseTitle";
 import {StyledLine} from "../../../../../styles/line/Line";
 import {SkillBoxType} from "../../../../../types/types";
 import {myTheme} from "../../../../../styles/Theme.styled";
+import {Fade} from "react-awesome-reveal";
 
 const languages = [
     "TypeScript", "Lua", "Python", "JavaScript"
@@ -68,10 +69,12 @@ export const Skills = () => {
                 <StyledSkillsContent justify={"space-between"}>
                     <Photo src={skillsImg} alt={"skillsImg"}/>
                     <StyledSkills direction={"column"} wrap={"wrap-reverse"} justify={"flex-start"} align={"flex-end"}>
-                        {GroupsSkills.map((skillBox, index) => {
-                            return <SkillBox key={index} skillBoxTitle={skillBox.skillBoxTitle} boxSkills={skillBox.boxSkills}
-                                             maxWidth={skillBox.maxWidth}/>
-                        })}
+                        <Fade cascade={true} damping={0.2}>
+                            {GroupsSkills.map((skillBox, index) => {
+                                return <SkillBox key={index} skillBoxTitle={skillBox.skillBoxTitle} boxSkills={skillBox.boxSkills}
+                                                 maxWidth={skillBox.maxWidth}/>
+                            })}
+                        </Fade>
                     </StyledSkills>
                 </StyledSkillsContent>
             </Container>

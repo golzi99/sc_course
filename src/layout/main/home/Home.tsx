@@ -5,11 +5,13 @@ import {ProjectsHome} from "./homeParts/projects/ProjectsHome";
 import {Skills} from "./homeParts/skills/Skills";
 import {AboutMeHome} from "./homeParts/aboutMe/AboutMeHome";
 import {ContactsHome} from "./homeParts/contacts/ContactsHome";
+import {Particle} from "../../../components/partical/Particle";
 // import {myTheme} from "../../../styles/Theme.styled";
 
 export const Home = () => {
     return (
         <StyledHome>
+            <Particle/>
             <Introduce/>
             <ProjectsHome/>
             <Skills/>
